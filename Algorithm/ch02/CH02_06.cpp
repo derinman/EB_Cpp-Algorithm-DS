@@ -1,11 +1,11 @@
 #include <iostream>
-#define EAST  MAZE[x][y+1]  //©w¸qªF¤èªº¬Û¹ï¦ì¸m
-#define WEST  MAZE[x][y-1]  //©w¸q¦è¤èªº¬Û¹ï¦ì¸m
-#define SOUTH MAZE[x+1][y]	//©w¸q«n¤èªº¬Û¹ï¦ì¸m
-#define NORTH MAZE[x-1][y]	//©w¸q¥_¤èªº¬Û¹ï¦ì¸m
+#define EAST  MAZE[x][y+1]  //å®šç¾©æ±æ–¹çš„ç›¸å°ä½ç½®
+#define WEST  MAZE[x][y-1]  //å®šç¾©è¥¿æ–¹çš„ç›¸å°ä½ç½®
+#define SOUTH MAZE[x+1][y]	//å®šç¾©å—æ–¹çš„ç›¸å°ä½ç½®
+#define NORTH MAZE[x-1][y]	//å®šç¾©åŒ—æ–¹çš„ç›¸å°ä½ç½®
 using namespace std;
-const int ExitX = 8;  //©w¸q¥X¤fªºX®y¼Ğ¦b²Ä¤K¦C
-const int ExitY = 10; //©w¸q¥X¤fªºY®y¼Ğ¦b²Ä¤Q¦æ
+const int ExitX = 8;  //å®šç¾©å‡ºå£çš„Xåº§æ¨™åœ¨ç¬¬å…«åˆ—
+const int ExitY = 10; //å®šç¾©å‡ºå£çš„Yåº§æ¨™åœ¨ç¬¬åè¡Œ
 struct list
 {
     int x,y;
@@ -13,7 +13,7 @@ struct list
 };
 typedef struct list node;
 typedef node* link;
-int MAZE[10][12] = {1,1,1,1,1,1,1,1,1,1,1,1,//«Å§i°g®c°}¦C
+int MAZE[10][12] = {1,1,1,1,1,1,1,1,1,1,1,1,//å®£å‘Šè¿·å®®é™£åˆ—
                     1,0,0,0,1,1,1,1,1,1,1,1,
                     1,1,1,0,1,1,0,0,0,0,1,1,
                     1,1,1,0,1,1,0,1,1,0,1,1,
@@ -30,9 +30,9 @@ int main(void)
 {
     int i,j;
     link path = NULL;
-    int x=1;	//¤J¤fªºX®y¼Ğ
-    int y=1;    //¤J¤fªºY®y¼Ğ
-    cout<<"[°g®cªº¸ô®|(0ªº³¡¤À)]"<<endl; //¦L¥X°g®cªº¸ô®|¹Ï
+    int x=1;	//å…¥å£çš„Xåº§æ¨™
+    int y=1;    //å…¥å£çš„Yåº§æ¨™
+    cout<<"[è¿·å®®çš„è·¯å¾‘(0çš„éƒ¨åˆ†)]"<<endl; //å°å‡ºè¿·å®®çš„è·¯å¾‘åœ–
     for(i=0;i<10;i++)
     {
         for(j=0;j<12;j++)
@@ -62,7 +62,7 @@ int main(void)
             y+=1;
             path=push(path,x,y);
         }
-        else if(chkExit(x,y,ExitX,ExitY)==1) //ÀË¬d¬O§_¨«¨ì¥X¤f¤F
+        else if(chkExit(x,y,ExitX,ExitY)==1) //æª¢æŸ¥æ˜¯å¦èµ°åˆ°å‡ºå£äº†
             break;
         else
         {
@@ -70,7 +70,7 @@ int main(void)
             path=pop(path,&x,&y);
         }
     }
-    cout<<"[¦Ñ¹«¨«¹Lªº¸ô®|(2ªº³¡¤À)]"<<endl; //¦L¥X¦Ñ¹«¨«§¹°g®c«áªº¸ô®|¹Ï
+    cout<<"[è€é¼ èµ°éçš„è·¯å¾‘(2çš„éƒ¨åˆ†)]"<<endl; //å°å‡ºè€é¼ èµ°å®Œè¿·å®®å¾Œçš„è·¯å¾‘åœ–
     for(i=0;i<10;i++)
     {
         for(j=0;j<12;j++)
@@ -86,7 +86,7 @@ link push(link stack,int x,int y)
     newnode = new node;
     if(!newnode)
     {
-        cout<<"Error!°O¾ĞÅé°t¸m¥¢±Ñ!"<<endl;
+        cout<<"Error!è¨˜æ†¶é«”é…ç½®å¤±æ•—!"<<endl;
         return NULL;
     }
     newnode->x=x;

@@ -2,37 +2,37 @@
 #include <cstdlib>
 #include <iomanip>
 using namespace std;
-class Node//¤G¤¸¾ğªº¸`ÂI«Å§i
+class Node//äºŒå…ƒæ¨¹çš„ç¯€é»å®£å‘Š
 {
     public:
-        int value;//¸`ÂI¸ê®Æ
-        class Node *left_Node;//«ü¦V¥ª¤l¾ğªº«ü¼Ğ
-        class Node *right_Node;//«ü¦V¥ª¥k¤l¾ğªº«ü¼Ğ
+        int value;//ç¯€é»è³‡æ–™
+        class Node *left_Node;//æŒ‡å‘å·¦å­æ¨¹çš„æŒ‡æ¨™
+        class Node *right_Node;//æŒ‡å‘å·¦å³å­æ¨¹çš„æŒ‡æ¨™
 };
-typedef class Node TreeNode;//©w¸q·sªº¤G¤¸¾ğ¸`ÂI¸ê®Æ«¬ºA
-typedef TreeNode *BinaryTree;//©w¸q·sªº¤G¤¸¾ğÃìµ²¸ê®Æ«¬ºA
-BinaryTree rootNode;//¤G¤¸¾ğªº®Ú¸`ÂIªº«ü¼Ğ 
+typedef class Node TreeNode;//å®šç¾©æ–°çš„äºŒå…ƒæ¨¹ç¯€é»è³‡æ–™å‹æ…‹
+typedef TreeNode *BinaryTree;//å®šç¾©æ–°çš„äºŒå…ƒæ¨¹éˆçµè³‡æ–™å‹æ…‹
+BinaryTree rootNode;//äºŒå…ƒæ¨¹çš„æ ¹ç¯€é»çš„æŒ‡æ¨™ 
 BinaryTree rootNode2;
-//±N«ü©wªº­È¥[¤J¨ì¤G¤¸¾ğ¤¤¾A·íªº¸`ÂI
+//å°‡æŒ‡å®šçš„å€¼åŠ å…¥åˆ°äºŒå…ƒæ¨¹ä¸­é©ç•¶çš„ç¯€é»
 void Add_Node_To_Tree(int value)
 {
     BinaryTree currentNode;
     BinaryTree newnode;
-    int flag=0;//¥Î¨Ó¬ö¿ı¬O§_´¡¤J·sªº¸`ÂI
+    int flag=0;//ç”¨ä¾†ç´€éŒ„æ˜¯å¦æ’å…¥æ–°çš„ç¯€é»
     newnode=(BinaryTree) new TreeNode;
-    //«Ø¥ß¸`ÂI¤º®e
+    //å»ºç«‹ç¯€é»å…§å®¹
     newnode->value=value;
     newnode->left_Node=NULL;
     newnode->right_Node=NULL;
-    //¦pªG¬°ªÅªº¤G¤¸¾ğ,«K±N·sªº¸`ÂI³]©w¬°®Ú¸`ÂI
+    //å¦‚æœç‚ºç©ºçš„äºŒå…ƒæ¨¹,ä¾¿å°‡æ–°çš„ç¯€é»è¨­å®šç‚ºæ ¹ç¯€é»
     if(rootNode==NULL)
         rootNode=newnode;
     else 
     {
-        currentNode=rootNode;//«ü©w¤@­Ó«ü¼Ğ«ü¦V®Ú¸`ÂI
+        currentNode=rootNode;//æŒ‡å®šä¸€å€‹æŒ‡æ¨™æŒ‡å‘æ ¹ç¯€é»
         while(!flag)
             if (value<currentNode->value) 
-            { //¦b¥ª¤l¾ğ
+            { //åœ¨å·¦å­æ¨¹
                 if(currentNode->left_Node==NULL)
                 {
                     currentNode->left_Node=newnode;
@@ -42,7 +42,7 @@ void Add_Node_To_Tree(int value)
                     currentNode=currentNode->left_Node;
            }
            else
-           { //¦b¥k¤l¾ğ
+           { //åœ¨å³å­æ¨¹
                 if(currentNode->right_Node==NULL) 
                 {
                     currentNode->right_Node=newnode;
@@ -56,7 +56,7 @@ void Add_Node_To_Tree(int value)
 BinaryTree create(char sequence[100],int index,int ArraySize)
 {
     BinaryTree tempNode;            
-    if ( sequence[index]==0 ||index >= ArraySize )//§@¬°¥X¤f±ø¥ó
+    if ( sequence[index]==0 ||index >= ArraySize )//ä½œç‚ºå‡ºå£æ¢ä»¶
         return NULL;
     else  
 	{ 
@@ -64,14 +64,14 @@ BinaryTree create(char sequence[100],int index,int ArraySize)
         tempNode->value=(int)sequence[index];
         tempNode->left_Node=NULL;
         tempNode->right_Node=NULL;
-        //«Ø¥ß¥ª¤l¾ğ
+        //å»ºç«‹å·¦å­æ¨¹
         tempNode->left_Node = create(sequence, 2*index,ArraySize);
-        //«Ø¥ß¥k¤l¾ğ
+        //å»ºç«‹å³å­æ¨¹
         tempNode->right_Node = create(sequence, 2*index+1,ArraySize);
         return tempNode;
     }
 }
-//preOrder(«e§Ç¨«³X)¤èªkªºµ{¦¡¤º®e
+//preOrder(å‰åºèµ°è¨ª)æ–¹æ³•çš„ç¨‹å¼å…§å®¹
 void preOrder(BinaryTree node) 
 {
     if ( node != NULL ) 
@@ -81,7 +81,7 @@ void preOrder(BinaryTree node)
         preOrder(node->right_Node); 
     }
 }
-//inOrder(¤¤§Ç¨«³X)¤èªkªºµ{¦¡¤º®e
+//inOrder(ä¸­åºèµ°è¨ª)æ–¹æ³•çš„ç¨‹å¼å…§å®¹
 void inOrder(BinaryTree node) 
 {
     if ( node != NULL ) {
@@ -90,7 +90,7 @@ void inOrder(BinaryTree node)
         inOrder(node->right_Node); 
     }
 }
-//postOrder(«á§Ç¨«³X)¤èªkªºµ{¦¡¤º®e
+//postOrder(å¾Œåºèµ°è¨ª)æ–¹æ³•çš„ç¨‹å¼å…§å®¹
 void postOrder(BinaryTree node) 
 {
     if ( node != NULL ) 
@@ -100,69 +100,69 @@ void postOrder(BinaryTree node)
         cout<<setw(1)<<(char)node->value;
     }
 }
-//§PÂ_¹Bºâ¦¡¦p¦ó¹Bºâªº¤èªk«Å§i¤º®e
+//åˆ¤æ–·é‹ç®—å¼å¦‚ä½•é‹ç®—çš„æ–¹æ³•å®£å‘Šå…§å®¹
 int condition(char oprator, int num1, int num2)
 {
     switch ( oprator ) {
-        case '*': return ( num1 * num2 ); //­¼ªk½Ğ¦^¶Çnum1 * num2
-        case '/': return ( num1 / num2 ); //°£ªk½Ğ¦^¶Çnum1 / num2
-        case '+': return ( num1 + num2 ); //¥[ªk½Ğ¦^¶Çnum1 + num2
-        case '-': return ( num1 - num2 ); //´îªk½Ğ¦^¶Çnum1 - num2
-        case '%': return ( num1 % num2 ); //¨ú¾l¼Æªk½Ğ¦^¶Çnum1 % num2
+        case '*': return ( num1 * num2 ); //ä¹˜æ³•è«‹å›å‚³num1 * num2
+        case '/': return ( num1 / num2 ); //é™¤æ³•è«‹å›å‚³num1 / num2
+        case '+': return ( num1 + num2 ); //åŠ æ³•è«‹å›å‚³num1 + num2
+        case '-': return ( num1 - num2 ); //æ¸›æ³•è«‹å›å‚³num1 - num2
+        case '%': return ( num1 % num2 ); //å–é¤˜æ•¸æ³•è«‹å›å‚³num1 % num2
     }
     return -1;
 }
-//¶Ç¤J®Ú¸`ÂI,¥Î¨Ó­pºâ¦¹¤G¤¸¹Bºâ¾ğªº­È
+//å‚³å…¥æ ¹ç¯€é»,ç”¨ä¾†è¨ˆç®—æ­¤äºŒå…ƒé‹ç®—æ¨¹çš„å€¼
 int answer(BinaryTree node) 
 {
     int firstnumber = 0;       
     int secondnumber = 0;      
-    //»¼°j©I¥sªº¥X¤f±ø¥ó
+    //éè¿´å‘¼å«çš„å‡ºå£æ¢ä»¶
     if ( node->left_Node == NULL && node->right_Node == NULL )
-        //±N¸`ÂIªº­ÈÂà´«¦¨¼Æ­È«á¶Ç¦^
+        //å°‡ç¯€é»çš„å€¼è½‰æ›æˆæ•¸å€¼å¾Œå‚³å›
         return node->value-48;
     else {
-        firstnumber = answer(node->left_Node);//­pºâ¥ª¤l¾ğ¹Bºâ¦¡ªº­È
-        secondnumber = answer(node->right_Node); //­pºâ¥k¤l¾ğ¹Bºâ¦¡ªº­È
+        firstnumber = answer(node->left_Node);//è¨ˆç®—å·¦å­æ¨¹é‹ç®—å¼çš„å€¼
+        secondnumber = answer(node->right_Node); //è¨ˆç®—å³å­æ¨¹é‹ç®—å¼çš„å€¼
         return condition((char)node->value, firstnumber, secondnumber);
     }
 }
 int main(void)
 {
-    //²Ä¤@µ§¹Bºâ¦¡ 
+    //ç¬¬ä¸€ç­†é‹ç®—å¼ 
     char information1[] = {' ','+','*','%','6','3','9','5' };
-    //²Ä¤Gµ§¹Bºâ¦¡ 
+    //ç¬¬äºŒç­†é‹ç®—å¼ 
     char information2[] = {' ','+','+','+','*','%','/','*',
                           '1','2','3','2','6','3','2','2' }; 
     rootNode=(BinaryTree)new TreeNode;                      
     rootNode2=(BinaryTree)new TreeNode;                     
-    //create¤èªk¥i¥H±N¤G¤¸¾ğªº°}¦Cªí¥ÜªkÂà´«¦¨Ãìµ²ªí¥Üªk
+    //createæ–¹æ³•å¯ä»¥å°‡äºŒå…ƒæ¨¹çš„é™£åˆ—è¡¨ç¤ºæ³•è½‰æ›æˆéˆçµè¡¨ç¤ºæ³•
     rootNode = create(information1,1,8);
-    cout<<"====¤G¤¸¹Bºâ¾ğ¼Æ­È¹Bºâ½d¨Ò 1: ===="<<endl;
+    cout<<"====äºŒå…ƒé‹ç®—æ¨¹æ•¸å€¼é‹ç®—ç¯„ä¾‹ 1: ===="<<endl;
     cout<<"================================="<<endl;
-    cout<<"===Âà´«¦¨¤¤§Ç¹Bºâ¦¡===:  ";
+    cout<<"===è½‰æ›æˆä¸­åºé‹ç®—å¼===:  ";
     inOrder(rootNode);     
-    cout<<endl<<"===Âà´«¦¨«e§Ç¹Bºâ¦¡===:  ";
+    cout<<endl<<"===è½‰æ›æˆå‰åºé‹ç®—å¼===:  ";
     preOrder(rootNode);    
-    cout<<endl<<"===Âà´«¦¨«á§Ç¹Bºâ¦¡===:  ";
+    cout<<endl<<"===è½‰æ›æˆå¾Œåºé‹ç®—å¼===:  ";
     postOrder(rootNode);   
-    //­pºâ¤G¤¸¾ğ¹Bºâ¦¡ªº¹Bºâµ²ªG
-    cout<<endl<<"¦¹¤G¤¸¹Bºâ¾ğ,¸g¹L­pºâ«á©Ò±o¨ìªºµ²ªG­È: ";
+    //è¨ˆç®—äºŒå…ƒæ¨¹é‹ç®—å¼çš„é‹ç®—çµæœ
+    cout<<endl<<"æ­¤äºŒå…ƒé‹ç®—æ¨¹,ç¶“éè¨ˆç®—å¾Œæ‰€å¾—åˆ°çš„çµæœå€¼: ";
     cout<<setw(1)<<answer(rootNode);
-    //«Ø¥ß²Ä¤G´Ê¤G¤¸·j´M¾ğª«¥ó
+    //å»ºç«‹ç¬¬äºŒæ£µäºŒå…ƒæœå°‹æ¨¹ç‰©ä»¶
     rootNode2 = create(information2,1,16);
     cout<<endl;
     cout<<endl;
-    cout<<"====¤G¤¸¹Bºâ¾ğ¼Æ­È¹Bºâ½d¨Ò 2: ===="<<endl;
+    cout<<"====äºŒå…ƒé‹ç®—æ¨¹æ•¸å€¼é‹ç®—ç¯„ä¾‹ 2: ===="<<endl;
     cout<<"================================="<<endl;
-    cout<<"===Âà´«¦¨¤¤§Ç¹Bºâ¦¡===:  ";
+    cout<<"===è½‰æ›æˆä¸­åºé‹ç®—å¼===:  ";
     inOrder(rootNode2);     
-    cout<<endl<<"===Âà´«¦¨«e§Ç¹Bºâ¦¡===:  ";
+    cout<<endl<<"===è½‰æ›æˆå‰åºé‹ç®—å¼===:  ";
     preOrder(rootNode2);    
-    cout<<endl<<"===Âà´«¦¨«á§Ç¹Bºâ¦¡===:  ";
+    cout<<endl<<"===è½‰æ›æˆå¾Œåºé‹ç®—å¼===:  ";
     postOrder(rootNode2);   
-    //­pºâ¤G¤¸¾ğ¹Bºâ¦¡ªº¹Bºâµ²ªG
-    cout<<endl<<"¦¹¤G¤¸¹Bºâ¾ğ,¸g¹L­pºâ«á©Ò±o¨ìªºµ²ªG­È: ";
+    //è¨ˆç®—äºŒå…ƒæ¨¹é‹ç®—å¼çš„é‹ç®—çµæœ
+    cout<<endl<<"æ­¤äºŒå…ƒé‹ç®—æ¨¹,ç¶“éè¨ˆç®—å¾Œæ‰€å¾—åˆ°çš„çµæœå€¼: ";
     cout<<setw(1)<<answer(rootNode2); 
     cout<<endl;
     delete rootNode;

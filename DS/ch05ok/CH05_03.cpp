@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:¹ê§@Àôª¬¦î¦C¸ê®Æªº¦s¤J©M¨ú¥X
+[ç¤ºç¯„]:å¯¦ä½œç’°ç‹€ä½‡åˆ—è³‡æ–™çš„å­˜å…¥å’Œå–å‡º
 */
 #include <iostream>
 using namespace std;
@@ -9,26 +9,26 @@ int main(void)
 	front=rear=-1;
 	while(rear<5&&val!=-1)
 	{  
-	    cout<<"½Ğ¿é¤J¤@­Ó­È¥H¦s¤J¦î¦C¡A±ı¨ú¥X­È½Ğ¿é¤J-2¡C(µ²§ô¿é¤J-1)¡G";
+	    cout<<"è«‹è¼¸å…¥ä¸€å€‹å€¼ä»¥å­˜å…¥ä½‡åˆ—ï¼Œæ¬²å–å‡ºå€¼è«‹è¼¸å…¥-2ã€‚(çµæŸè¼¸å…¥-1)ï¼š";
 		cin>>val;
 		if(val==-2)
 		{  
 			if(front==rear)
 			{  
-				cout<<"[¦î¦C¤w¸gªÅ¤F]"<<endl;
+				cout<<"[ä½‡åˆ—å·²ç¶“ç©ºäº†]"<<endl;
 				break;
 			}
 			front++;
 			if (front==5)
 				front=0;
-			cout<<"¨ú¥X¦î¦C­È ["<<queue[front]<<"]"<<endl;
+			cout<<"å–å‡ºä½‡åˆ—å€¼ ["<<queue[front]<<"]"<<endl;
 			queue[front]=0;
 		}
 		else if(val!=-1 && rear<5)
 		{  
 			if(rear+1==front || rear==4 && front<=0)
 			{  
-				cout<<"[¦î¦C¤w¸gº¡¤F]"<<endl;
+				cout<<"[ä½‡åˆ—å·²ç¶“æ»¿äº†]"<<endl;
 				break;
 			}
 			rear++;
@@ -37,9 +37,9 @@ int main(void)
 			queue[rear]=val;
 		}
 	}
-	cout<<"\n¦î¦C³Ñ¾l¸ê®Æ¡G"<<endl;
+	cout<<"\nä½‡åˆ—å‰©é¤˜è³‡æ–™ï¼š"<<endl;
 	if (front==rear)
-		cout<<"¦î¦C¤wªÅ!!"<<endl;
+		cout<<"ä½‡åˆ—å·²ç©º!!"<<endl;
 	else 
 	{ 
 		while(front!=rear)

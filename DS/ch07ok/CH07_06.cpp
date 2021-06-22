@@ -1,10 +1,10 @@
 /*
-[¥Ü½d]:³Ì¤p¦¨¥»ÂX±i¾ğ
+[ç¤ºç¯„]:æœ€å°æˆæœ¬æ“´å¼µæ¨¹
 */
 #include <iostream>
-#define VERTS	6 //¹Ï§Î³»ÂI¼Æ
+#define VERTS	6 //åœ–å½¢é ‚é»æ•¸
 using namespace std;
-class edge        //Ãäªºµ²ºc«Å§i
+class edge        //é‚Šçš„çµæ§‹å®£å‘Š
 {  
 	public:
 	int from,to;
@@ -19,13 +19,13 @@ int v[VERTS+1];
 int main(void)
 {  
 	int data[10][3]={{1,2,6},{1,6,12},
-                     {1,5,10},{2,3,3},//¦¨¥»ªí°}¦C
+                     {1,5,10},{2,3,3},//æˆæœ¬è¡¨é™£åˆ—
                      {2,4,5},{2,6,8},{3,4,7},{4,6,11},
 					 {4,5,9},{5,6,16}};
 	mst head,ptr,newnode;
 	head=NULL;
-	cout<<"«Ø¥ß¹Ï§Î¦ê¦C¡G"<<endl;
-	for(int i=0;i<10;i++)//«Ø¥ß¹Ï§Î¦ê¦C
+	cout<<"å»ºç«‹åœ–å½¢ä¸²åˆ—ï¼š"<<endl;
+	for(int i=0;i<10;i++)//å»ºç«‹åœ–å½¢ä¸²åˆ—
 	{  
 		for(int j=1;j<=VERTS;j++)
 		{  
@@ -52,18 +52,18 @@ int main(void)
 		}
 	}
 	ptr=head;
-	while(ptr!=NULL)//¦C¦L¹Ï§Î¦ê¦C
+	while(ptr!=NULL)//åˆ—å°åœ–å½¢ä¸²åˆ—
 	{  
-		cout<<"°_©l³»ÂI ["<<ptr->from<<"]\t²×¤î³»ÂI ["
-        <<ptr->to<<"]\t¸ô®|ªø«× ["<<ptr->val<<"]";
+		cout<<"èµ·å§‹é ‚é» ["<<ptr->from<<"]\tçµ‚æ­¢é ‚é» ["
+        <<ptr->to<<"]\tè·¯å¾‘é•·åº¦ ["<<ptr->val<<"]";
 		cout<<endl;
 		ptr=ptr->next;
 	}
-	cout<<"«Ø¥ß³Ì¤p¦¨¥»ÂX±i¾ğ¡G"<<endl;
-	mintree(head); //«Ø¥ß³Ì¤p¦¨¥»ÂX±i¾ğ
+	cout<<"å»ºç«‹æœ€å°æˆæœ¬æ“´å¼µæ¨¹ï¼š"<<endl;
+	mintree(head); //å»ºç«‹æœ€å°æˆæœ¬æ“´å¼µæ¨¹
 	delete newnode;
 }
-mst findmincost(mst head)//·j´M¦¨¥»³Ì¤pªºÃä
+mst findmincost(mst head)//æœå°‹æˆæœ¬æœ€å°çš„é‚Š
 {
 	int minval=100;
 	mst ptr,retptr;
@@ -71,16 +71,16 @@ mst findmincost(mst head)//·j´M¦¨¥»³Ì¤pªºÃä
 	while(ptr!=NULL)
 	{
 		if(ptr->val<minval && ptr->find==0)
-		{   //°²¦pptr->valªº­È¤p©óminval
-			minval=ptr->val; //´N§âptr->val³]¬°³Ì¤p­È
-			retptr=ptr;//¨Ã¥B§âptr¬ö¿ı¤U¨Ó
+		{   //å‡å¦‚ptr->valçš„å€¼å°æ–¼minval
+			minval=ptr->val; //å°±æŠŠptr->valè¨­ç‚ºæœ€å°å€¼
+			retptr=ptr;//ä¸¦ä¸”æŠŠptrç´€éŒ„ä¸‹ä¾†
 		}
 		ptr=ptr->next;
 	}
-	retptr->find=1;    //±Nretptr³]¬°¤w§ä¨ìªºÃä
-	return retptr;     //¶Ç¦^retptr
+	retptr->find=1;    //å°‡retptrè¨­ç‚ºå·²æ‰¾åˆ°çš„é‚Š
+	return retptr;     //å‚³å›retptr
 }
-void mintree(mst head) //³Ì¤p¦¨¥»ÂX±i¾ğ°Æµ{¦¡
+void mintree(mst head) //æœ€å°æˆæœ¬æ“´å¼µæ¨¹å‰¯ç¨‹å¼
 {
 	mst ptr,mceptr;
 	int result=0;
@@ -103,8 +103,8 @@ void mintree(mst head) //³Ì¤p¦¨¥»ÂX±i¾ğ°Æµ{¦¡
 		else
 			result=0;
 		if(result==0)
-			cout<<"°_©l³»ÂI ["<<mceptr->from
-            <<"]\t²×¤î³»ÂI ["<<mceptr->to<<"]\t¸ô®|ªø«× ["
+			cout<<"èµ·å§‹é ‚é» ["<<mceptr->from
+            <<"]\tçµ‚æ­¢é ‚é» ["<<mceptr->to<<"]\tè·¯å¾‘é•·åº¦ ["
             <<mceptr->val<<"]"<<endl;
 		ptr=ptr->next;
 	}

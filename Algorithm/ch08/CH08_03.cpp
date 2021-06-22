@@ -3,65 +3,65 @@
 #include <iomanip>
 
 using namespace std;
-class Node //°ïÅ|Ãìµ²¸`ÂIªº«Å§i
+class Node //å †ç–Šéˆçµç¯€é»çš„å®£å‘Š
 {
    public:
-   int data; //°ïÅ|¸ê®Æªº«Å§i
-   class Node *next;//°ïÅ|¤¤¥Î¨Ó«ü¦V¤U¤@­Ó¸`ÂI
+   int data; //å †ç–Šè³‡æ–™çš„å®£å‘Š
+   class Node *next;//å †ç–Šä¸­ç”¨ä¾†æŒ‡å‘ä¸‹ä¸€å€‹ç¯€é»
 };
-typedef class Node Stack_Node;//©w¸q°ïÅ|¤¤¸`ÂIªº·s«¬ºA
-typedef Stack_Node *Linked_Stack;//©w¸q¦ê¦C°ïÅ|ªº·s«¬ºA
-Linked_Stack top=NULL;//«ü¦V°ïÅ|³»ºİªº«ü¼Ğ
+typedef class Node Stack_Node;//å®šç¾©å †ç–Šä¸­ç¯€é»çš„æ–°å‹æ…‹
+typedef Stack_Node *Linked_Stack;//å®šç¾©ä¸²åˆ—å †ç–Šçš„æ–°å‹æ…‹
+Linked_Stack top=NULL;//æŒ‡å‘å †ç–Šé ‚ç«¯çš„æŒ‡æ¨™
 
-//§PÂ_¬O§_¬°ªÅ°ïÅ|
+//åˆ¤æ–·æ˜¯å¦ç‚ºç©ºå †ç–Š
 int isEmpty() 
 {
     if(top==NULL) return 1;
     else return 0;
 }
-//±N«ü©wªº¸ê®Æ¦s¤J°ïÅ|
+//å°‡æŒ‡å®šçš„è³‡æ–™å­˜å…¥å †ç–Š
 void push(int data)
 {
-    Linked_Stack new_add_node; //·s¥[¤J¸`ÂIªº«ü¼Ğ
-    //°t¸m·s¸`ÂIªº°O¾ĞÅé
+    Linked_Stack new_add_node; //æ–°åŠ å…¥ç¯€é»çš„æŒ‡æ¨™
+    //é…ç½®æ–°ç¯€é»çš„è¨˜æ†¶é«”
     new_add_node=new Stack_Node;
-    new_add_node->data=data;//±N¶Ç¤Jªº­È«ü©w¬°¸`ÂIªº¤º®e
-    new_add_node->next=top;//±N·s¸`ÂI«ü¦V°ïÅ|ªº³»ºİ
-    top=new_add_node;//·s¸`ÂI¦¨¬°°ïÅ|ªº³»ºİ
+    new_add_node->data=data;//å°‡å‚³å…¥çš„å€¼æŒ‡å®šç‚ºç¯€é»çš„å…§å®¹
+    new_add_node->next=top;//å°‡æ–°ç¯€é»æŒ‡å‘å †ç–Šçš„é ‚ç«¯
+    top=new_add_node;//æ–°ç¯€é»æˆç‚ºå †ç–Šçš„é ‚ç«¯
 }
-//±q°ïÅ|¨ú¥X¸ê®Æ
+//å¾å †ç–Šå–å‡ºè³‡æ–™
 int pop()
 {
-    Linked_Stack ptr; //«ü¦V°ïÅ|³»ºİªº«ü¼Ğ
+    Linked_Stack ptr; //æŒ‡å‘å †ç–Šé ‚ç«¯çš„æŒ‡æ¨™
     int temp;
-    if(isEmpty()) //§PÂ_°ïÅ|¬O§_¬°ªÅ,¦pªG¬O«h¶Ç¦^-1
+    if(isEmpty()) //åˆ¤æ–·å †ç–Šæ˜¯å¦ç‚ºç©º,å¦‚æœæ˜¯å‰‡å‚³å›-1
     {
-        cout<<"===¥Ø«e¬°ªÅ°ïÅ|==="<<endl;
+        cout<<"===ç›®å‰ç‚ºç©ºå †ç–Š==="<<endl;
         return -1;
     }
     else
     {
-        ptr=top;//«ü¦V°ïÅ|ªº³»ºİ
-        top=top->next;//±N°ïÅ|³»ºİªº«ü¼Ğ«ü¦V¤U¤@­Ó¸`ÂI
-        temp=ptr->data;//¨ú¥X°ïÅ|ªº¸ê®Æ
-        free(ptr);//±N¸`ÂI¦û¥Îªº°O¾ĞÅéÄÀ©ñ
-        return temp;//±N±q°ïÅ|¨ú¥Xªº¸ê®Æ¦^¶Çµ¹¥Dµ{¦¡
+        ptr=top;//æŒ‡å‘å †ç–Šçš„é ‚ç«¯
+        top=top->next;//å°‡å †ç–Šé ‚ç«¯çš„æŒ‡æ¨™æŒ‡å‘ä¸‹ä¸€å€‹ç¯€é»
+        temp=ptr->data;//å–å‡ºå †ç–Šçš„è³‡æ–™
+        free(ptr);//å°‡ç¯€é»ä½”ç”¨çš„è¨˜æ†¶é«”é‡‹æ”¾
+        return temp;//å°‡å¾å †ç–Šå–å‡ºçš„è³‡æ–™å›å‚³çµ¦ä¸»ç¨‹å¼
     }
 }
-//¥Dµ{¦¡
+//ä¸»ç¨‹å¼
 int main(void)
 {
     int value;
     int i;
-    cout<<"½Ğ¨Ì§Ç¿é¤J10µ§¸ê®Æ:"<<endl;
+    cout<<"è«‹ä¾åºè¼¸å…¥10ç­†è³‡æ–™:"<<endl;
     for(i=0;i<10;i++)
     {
         cin>>value;
         push(value);
     }
     cout<<"===================="<<endl;
-    while(!isEmpty()) //±N¸ê®Æ³°Äò±q³»ºİ¼u¥X
-        cout<<"°ïÅ|¼u¥Xªº¶¶§Ç¬°:"<<setw(2)<<pop()<<endl; 
+    while(!isEmpty()) //å°‡è³‡æ–™é™¸çºŒå¾é ‚ç«¯å½ˆå‡º
+        cout<<"å †ç–Šå½ˆå‡ºçš„é †åºç‚º:"<<setw(2)<<pop()<<endl; 
     cout<<"===================="<<endl;    
     return 0; 
 }

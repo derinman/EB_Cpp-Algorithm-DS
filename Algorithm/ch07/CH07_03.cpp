@@ -3,12 +3,12 @@
 #include <ctime>
 #include<cstdlib>
 using namespace std;
-const int INDEXBOX=7;  //Âø´êªí¤¸¯À­Ó¼Æ
-const int MAXNUM=13;   //¸ê®Æ­Ó¼Æ
-void creat_table(int); //«Å§i«Ø¥ßÂø´êªí°Æµ{¦¡
-void print_data(int);  //«Å§i¦C¦LÂø´êªí°Æµ{¦¡
-int findnum(int);      //«Å§iÂø´ê·j´M°Æµ{¦¡
-class list	//«Å§i¦ê¦CÃş§O 
+const int INDEXBOX=7;  //é›œæ¹Šè¡¨å…ƒç´ å€‹æ•¸
+const int MAXNUM=13;   //è³‡æ–™å€‹æ•¸
+void creat_table(int); //å®£å‘Šå»ºç«‹é›œæ¹Šè¡¨å‰¯ç¨‹å¼
+void print_data(int);  //å®£å‘Šåˆ—å°é›œæ¹Šè¡¨å‰¯ç¨‹å¼
+int findnum(int);      //å®£å‘Šé›œæ¹Šæœå°‹å‰¯ç¨‹å¼
+class list	//å®£å‘Šä¸²åˆ—é¡åˆ¥ 
 {
 	public:
 	int val;
@@ -16,79 +16,79 @@ class list	//«Å§i¦ê¦CÃş§O
 };
 typedef class list node;
 typedef node *link;
-node indextable[INDEXBOX];//«Å§i°ÊºA°}¦C
+node indextable[INDEXBOX];//å®£å‘Šå‹•æ…‹é™£åˆ—
 int main(void)
 {  
 	int i,num,data[MAXNUM];
 	srand(time(NULL));
-	for(i=0;i<INDEXBOX;i++)//²M°£Âø´êªí
+	for(i=0;i<INDEXBOX;i++)//æ¸…é™¤é›œæ¹Šè¡¨
 	{  
 		indextable[i].val=i;
 		indextable[i].next=NULL;
 	}
-	cout<<"­ì©l¸ê®Æ¡G\n\t";
+	cout<<"åŸå§‹è³‡æ–™ï¼š\n\t";
 	for(i=0;i<MAXNUM;i++)
 	{  
-		data[i]=rand()%30+1;//¶Ã¼Æ«Ø¥ß­ì©l¸ê®Æ
-		cout<<"["<<setw(2)<<data[i]<<"] ";//¨Ã¦C¦L¥X¨Ó
+		data[i]=rand()%30+1;//äº‚æ•¸å»ºç«‹åŸå§‹è³‡æ–™
+		cout<<"["<<setw(2)<<data[i]<<"] ";//ä¸¦åˆ—å°å‡ºä¾†
 		
 		if (i%8==7)
 			cout<<"\n\t";
 	}
 	cout<<endl;
 	for(i=0;i<MAXNUM;i++)
-		creat_table(data[i]);//«Ø¥ßÂø´êªí
+		creat_table(data[i]);//å»ºç«‹é›œæ¹Šè¡¨
 	while(1)
 	{  
-		cout<<"½Ğ¿é¤J·j´M¸ê®Æ(1-30)¡Aµ²§ô½Ğ¿é¤J-1¡G";
+		cout<<"è«‹è¼¸å…¥æœå°‹è³‡æ–™(1-30)ï¼ŒçµæŸè«‹è¼¸å…¥-1ï¼š";
 		cin>>num;
 		if(num==-1)
 			break;
 		i=findnum(num);
 		if(i==0)
-			cout<<"#####¨S¦³§ä¨ì "<<num<<" #####"<<endl;
+			cout<<"#####æ²’æœ‰æ‰¾åˆ° "<<num<<" #####"<<endl;
 		else
-			cout<<"§ä¨ì "<<num<<"¡A¦@§ä¤F "<<i<<" ¦¸!"<<endl;
+			cout<<"æ‰¾åˆ° "<<num<<"ï¼Œå…±æ‰¾äº† "<<i<<" æ¬¡!"<<endl;
 	}
-	cout<<"\nÂø´êªí¡G"<<endl;
+	cout<<"\né›œæ¹Šè¡¨ï¼š"<<endl;
 	for(i=0;i<INDEXBOX;i++)
-		print_data(i);//¦C¦LÂø´êªí
+		print_data(i);//åˆ—å°é›œæ¹Šè¡¨
 	cout<<endl;
 	return 0;
 }
-void creat_table(int val)//«Ø¥ßÂø´êªí°Æµ{¦¡
+void creat_table(int val)//å»ºç«‹é›œæ¹Šè¡¨å‰¯ç¨‹å¼
 {  
 	link newnode;
 	int hash;
-	hash=val%7; //Âø´ê¨ç¼Æ°£¥H7¨ú¾l¼Æ
+	hash=val%7; //é›œæ¹Šå‡½æ•¸é™¤ä»¥7å–é¤˜æ•¸
 	newnode=(link)malloc(sizeof(node));
 	if(!newnode)
 	{  
-		cout<<"ERROR!! °O¾ĞÅé°t¸m¥¢±Ñ!!"<<endl;
+		cout<<"ERROR!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
 		exit(1);
 	}
 	newnode->val=val;
 	newnode->next=NULL;
-	newnode->next=indextable[hash].next;//¥[¤J¸`ÂI
+	newnode->next=indextable[hash].next;//åŠ å…¥ç¯€é»
 	indextable[hash].next=newnode;
 }
-void print_data(int val)//¦C¦LÂø´êªí°Æµ{¦¡
+void print_data(int val)//åˆ—å°é›œæ¹Šè¡¨å‰¯ç¨‹å¼
 {  
 	link head;
 	int i=0;
-	head=indextable[val].next;//°_©l«ü¼Ğ
-	cout<<setw(2)<<val<<"¡G\t";//¯Á¤Ş¦ì§}
+	head=indextable[val].next;//èµ·å§‹æŒ‡æ¨™
+	cout<<setw(2)<<val<<"ï¼š\t";//ç´¢å¼•ä½å€
 	while(head!=NULL)
 	{  
 		cout<<"["<<setw(2)<<head->val<<"]-";
 		i++;
-		if(i%8==7)//±±¨îªø«×
+		if(i%8==7)//æ§åˆ¶é•·åº¦
 			cout<<"\n\t";
 		head=head->next;
 	}
-	cout<<"\b "<<endl;//²M°£³Ì«á¤@­Ó"-"²Å¸¹
+	cout<<"\b "<<endl;//æ¸…é™¤æœ€å¾Œä¸€å€‹"-"ç¬¦è™Ÿ
 }
-int findnum(int num)  //Âø´ê·j´M°Æµ{¦¡
+int findnum(int num)  //é›œæ¹Šæœå°‹å‰¯ç¨‹å¼
 {  
 	link ptr;
 	int i=0,hash;

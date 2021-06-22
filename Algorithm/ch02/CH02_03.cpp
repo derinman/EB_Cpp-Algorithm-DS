@@ -9,27 +9,27 @@ int main()
     char Str_3[80];                                  
     int count, s_record;
     
-        cout<<"¦r¦ê Str_1 ªº¤º®e:";
+        cout<<"å­—ä¸² Str_1 çš„å…§å®¹:";
         cin>>Str_1;                                   
-        cout<<"¦r¦ê Str_2 ªº¤º®e:";
+        cout<<"å­—ä¸² Str_2 çš„å…§å®¹:";
         cin>>Str_2;                               
 
         s_record=0;     
-	    //§â¾ã¼ÆÅÜ¼Æ s_record Âk 0¡A¥Î¨Ó°O¿ı Str_3 ©Ò«üªº°}¦C¤¸¯À 
+	    //æŠŠæ•´æ•¸è®Šæ•¸ s_record æ­¸ 0ï¼Œç”¨ä¾†è¨˜éŒ„ Str_3 æ‰€æŒ‡çš„é™£åˆ—å…ƒç´  
 
     for (count=0; Str_1[count] != '\0'; count++, s_record++)  
-	    //±N Str_1 ¦r¦ê½Æ»s¨ì Str_3 
+	    //å°‡ Str_1 å­—ä¸²è¤‡è£½åˆ° Str_3 
 		Str_3[s_record]=Str_1[count];
 
 	for (count=0; Str_2[count] != '\0'; count++, s_record++)  
-	    // ±N Str_2 ¦r¦ê½Æ»s¨ì Str_3 
+	    // å°‡ Str_2 å­—ä¸²è¤‡è£½åˆ° Str_3 
 		Str_3[s_record]=Str_2[count];
 
     Str_3[s_record]='\0';                                     
-	//¦r¦ê³Ì«á­n¥[¤W NULL ¦r¤¸ 
+	//å­—ä¸²æœ€å¾Œè¦åŠ ä¸Š NULL å­—å…ƒ 
 
-    cout<<"³sµ²«áªº¦r¦ê Str_3:"<<Str_3<<endl;                   
-	//Åã¥Ü¦r¦ê³sµ²ªºµ²ªG 
+    cout<<"é€£çµå¾Œçš„å­—ä¸² Str_3:"<<Str_3<<endl;                   
+	//é¡¯ç¤ºå­—ä¸²é€£çµçš„çµæœ 
 	    
     return 0;                                       
 }

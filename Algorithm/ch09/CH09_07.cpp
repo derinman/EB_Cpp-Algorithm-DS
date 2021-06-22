@@ -16,21 +16,21 @@ int main(void)
 {  
 	int data;
 	btree ptr=NULL;
-	cout<<"½Ğ¿é¤J¸ê®Æ¡Aµ²§ô½Ğ¿é¤J-1¡G"<<endl;
+	cout<<"è«‹è¼¸å…¥è³‡æ–™ï¼ŒçµæŸè«‹è¼¸å…¥-1ï¼š"<<endl;
 	while (1)                         
 	{  
-		cin>>data; //¿é¤J¸ê®Æ
-		if(data==-1)//µ²§ô¿é¤J
+		cin>>data; //è¼¸å…¥è³‡æ–™
+		if(data==-1)//çµæŸè¼¸å…¥
 			break;                      
-		ptr=creat_tree(ptr,data);//«Ø¥ß¤G¤¸¾ğ
+		ptr=creat_tree(ptr,data);//å»ºç«‹äºŒå…ƒæ¨¹
 	}
 	cout<<"=============="<<endl;
-	cout<<"±Æ§Ç§¹¦¨µ²ªG¡G"<<endl;
-	in(ptr); //¤¤§Ç¨«³X
+	cout<<"æ’åºå®Œæˆçµæœï¼š"<<endl;
+	in(ptr); //ä¸­åºèµ°è¨ª
 	cout<<endl;
 	return 0;
 }
-btree creat_tree(btree root,int val)//«Ø¥ß¤G¤¸¾ğ°Æµ{¦¡
+btree creat_tree(btree root,int val)//å»ºç«‹äºŒå…ƒæ¨¹å‰¯ç¨‹å¼
 {  
 	btree newnode,current,backup;
 	newnode = new node;
@@ -59,7 +59,7 @@ btree creat_tree(btree root,int val)//«Ø¥ß¤G¤¸¾ğ°Æµ{¦¡
 	}
 	return root;
 }
-void in(btree ptr)//¤¤§Ç¨«³X°Æµ{¦¡
+void in(btree ptr)//ä¸­åºèµ°è¨ªå‰¯ç¨‹å¼
 {  
 	if(ptr!=NULL)
 	{  

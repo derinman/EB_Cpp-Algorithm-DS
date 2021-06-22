@@ -1,6 +1,6 @@
 /*
-[¥Ü½d]:±N¨â­Ó¾Ç¥Í¦¨ÁZ¦ê¦C³sµ²°_¨Ó¡A
-       µM«á¦C¦L¥X³sµ²«áªº¦ê¦C¤º®e
+[ç¤ºç¯„]:å°‡å…©å€‹å­¸ç”Ÿæˆç¸¾ä¸²åˆ—é€£çµèµ·ä¾†ï¼Œ
+       ç„¶å¾Œåˆ—å°å‡ºé€£çµå¾Œçš„ä¸²åˆ—å…§å®¹
 */
 #include <iostream>
 #include <iomanip>
@@ -31,22 +31,22 @@ int main()
 		data2[i-1][0]=i*2;
 		data2[i-1][1]=rand()%49+52;
 	}
-	ptr1=creat_link(data1,6);//«Ø¥ß¦ê¦C1
-	ptr2=creat_link(data2,6);//«Ø¥ß¦ê¦C2
+	ptr1=creat_link(data1,6);//å»ºç«‹ä¸²åˆ—1
+	ptr2=creat_link(data2,6);//å»ºç«‹ä¸²åˆ—2
 	i=0;
-	cout<<"\t\t    ­ì ©l ¦ê ¦C ¸ê ®Æ¡G"<<endl;
-	cout<<"\t    ®y¸¹ ¦¨ÁZ   ®y¸¹ ¦¨ÁZ   ®y¸¹ ¦¨ÁZ"<<endl;
+	cout<<"\t\t    åŸ å§‹ ä¸² åˆ— è³‡ æ–™ï¼š"<<endl;
+	cout<<"\t    åº§è™Ÿ æˆç¸¾   åº§è™Ÿ æˆç¸¾   åº§è™Ÿ æˆç¸¾"<<endl;
 	cout<<"\t    =================================="<<endl;
-	cout<<"   ¦ê¦C 1 ¡G";
+	cout<<"   ä¸²åˆ— 1 ï¼š";
 	print_link(ptr1);
-	cout<<"   ¦ê¦C 2 ¡G";
+	cout<<"   ä¸²åˆ— 2 ï¼š";
 	print_link(ptr2);
 	cout<<"\t    =================================="<<endl;
-	cout<<"³sµ²«á¦ê¦C¡G";
-	ptr=concat(ptr1,ptr2);//³sµ²¦ê¦C
+	cout<<"é€£çµå¾Œä¸²åˆ—ï¼š";
+	ptr=concat(ptr1,ptr2);//é€£çµä¸²åˆ—
 	print_link(ptr);
 }
-link creat_link(int data[10][2],int num)//«Ø¥ß¦ê¦C°Æµ{¦¡
+link creat_link(int data[10][2],int num)//å»ºç«‹ä¸²åˆ—å‰¯ç¨‹å¼
 {  
 	link head,ptr,newnode;
 	for(int i=0;i<num;i++)
@@ -54,10 +54,10 @@ link creat_link(int data[10][2],int num)//«Ø¥ß¦ê¦C°Æµ{¦¡
 		newnode=new node;
 		if(!newnode)
 		{  
-			cout<<"Error!! °O¾ĞÅé°t¸m¥¢±Ñ!!"<<endl;
+			cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
 			exit(i);
 		}
-		if(i==0)//«Ø¥ß¦ê¦C­º
+		if(i==0)//å»ºç«‹ä¸²åˆ—é¦–
 		{  
 			newnode->num=data[i][0];
 			newnode->score=data[i][1];
@@ -65,7 +65,7 @@ link creat_link(int data[10][2],int num)//«Ø¥ß¦ê¦C°Æµ{¦¡
 			head=newnode;
 			ptr=head;
 		}
-		else //«Ø¥ß¦ê¦C¨ä¥L¸`ÂI
+		else //å»ºç«‹ä¸²åˆ—å…¶ä»–ç¯€é»
 		{  
 			newnode->num=data[i][0];
 			newnode->score=data[i][1];
@@ -75,9 +75,9 @@ link creat_link(int data[10][2],int num)//«Ø¥ß¦ê¦C°Æµ{¦¡
 		}
 		newnode->next=head;
 	}
-	return ptr;//¦^¶Ç¦ê¦C
+	return ptr;//å›å‚³ä¸²åˆ—
 }
-void print_link(link head)//¦C¦L¦ê¦C°Æµ{¦¡
+void print_link(link head)//åˆ—å°ä¸²åˆ—å‰¯ç¨‹å¼
 {  
 	link ptr;
 	int i=0;
@@ -87,7 +87,7 @@ void print_link(link head)//¦C¦L¦ê¦C°Æµ{¦¡
 		cout<<"["<<setw(2)<<ptr->num<<"-"<<setw(3)
             <<ptr->score<<"] -> ";
 		i++;
-		if(i>=3)//¨C¦æ¦C¦L¤T­Ó¤¸¯À
+		if(i>=3)//æ¯è¡Œåˆ—å°ä¸‰å€‹å…ƒç´ 
 		{  
 			cout<<"\n\t    ";
 			i=0;
@@ -96,11 +96,11 @@ void print_link(link head)//¦C¦L¦ê¦C°Æµ{¦¡
 	}while(ptr!=head->next);
 	cout<<endl;
 }
-link concat(link ptr1,link ptr2)//³sµ²¦ê¦C°Æµ{¦¡
+link concat(link ptr1,link ptr2)//é€£çµä¸²åˆ—å‰¯ç¨‹å¼
 {  
 	link head;
-	head=ptr1->next;//¦bptr1¤Îptr2¤¤¡A¦U§ä¥ô·N¤@­Ó¸`ÂI
-	ptr1->next=ptr2->next;//§â¨â­Ó¸`ÂIªºnext¹ï½Õ§Y¥i
+	head=ptr1->next;//åœ¨ptr1åŠptr2ä¸­ï¼Œå„æ‰¾ä»»æ„ä¸€å€‹ç¯€é»
+	ptr1->next=ptr2->next;//æŠŠå…©å€‹ç¯€é»çš„nextå°èª¿å³å¯
 	ptr2->next=head;
 	return ptr2;
 }

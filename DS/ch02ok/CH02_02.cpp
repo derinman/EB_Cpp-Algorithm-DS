@@ -8,15 +8,15 @@ int main()
     int sum;
     cout<<"|a1 b1|"<<endl;
   	cout<<"|a2 b2|"<<endl;
-  	cout<<"½Ğ¿é¤Ja1:";
+  	cout<<"è«‹è¼¸å…¥a1:";
   	cin>>arr[0][0];
-  	cout<<"½Ğ¿é¤Jb1:";
+  	cout<<"è«‹è¼¸å…¥b1:";
   	cin>>arr[0][1];
-  	cout<<"½Ğ¿é¤Ja2:";
+  	cout<<"è«‹è¼¸å…¥a2:";
   	cin>>arr[1][0];
-  	cout<<"½Ğ¿é¤Jb2:";
+  	cout<<"è«‹è¼¸å…¥b2:";
 	cin>>arr[1][1];
-	sum = arr[0][0]*arr[1][1]-arr[0][1]*arr[1][0];//¨D¤G¶¥¦æ¦C¦¡ªº­È 
+	sum = arr[0][0]*arr[1][1]-arr[0][1]*arr[1][0];//æ±‚äºŒéšè¡Œåˆ—å¼çš„å€¼ 
   	cout<<"|"<<arr[0][0]<<" "<<arr[0][1]<<"|"<<endl;
   	cout<<"|"<<arr[1][0]<<" "<<arr[1][1]<<"|"<<endl;
  	cout<<"sum="<<sum<<endl;

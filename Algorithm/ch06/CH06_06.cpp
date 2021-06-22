@@ -11,47 +11,47 @@ typedef class list node;
 typedef node *link;
 int main()
 {  
-	link newnode,ptr,delptr; //«Å§i¤T­Ó¦ê¦Cµ²ºc«ü¼Ğ
-	cout<<"½Ğ¿é¤J 5 µ§¾Ç¥Í¸ê®Æ¡G"<<endl;
-	delptr=new node;  //delptr¼È·í¦ê¦C­º
+	link newnode,ptr,delptr; //å®£å‘Šä¸‰å€‹ä¸²åˆ—çµæ§‹æŒ‡æ¨™
+	cout<<"è«‹è¼¸å…¥ 5 ç­†å­¸ç”Ÿè³‡æ–™ï¼š"<<endl;
+	delptr=new node;  //delptræš«ç•¶ä¸²åˆ—é¦–
 	if (!delptr)
 	{  
-		cout<<"[Error!!°O¾ĞÅé°t¸m¥¢±Ñ!]"<<endl;
+		cout<<"[Error!!è¨˜æ†¶é«”é…ç½®å¤±æ•—!]"<<endl;
 		exit(1);
 	}
-	cout<<"½Ğ¿é¤J®y¸¹¡G";
+	cout<<"è«‹è¼¸å…¥åº§è™Ÿï¼š";
 	cin>>delptr->num;
-	cout<<"½Ğ¿é¤J©m¦W¡G";
+	cout<<"è«‹è¼¸å…¥å§“åï¼š";
 	cin>>delptr->name;
-	cout<<"½Ğ¿é¤J¦¨ÁZ¡G";
+	cout<<"è«‹è¼¸å…¥æˆç¸¾ï¼š";
 	cin>>delptr->score;
-	ptr=delptr;   //«O¯d¦ê¦C­º¡A¥Hptr¬°¥Ø«e¸`ÂI«ü¼Ğ
+	ptr=delptr;   //ä¿ç•™ä¸²åˆ—é¦–ï¼Œä»¥ptrç‚ºç›®å‰ç¯€é»æŒ‡æ¨™
 	for (int i=1;i<5;i++)
 	{  
-		newnode=new node;  //«Ø¥ß·s¸`ÂI
+		newnode=new node;  //å»ºç«‹æ–°ç¯€é»
 		if(!newnode)
 		{  
-			cout<<"[Error!!°O¾ĞÅé°t¸m¥¢±Ñ!"<<endl;
+			cout<<"[Error!!è¨˜æ†¶é«”é…ç½®å¤±æ•—!"<<endl;
 			exit(1);
 		}
-		cout<<"½Ğ¿é¤J®y¸¹¡G";
+		cout<<"è«‹è¼¸å…¥åº§è™Ÿï¼š";
 		cin>>newnode->num;
-		cout<<"½Ğ¿é¤J©m¦W¡G";
+		cout<<"è«‹è¼¸å…¥å§“åï¼š";
 		cin>>newnode->name;
-		cout<<"½Ğ¿é¤J¦¨ÁZ¡G";
+		cout<<"è«‹è¼¸å…¥æˆç¸¾ï¼š";
 		cin>>newnode->score;
 		newnode->next=NULL;
-		ptr->next=newnode; //§â·s¸`ÂI¥[¦b¦ê¦C«á­±
-		ptr=ptr->next;     //Åıptr«O«ù¦b¦ê¦Cªº³Ì«á­±
+		ptr->next=newnode; //æŠŠæ–°ç¯€é»åŠ åœ¨ä¸²åˆ—å¾Œé¢
+		ptr=ptr->next;     //è®“pträ¿æŒåœ¨ä¸²åˆ—çš„æœ€å¾Œé¢
 	}
-    cout<<"\n  ¾Ç  ¥Í  ¦¨  ÁZ"<<endl;
-    cout<<" ®y¸¹\t©m¦W\t¦¨ÁZ\n====================="<<endl;
-	ptr=delptr;            //Åıptr¦^¨ì¦ê¦C­º
+    cout<<"\n  å­¸  ç”Ÿ  æˆ  ç¸¾"<<endl;
+    cout<<" åº§è™Ÿ\tå§“å\tæˆç¸¾\n====================="<<endl;
+	ptr=delptr;            //è®“ptrå›åˆ°ä¸²åˆ—é¦–
 	while(ptr!=NULL)
 	{  
 		cout<<ptr->num<<"\t"<<ptr->name<<"\t"<<ptr->score<<endl;
 	    delptr=ptr;
-		ptr=ptr->next;     //ptr¨Ì§Ç©¹«á¨«³X¦ê¦C
-        delete delptr;     //ÄÀ¦^°O¾ĞÅéªÅ¶¡
+		ptr=ptr->next;     //pträ¾åºå¾€å¾Œèµ°è¨ªä¸²åˆ—
+        delete delptr;     //é‡‹å›è¨˜æ†¶é«”ç©ºé–“
 	}
 }

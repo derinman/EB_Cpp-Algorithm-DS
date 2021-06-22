@@ -1,16 +1,16 @@
 /*
-[¥Ü½d]:¥ı¼s«á²`·j´Mªk(BFS)
+[ç¤ºç¯„]:å…ˆå»£å¾Œæ·±æœå°‹æ³•(BFS)
 */
 #include <iostream>
 #include <cstdlib>
-#define MAXSIZE 10//©w¸q¦î¦Cªº³Ì¤j®e¶q
+#define MAXSIZE 10//å®šç¾©ä½‡åˆ—çš„æœ€å¤§å®¹é‡
 using namespace std;
-int front=-1;//«ü¦V¦î¦Cªº«eºİ
-int rear=-1;//«ü¦V¦î¦Cªº«áºİ
-struct list//¹Ï§Î³»ÂIµ²ºc«Å§i
+int front=-1;//æŒ‡å‘ä½‡åˆ—çš„å‰ç«¯
+int rear=-1;//æŒ‡å‘ä½‡åˆ—çš„å¾Œç«¯
+struct list//åœ–å½¢é ‚é»çµæ§‹å®£å‘Š
 {
-    int x;//³»ÂI¸ê®Æ
-    struct list *next;//«ü¦V¤U¤@­Ó³»ÂIªº«ü¼Ğ
+    int x;//é ‚é»è³‡æ–™
+    struct list *next;//æŒ‡å‘ä¸‹ä¸€å€‹é ‚é»çš„æŒ‡æ¨™
 };
 typedef struct list node;
 typedef node *link;
@@ -19,7 +19,7 @@ struct GraphLink
     link first;
     link last;       
 };
-int run[9];//¥Î¨Ó°O¿ı¦U³»ÂI¬O§_¨«³X¹L
+int run[9];//ç”¨ä¾†è¨˜éŒ„å„é ‚é»æ˜¯å¦èµ°è¨ªé
 int queue[MAXSIZE];
 struct GraphLink Head[9];
 void print(struct GraphLink temp)
@@ -49,36 +49,36 @@ void insert(struct GraphLink *temp,int x)
 	    temp->last=newNode;
     }
 }
-//¦î¦C¸ê®Æªº¦s¤J
+//ä½‡åˆ—è³‡æ–™çš„å­˜å…¥
 void enqueue(int value)
 {
     if(rear>=MAXSIZE) return;
     rear++;
     queue[rear]=value;
 }
-//¦î¦C¸ê®Æªº¨ú¥X
+//ä½‡åˆ—è³‡æ–™çš„å–å‡º
 int dequeue() 
 {
     if(front==rear) return -1;
     front++;
     return queue[front];
 }
-//¼s«×Àu¥ı·j´Mªk
+//å»£åº¦å„ªå…ˆæœå°‹æ³•
 void bfs(int current)
 {
-    link tempnode; //Á{®Éªº¸`ÂI«ü¼Ğ
-    enqueue(current); //±N²Ä¤@­Ó³»ÂI¦s¤J¦î¦C
-    run[current]=1; //±N¨«³X¹Lªº³»ÂI³]©w¬°1
-    cout<<"["<<current<<"]"; //¦L¥X¸Ó¨«³X¹Lªº³»ÂI
-    while(front!=rear) { //§PÂ_¥Ø«e¬O§_¬°ªÅ¦î¦C
-        current=dequeue(); //±N³»ÂI±q¦î¦C¤¤¨ú¥X
-        tempnode=Head[current].first; //¥ı°O¿ı¥Ø«e³»ÂIªº¦ì¸m
+    link tempnode; //è‡¨æ™‚çš„ç¯€é»æŒ‡æ¨™
+    enqueue(current); //å°‡ç¬¬ä¸€å€‹é ‚é»å­˜å…¥ä½‡åˆ—
+    run[current]=1; //å°‡èµ°è¨ªéçš„é ‚é»è¨­å®šç‚º1
+    cout<<"["<<current<<"]"; //å°å‡ºè©²èµ°è¨ªéçš„é ‚é»
+    while(front!=rear) { //åˆ¤æ–·ç›®å‰æ˜¯å¦ç‚ºç©ºä½‡åˆ—
+        current=dequeue(); //å°‡é ‚é»å¾ä½‡åˆ—ä¸­å–å‡º
+        tempnode=Head[current].first; //å…ˆè¨˜éŒ„ç›®å‰é ‚é»çš„ä½ç½®
         while(tempnode!=NULL)
         {
             if(run[tempnode->x]==0)
             {
                 enqueue(tempnode->x);
-                run[tempnode->x]=1; //°O¿ı¤w¨«³X¹L
+                run[tempnode->x]=1; //è¨˜éŒ„å·²èµ°è¨ªé
                 cout<<"["<<tempnode->x<<"]";
             }
             tempnode=tempnode->next;
@@ -87,30 +87,30 @@ void bfs(int current)
 } 
 int main(void)
 {
-//¹Ï§ÎÃä½u°}¦C«Å§i
+//åœ–å½¢é‚Šç·šé™£åˆ—å®£å‘Š
    int Data[20][2] =  
    { {1,2},{2,1},{1,3},{3,1},{2,4},{4,2},{2,5},{5,2},{3,6},{6,3},
    {3,7},{7,3},{4,5},{5,4},{6,7},{7,6},{5,8},{8,5},{6,8},{8,6} };
    int DataNum;			
    int i,j;				
-   cout<<"¹Ï§Îªº¾F±µ¦ê¦C¤º®e¡G"<<endl; //¦C¦L¹Ï§Îªº¾F±µ¦ê¦C¤º®e
+   cout<<"åœ–å½¢çš„é„°æ¥ä¸²åˆ—å…§å®¹ï¼š"<<endl; //åˆ—å°åœ–å½¢çš„é„°æ¥ä¸²åˆ—å…§å®¹
    for( i=1 ; i<9 ; i++ )
-   { //¦@¦³¤K­Ó³»ÂI
-        run[i]=0; //³]©w©Ò¦³³»ÂI¦¨©|¥¼¨«³X¹L
-        cout<<"³»ÂI"<<i<<"=>";
+   { //å…±æœ‰å…«å€‹é ‚é»
+        run[i]=0; //è¨­å®šæ‰€æœ‰é ‚é»æˆå°šæœªèµ°è¨ªé
+        cout<<"é ‚é»"<<i<<"=>";
         Head[i].first=NULL;
         Head[i].last=NULL;                 
 	    for( j=0 ; j<20 ;j++)
         {
 	        if(Data[j][0]==i)
-            { //¦pªG°_ÂI©M¦ê¦C­º¬Ûµ¥¡A«h§â³»ÂI¥[¤J¦ê¦C
+            { //å¦‚æœèµ·é»å’Œä¸²åˆ—é¦–ç›¸ç­‰ï¼Œå‰‡æŠŠé ‚é»åŠ å…¥ä¸²åˆ—
 	            DataNum = Data[j][1];          
 	            insert(&Head[i],DataNum);
 	        }
 	    }
-	    print(Head[i]);//¦C¦L¹Ï§Îªº¾F±µ¦ê¦C¤º®e
+	    print(Head[i]);//åˆ—å°åœ–å½¢çš„é„°æ¥ä¸²åˆ—å…§å®¹
     } 	
-    cout<<"¼s«×Àu¥ı¨«³X³»ÂI¡G"<<endl;//¦C¦L¼s«×Àu¥ı¨«³Xªº³»ÂI
+    cout<<"å»£åº¦å„ªå…ˆèµ°è¨ªé ‚é»ï¼š"<<endl;//åˆ—å°å»£åº¦å„ªå…ˆèµ°è¨ªçš„é ‚é»
     bfs(1);
     cout<<endl;
 	return 0;

@@ -1,19 +1,19 @@
 /*
-[¥Ü½d]:ÁÂ¦Õ±Æ§Çªk
+[ç¤ºç¯„]:è¬è€³æ’åºæ³•
 */
 #include <iostream>
 #include <iomanip>
-#define SIZE 8 //©w¸q¯x°}¤j¤p
+#define SIZE 8 //å®šç¾©çŸ©é™£å¤§å°
 using namespace std;
 
-void shell (int *,int);  //«Å§i±Æ§Çªk°Æµ{¦¡
-void showdata (int *);   //«Å§i¦C¦L°}¦C°Æµ{¦¡
-void inputarr (int *,int);//«Å§i¿é¤J°}¦C°Æµ{¦¡
+void shell (int *,int);  //å®£å‘Šæ’åºæ³•å‰¯ç¨‹å¼
+void showdata (int *);   //å®£å‘Šåˆ—å°é™£åˆ—å‰¯ç¨‹å¼
+void inputarr (int *,int);//å®£å‘Šè¼¸å…¥é™£åˆ—å‰¯ç¨‹å¼
 int main(void)
 { 
 	int data[SIZE];
 	inputarr(data,SIZE);
-	cout<<"±z¿é¤Jªº­ì©l°}¦C¬O¡G";
+	cout<<"æ‚¨è¼¸å…¥çš„åŸå§‹é™£åˆ—æ˜¯ï¼š";
 	showdata(data);
 	shell(data,SIZE);
 	return 0;
@@ -22,7 +22,7 @@ void inputarr(int data[],int size)
 {
 	for (int i=0;i<size;i++)
 	{ 
-		cout<<"½Ğ¿é¤J²Ä "<<i+1<<" ­Ó¤¸¯À¡G";
+		cout<<"è«‹è¼¸å…¥ç¬¬ "<<i+1<<" å€‹å…ƒç´ ï¼š";
 		cin>>data[i];
 	}
 }
@@ -34,11 +34,11 @@ void showdata(int data[])
 }
 void shell(int data[],int size)
 {  
-	int i;        //i¬°±½´y¦¸¼Æ
-	int j;        //¥Hj¨Ó©w¦ì¤ñ¸ûªº¤¸¯À
-	int k=1;      //k¦C¦L­p¼Æ
-	int tmp;      //tmp¥Î¨Ó¼È¦s¸ê®Æ
-	int jmp;      //³]©w¶¡¶Z¦ì²¾¶q
+	int i;        //iç‚ºæƒææ¬¡æ•¸
+	int j;        //ä»¥jä¾†å®šä½æ¯”è¼ƒçš„å…ƒç´ 
+	int k=1;      //kåˆ—å°è¨ˆæ•¸
+	int tmp;      //tmpç”¨ä¾†æš«å­˜è³‡æ–™
+	int jmp;      //è¨­å®šé–“è·ä½ç§»é‡
 	jmp=size/2;
 	while (jmp != 0)
 	{  
@@ -46,15 +46,15 @@ void shell(int data[],int size)
 		{  
 			tmp=data[i];
 			j=i-jmp;
-			while(tmp<data[j] && j>=0)  //´¡¤J±Æ§Çªk
+			while(tmp<data[j] && j>=0)  //æ’å…¥æ’åºæ³•
 			{  
 				data[j+jmp] = data[j];
 				j=j-jmp;
 			}	
 			data[jmp+j]=tmp;
 		}
-		cout<<"²Ä "<<k++<<" ¦¸±Æ§Ç¡G";
+		cout<<"ç¬¬ "<<k++<<" æ¬¡æ’åºï¼š";
 		showdata (data);
-		jmp=jmp/2;    //±±¨î°j°é¼Æ
+		jmp=jmp/2;    //æ§åˆ¶è¿´åœˆæ•¸
 	}
 }

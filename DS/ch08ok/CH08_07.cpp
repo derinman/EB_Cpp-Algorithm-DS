@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:°ï¿n±Æ§Çªk
+[ç¤ºç¯„]:å †ç©æ’åºæ³•
 */
 #include <iostream>
 #include <iomanip>
@@ -8,13 +8,13 @@ void heap(int*,int);
 void ad_heap(int*,int,int);
 int main(void)
 {  
-	int data[9]={0,5,6,4,8,3,2,7,1};	//­ì©l°}¦C¤º®e
+	int data[9]={0,5,6,4,8,3,2,7,1};	//åŸå§‹é™£åˆ—å…§å®¹
 	int size=9;
-	cout<<"­ì©l°}¦C¡G";
+	cout<<"åŸå§‹é™£åˆ—ï¼š";
 	for(int i=1;i<size;i++)
 		cout<<"["<<setw(2)<<data[i]<<"] ";
-	heap(data,size);						//«Ø¥ß°ï¿n¾ğ
-	cout<<"\n±Æ§Çµ²ªG¡G";
+	heap(data,size);						//å»ºç«‹å †ç©æ¨¹
+	cout<<"\næ’åºçµæœï¼š";
 	for(int i=1;i<size;i++)
 		cout<<"["<<setw(2)<<data[i]<<"] ";
 	cout<<endl;
@@ -23,19 +23,19 @@ int main(void)
 void heap(int *data,int size)
 {  
 	int i,j,tmp;
-	for(i=(size/2);i>0;i--)			    //«Ø¥ß°ï¿n¾ğ¸`ÂI	
+	for(i=(size/2);i>0;i--)			    //å»ºç«‹å †ç©æ¨¹ç¯€é»	
 		ad_heap(data,i,size-1);
-	cout<<"\n°ï¿n¤º®e¡G";
-	for(i=1;i<size;i++)					//­ì©l°ï¿n¾ğ¤º®e
+	cout<<"\nå †ç©å…§å®¹ï¼š";
+	for(i=1;i<size;i++)					//åŸå§‹å †ç©æ¨¹å…§å®¹
 		cout<<"["<<setw(2)<<data[i]<<"] ";
 	cout<<endl;
-	for(i=size-2;i>0;i--)				//°ï¿n±Æ§Ç
+	for(i=size-2;i>0;i--)				//å †ç©æ’åº
 	{  
-		tmp=data[i+1];					//ÀY§À¸`ÂI¥æ´«      
+		tmp=data[i+1];					//é ­å°¾ç¯€é»äº¤æ›      
 		data[i+1]=data[1];
 		data[1]=tmp;
-		ad_heap(data,1,i);			    //³B²z³Ñ¾l¸`ÂI
-		cout<<"\n³B²z¹Lµ{¡G";
+		ad_heap(data,1,i);			    //è™•ç†å‰©é¤˜ç¯€é»
+		cout<<"\nè™•ç†éç¨‹ï¼š";
 		for(j=1;j<size;j++)
 			cout<<"["<<setw(2)<<data[j]<<"] ";
 	}
@@ -50,16 +50,16 @@ void ad_heap(int *data,int i,int size)
 	{  
 		if(j<size)
 		{
-			if(data[j]<data[j+1])		//§ä¥X³Ì¤j¸`ÂI
+			if(data[j]<data[j+1])		//æ‰¾å‡ºæœ€å¤§ç¯€é»
 				j++;
 		}
-		if(tmp>=data[j])				//­Y¾ğ®Ú¸û¤j¡Aµ²§ô¤ñ¸û¹Lµ{
+		if(tmp>=data[j])				//è‹¥æ¨¹æ ¹è¼ƒå¤§ï¼ŒçµæŸæ¯”è¼ƒéç¨‹
 			post=1;
 		else
 		{  
-			data[j/2]=data[j];			//­Y¾ğ®Ú¸û¤p¡A«hÄ~Äò¤ñ¸û
+			data[j/2]=data[j];			//è‹¥æ¨¹æ ¹è¼ƒå°ï¼Œå‰‡ç¹¼çºŒæ¯”è¼ƒ
 			j=2*j;
 		}   
    }
-   data[j/2]=tmp;						//«ü©w¾ğ®Ú¬°¤÷¸`ÂI
+   data[j/2]=tmp;						//æŒ‡å®šæ¨¹æ ¹ç‚ºçˆ¶ç¯€é»
 }

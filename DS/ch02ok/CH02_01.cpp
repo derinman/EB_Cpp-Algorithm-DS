@@ -4,16 +4,16 @@ using namespace std;
 int main()
 {
     int Score[5]={ 87,66,90,65,70 };    
-    //©w¸q¾ã¼Æ°}¦C Score[5],¨Ã³]©w5µ§¦¨ÁZ 
+    //å®šç¾©æ•´æ•¸é™£åˆ— Score[5],ä¸¦è¨­å®š5ç­†æˆç¸¾ 
     int count, Total_Score=0;
-    for (count=0; count < 5; count++)   //°õ¦æ for °j°éÅª¨ú¾Ç¥Í¦¨ÁZ 
+    for (count=0; count < 5; count++)   //åŸ·è¡Œ for è¿´åœˆè®€å–å­¸ç”Ÿæˆç¸¾ 
     {
-        cout<<"²Ä"<<count+1<<"¦ì¾Ç¥Íªº¤À¼Æ:"<<Score[count]<<endl;  
-        Total_Score+=Score[count];  //¥Ñ°}¦C¤¤Åª¨ú¤À¼Æ­pºâÁ`¦X 
+        cout<<"ç¬¬"<<count+1<<"ä½å­¸ç”Ÿçš„åˆ†æ•¸:"<<Score[count]<<endl;  
+        Total_Score+=Score[count];  //ç”±é™£åˆ—ä¸­è®€å–åˆ†æ•¸è¨ˆç®—ç¸½åˆ 
     }
     cout<<"-------------------------"<<endl;
-    cout<<"5¦ì¾Ç¥ÍªºÁ`¤À:"<<Total_Score<<endl;  
-    //¿é¥X¦¨ÁZÁ`¤À 
+    cout<<"5ä½å­¸ç”Ÿçš„ç¸½åˆ†:"<<Total_Score<<endl;  
+    //è¼¸å‡ºæˆç¸¾ç¸½åˆ† 
     
     return 0;
 }

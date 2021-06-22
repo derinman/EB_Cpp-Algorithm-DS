@@ -1,9 +1,9 @@
 /*
-[¥Ü½d]:¦h¶µ¦¡¬Û¥[
+[ç¤ºç¯„]:å¤šé …å¼ç›¸åŠ 
 */
 #include <iostream>
 using namespace std;
-class list //«Å§i¦ê¦Cµ²ºc
+class list //å®£å‘Šä¸²åˆ—çµæ§‹
 {  
 	public :
 	int coef,exp;
@@ -17,19 +17,19 @@ link sum_link(link a,link b);
 int main()
 {  
 	link a,b,c;
-	int data1[4]={3,0,4,2}; //¦h¶µ¦¡Aªº«Y¼Æ
-	int data2[4]={6,8,6,9}; //¦h¶µ¦¡Bªº«Y¼Æ
-	cout<<"­ì©l¦h¶µ¦¡¡G"<<endl<<"A=";
-	a=creat_link(data1);    //«Ø¥ß¦h¶µ¦¡A
-	b=creat_link(data2);    //«Ø¥ß¦h¶µ¦¡B
-	print_link(a);          //¦C¦L¦h¶µ¦¡A
+	int data1[4]={3,0,4,2}; //å¤šé …å¼Açš„ä¿‚æ•¸
+	int data2[4]={6,8,6,9}; //å¤šé …å¼Bçš„ä¿‚æ•¸
+	cout<<"åŸå§‹å¤šé …å¼ï¼š"<<endl<<"A=";
+	a=creat_link(data1);    //å»ºç«‹å¤šé …å¼A
+	b=creat_link(data2);    //å»ºç«‹å¤šé …å¼B
+	print_link(a);          //åˆ—å°å¤šé …å¼A
 	cout<<"B=";
-	print_link(b);          //¦C¦L¦h¶µ¦¡B
-	cout<<"¦h¶µ¦¡¬Û¥[µ²ªG¡G\nC=";
-	c=sum_link(a,b);        //C¬°A¡BB¦h¶µ¦¡¬Û¥[µ²ªG
-	print_link(c);          //¦C¦L¦h¶µ¦¡C
+	print_link(b);          //åˆ—å°å¤šé …å¼B
+	cout<<"å¤šé …å¼ç›¸åŠ çµæœï¼š\nC=";
+	c=sum_link(a,b);        //Cç‚ºAã€Bå¤šé …å¼ç›¸åŠ çµæœ
+	print_link(c);          //åˆ—å°å¤šé …å¼C
 }
-link creat_link(int data[4])//«Ø¥ß¦h¶µ¦¡°Æµ{¦¡
+link creat_link(int data[4])//å»ºç«‹å¤šé …å¼å‰¯ç¨‹å¼
 {
 	link head,newnode,ptr;
 	for(int i=0;i<4;i++)
@@ -37,7 +37,7 @@ link creat_link(int data[4])//«Ø¥ß¦h¶µ¦¡°Æµ{¦¡
 		newnode = new node;
 		if(!newnode)
 		{  
-			cout<<"Error!! °O¾ĞÅé°t¸m¥¢±Ñ!!"<<endl;
+			cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
 			exit(1);
 		}
 		if(i==0)
@@ -59,44 +59,44 @@ link creat_link(int data[4])//«Ø¥ß¦h¶µ¦¡°Æµ{¦¡
 	}
 	return head;
 }
-void print_link(link head) //¦C¦L¦h¶µ¦¡°Æµ{¦¡
+void print_link(link head) //åˆ—å°å¤šé …å¼å‰¯ç¨‹å¼
 {  
 	while(head!=NULL) 
 	{  
-		if(head->exp==1 && head->coef!=0)//X^1®É¤£Åã¥Ü«ü¼Æ
+		if(head->exp==1 && head->coef!=0)//X^1æ™‚ä¸é¡¯ç¤ºæŒ‡æ•¸
 			cout<<head->coef<<"X + ";
 		else if(head->exp!=0 && head->coef!=0)
 			cout<<head->coef<<"X^"<<head->exp<<" + ";
-		else if(head->coef!=0)           //X^0®É¤£Åã¥ÜÅÜ¼Æ
+		else if(head->coef!=0)           //X^0æ™‚ä¸é¡¯ç¤ºè®Šæ•¸
 			cout<<head->coef;
 		head=head->next;
 	}
 	cout<<endl;
 }
-link sum_link(link a,link b) //¦h¶µ¦¡¬Û¥[°Æµ{¦¡
+link sum_link(link a,link b) //å¤šé …å¼ç›¸åŠ å‰¯ç¨‹å¼
 {  
 	int sum[4],i=0;
 	link ptr;
 	ptr=b;
-	while(a!=NULL) //§PÂ_¦h¶µ¦¡1
+	while(a!=NULL) //åˆ¤æ–·å¤šé …å¼1
 	{  
-		b=ptr; //­«½Æ¤ñ¸ûA¤ÎBªº«ü¼Æ
+		b=ptr; //é‡è¤‡æ¯”è¼ƒAåŠBçš„æŒ‡æ•¸
 		while(b!=NULL)
 		{  
-			if(a->exp==b->exp)//«ü¼Æ¬Ûµ¥¡A«Y¼Æ¬Û¥[
+			if(a->exp==b->exp)//æŒ‡æ•¸ç›¸ç­‰ï¼Œä¿‚æ•¸ç›¸åŠ 
 			{  
 				sum[i]=a->coef+b->coef;
 				a=a->next;
 				b=b->next;
 				i++;
 			}
-			else if(b->exp > a->exp)//B«ü¼Æ¸û¤j¡A«ü©w«Y¼Æµ¹C
+			else if(b->exp > a->exp)//BæŒ‡æ•¸è¼ƒå¤§ï¼ŒæŒ‡å®šä¿‚æ•¸çµ¦C
 			{  
 				sum[i]=b->coef;
 				b=b->next;
 				i++;
 			}
-			else if(a->exp > b->exp)//A«ü¼Æ¸û¤j¡A«ü©w«Y¼Æµ¹C
+			else if(a->exp > b->exp)//AæŒ‡æ•¸è¼ƒå¤§ï¼ŒæŒ‡å®šä¿‚æ•¸çµ¦C
 			{  
 				sum[i]=a->coef;
 				a=a->next;
@@ -104,5 +104,5 @@ link sum_link(link a,link b) //¦h¶µ¦¡¬Û¥[°Æµ{¦¡
 			}
 		}
 	}
-	return creat_link(sum);//«Ø¥ß¬Û¥[µ²ªG¦ê¦CC
+	return creat_link(sum);//å»ºç«‹ç›¸åŠ çµæœä¸²åˆ—C
 }

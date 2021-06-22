@@ -17,40 +17,40 @@ int main(void)
 	srand((unsigned)time(NULL));
 	for (i=0;i<52;i++)
 		card[i]=i+1;
-	cout<<"[¬~µP¤¤...½Ðµy«á!]"<<endl;
+	cout<<"[æ´—ç‰Œä¸­...è«‹ç¨å¾Œ!]"<<endl;
 	while(k<30)
 	{
 		for(i=0;i<51;i++)
 			for(j=i+1;j<52;j++)
 				if(rand()%52==2)
-					Swap(&card[i],&card[j]);//¬~µP
+					Swap(&card[i],&card[j]);//æ´—ç‰Œ
 		k++;
 	}
 	i=0;
 	while(i!=52)
 	{
-		push(stack,52,card[i]);//±N52±iµP±À¤J°ïÅ|
+		push(stack,52,card[i]);//å°‡52å¼µç‰ŒæŽ¨å…¥å †ç–Š
 		i++;
 	}
-	cout<<"[°f®É°wµoµP]"<<endl;
-	cout<<"[Åã¥Ü¦U®aµP¤l]"<<endl;
- 	cout<<" ªF®a\t ¥_®a\t ¦è®a\t «n®a"<<endl;
+	cout<<"[é€†æ™‚é‡ç™¼ç‰Œ]"<<endl;
+	cout<<"[é¡¯ç¤ºå„å®¶ç‰Œå­]"<<endl;
+ 	cout<<" æ±å®¶\t åŒ—å®¶\t è¥¿å®¶\t å—å®¶"<<endl;
 	cout<<"================================="<<endl;
 	while (top >=0)
 	{  
-		style = stack[top]/13;//­pºâµP¤lªá¦â
-		switch(style)		//µP¤lªá¦â¹Ï¥Ü¹ïÀ³
+		style = stack[top]/13;//è¨ˆç®—ç‰Œå­èŠ±è‰²
+		switch(style)		//ç‰Œå­èŠ±è‰²åœ–ç¤ºå°æ‡‰
 		{
-			case 0:			//±öªá
+			case 0:			//æ¢…èŠ±
 				ascVal='C';
 				break;
-			case 1:			//¤è¶ô
+			case 1:			//æ–¹å¡Š
 				ascVal='D';
 				break;
-			case 2:			//¬õ¤ß
+			case 2:			//ç´…å¿ƒ
 				ascVal='H';
 				break;
-			case 3:			//¶Â®ç
+			case 3:			//é»‘æ¡ƒ
 				ascVal='S';
 				break;
 		}
@@ -64,7 +64,7 @@ int main(void)
 void push(int stack[],int MAX,int val)
 {
 	if(top>=MAX-1)
-		cout<<"[°ïÅ|¤w¸gº¡¤F]"<<endl;
+		cout<<"[å †ç–Šå·²ç¶“æ»¿äº†]"<<endl;
 	else
 	{
 		top++;
@@ -74,7 +74,7 @@ void push(int stack[],int MAX,int val)
 int pop(int stack[])
 {
 	if(top<0)
-		cout<<"[°ïÅ|¤w¸gªÅ¤F]"<<endl;
+		cout<<"[å †ç–Šå·²ç¶“ç©ºäº†]"<<endl;
 	else
 		top--;
 	return stack[top];

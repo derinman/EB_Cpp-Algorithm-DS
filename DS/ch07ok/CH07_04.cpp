@@ -14,38 +14,38 @@ int run[9];
 int main(void)
 {  
 	link ptr,newnode;
-	int data[20][2]={{1,2},{2,1},{1,3},{3,1},//¹Ï§ÎÃä½u°}¦C«Å§i
+	int data[20][2]={{1,2},{2,1},{1,3},{3,1},//åœ–å½¢é‚Šç·šé™£åˆ—å®£å‘Š
 					{2,4},{4,2},{2,5},{5,2},
 					{3,6},{6,3},{3,7},{7,3},
 					{4,5},{5,4},{6,7},{7,6},
 					{5,8},{8,5},{6,8},{8,6}};
-	for (int i=1;i<=8;i++)//¦@¦³¤K­Ó³»ÂI
+	for (int i=1;i<=8;i++)//å…±æœ‰å…«å€‹é ‚é»ž
 	{  
-		run[i]=0;         //³]©w©Ò¦³³»ÂI¦¨©|¥¼¨«³X¹L
+		run[i]=0;         //è¨­å®šæ‰€æœ‰é ‚é»žæˆå°šæœªèµ°è¨ªéŽ
 		head[i]= new node;   
-		head[i]->val=i;   //³]©w¦U­Ó¦ê¦C­ºªºªì­È
+		head[i]->val=i;   //è¨­å®šå„å€‹ä¸²åˆ—é¦–çš„åˆå€¼
 		head[i]->next=NULL;
-		ptr=head[i];      //³]©w«ü¼Ð¬°¦ê¦C­º
-		for(int j=0;j<20;j++) //¤G¤Q±øÃä½u
+		ptr=head[i];      //è¨­å®šæŒ‡æ¨™ç‚ºä¸²åˆ—é¦–
+		for(int j=0;j<20;j++) //äºŒåæ¢é‚Šç·š
 		{  
-			if(data[j][0]==i) //¦pªG°_ÂI©M¦ê¦C­º¬Ûµ¥¡A«h§â³»ÂI¥[¤J¦ê¦C
+			if(data[j][0]==i) //å¦‚æžœèµ·é»žå’Œä¸²åˆ—é¦–ç›¸ç­‰ï¼Œå‰‡æŠŠé ‚é»žåŠ å…¥ä¸²åˆ—
 			{  
 				newnode =new node;
 				newnode->val=data[j][1];
 				newnode->next=NULL;
 				do
 				{
-					ptr->next=newnode;//¥[¤J·s¸`ÂI
+					ptr->next=newnode;//åŠ å…¥æ–°ç¯€é»ž
 					ptr=ptr->next;
 				}while(ptr->next!=NULL);
 			}
 		} 
 	}
-	cout<<"¹Ï§Îªº¾F±µ¦ê¦C¤º®e¡G"<<endl;//¦C¦L¹Ï§Îªº¾F±µ¦ê¦C¤º®e
+	cout<<"åœ–å½¢çš„é„°æŽ¥ä¸²åˆ—å…§å®¹ï¼š"<<endl;//åˆ—å°åœ–å½¢çš„é„°æŽ¥ä¸²åˆ—å…§å®¹
 	for(int i=1;i<=8;i++)
 	{
 		ptr=head[i];
-		cout<<"³»ÂI "<<i<<"=> ";
+		cout<<"é ‚é»ž "<<i<<"=> ";
 		ptr = ptr->next;
 		while(ptr!=NULL)
 		{
@@ -55,11 +55,11 @@ int main(void)
 		cout<<endl;
 	}
 
-	cout<<"²`«×Àu¥ý¨«³X³»ÂI¡G"<<endl;//¦C¦L²`«×Àu¥ý¨«³Xªº³»ÂI
+	cout<<"æ·±åº¦å„ªå…ˆèµ°è¨ªé ‚é»žï¼š"<<endl;//åˆ—å°æ·±åº¦å„ªå…ˆèµ°è¨ªçš„é ‚é»ž
 	dfs(1);
 	cout<<endl;
 }
-void dfs(int current) //²`«×Àu¥ý¨«³X°Æµ{¦¡
+void dfs(int current) //æ·±åº¦å„ªå…ˆèµ°è¨ªå‰¯ç¨‹å¼
 {  
 	link ptr;
 	run[current]=1;
@@ -67,8 +67,8 @@ void dfs(int current) //²`«×Àu¥ý¨«³X°Æµ{¦¡
 	ptr=head[current]->next;
 	while(ptr!=NULL)
 	{		
-		if (run[ptr->val]==0)//¦pªG³»ÂI©|¥¼¨«³X¡A
-			dfs(ptr->val);   //´N¶i¦ædfsªº»¼°j©I¥s
+		if (run[ptr->val]==0)//å¦‚æžœé ‚é»žå°šæœªèµ°è¨ªï¼Œ
+			dfs(ptr->val);   //å°±é€²è¡Œdfsçš„éžè¿´å‘¼å«
 		ptr=ptr->next;
 	}
 }

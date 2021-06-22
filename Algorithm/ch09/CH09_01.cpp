@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-class tree //¸`ÂI¦ê¦Cµ²ºc«Å§i
+class tree //ç¯€é»ä¸²åˆ—çµæ§‹å®£å‘Š
 {  
 	public:
-	int data; //¸`ÂI¸ê®Æ
-	class tree *left,*right; //¸`ÂI¥ª«ü¼Ğ¤Î¥k«ü¼Ğ
+	int data; //ç¯€é»è³‡æ–™
+	class tree *left,*right; //ç¯€é»å·¦æŒ‡æ¨™åŠå³æŒ‡æ¨™
 };
 typedef class tree node;
 typedef node *btree;
@@ -13,26 +13,26 @@ void Inorder(btree ptr);
 int main(void)
 {  
 	int i,level;
-	int data[]={0,6,3,5,9,7,8,4,2}; //­ì©l°}¦C
-	int btree[16]={0}; //¦s©ñ¤G¤¸¼Æ°}¦C
-	cout<<"­ì©l°}¦C¤º®e¡G"<<endl;
+	int data[]={0,6,3,5,9,7,8,4,2}; //åŸå§‹é™£åˆ—
+	int btree[16]={0}; //å­˜æ”¾äºŒå…ƒæ•¸é™£åˆ—
+	cout<<"åŸå§‹é™£åˆ—å…§å®¹ï¼š"<<endl;
 	for (i=1;i<9;i++)
 		cout<<"["<<data[i]<<"] ";
 	cout<<endl;
-	for(i=1;i<9;i++)   //§â­ì©l°}¦C¤¤ªº­È³v¤@¤ñ¹ï
+	for(i=1;i<9;i++)   //æŠŠåŸå§‹é™£åˆ—ä¸­çš„å€¼é€ä¸€æ¯”å°
 	{  
 		for(level=1;btree[level]!=0;)
-		//¤ñ¸û¾ğ®Ú¤Î°}¦C¤ºªº­È
+		//æ¯”è¼ƒæ¨¹æ ¹åŠé™£åˆ—å…§çš„å€¼
 		{  
 			if(data[i]>btree[level])
-			//¦pªG°}¦C¤ºªº­È¤j©ó¾ğ®Ú¡A«h©¹¥k¤l¾ğ¤ñ¸û
+			//å¦‚æœé™£åˆ—å…§çš„å€¼å¤§æ–¼æ¨¹æ ¹ï¼Œå‰‡å¾€å³å­æ¨¹æ¯”è¼ƒ
 				level=level*2+1;
-			else  //¦pªG°}¦C¤ºªº­È¤p©ó©Îµ¥©ó¾ğ®Ú¡A«h©¹¥ª¤l¾ğ¤ñ¸û
+			else  //å¦‚æœé™£åˆ—å…§çš„å€¼å°æ–¼æˆ–ç­‰æ–¼æ¨¹æ ¹ï¼Œå‰‡å¾€å·¦å­æ¨¹æ¯”è¼ƒ
 				level=level*2;
-		}     //¦pªG¤l¾ğ¸`ÂIªº­È¤£¬°0¡A«h¦A»P°}¦C¤ºªº­È¤ñ¸û¤@¦¸
-		btree[level]=data[i];  //§â°}¦C­È©ñ¤J¤G¤¸¾ğ
+		}     //å¦‚æœå­æ¨¹ç¯€é»çš„å€¼ä¸ç‚º0ï¼Œå‰‡å†èˆ‡é™£åˆ—å…§çš„å€¼æ¯”è¼ƒä¸€æ¬¡
+		btree[level]=data[i];  //æŠŠé™£åˆ—å€¼æ”¾å…¥äºŒå…ƒæ¨¹
 	}
-	cout<<"¤G¤¸¾ğ¤º®e¡G"<<endl;
+	cout<<"äºŒå…ƒæ¨¹å…§å®¹ï¼š"<<endl;
 	for (i=1;i<16;i++)
 		cout<<"["<<btree[i]<<"] ";
 	cout<<endl;
@@ -42,8 +42,8 @@ void Inorder(btree ptr)
 {
 	if(ptr!=NULL)
 	{
-		Inorder(ptr->left); //¨«³X¥ª¤l¾ğ
-		cout<<"["<<ptr->data<<"]"; //¨«³X¦C¦L¾ğ®Ú
-		Inorder(ptr->right); //¨«³X¥k¤l¾ğ
+		Inorder(ptr->left); //èµ°è¨ªå·¦å­æ¨¹
+		cout<<"["<<ptr->data<<"]"; //èµ°è¨ªåˆ—å°æ¨¹æ ¹
+		Inorder(ptr->right); //èµ°è¨ªå³å­æ¨¹
 	}
 }

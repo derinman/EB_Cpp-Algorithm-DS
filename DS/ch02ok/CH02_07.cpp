@@ -3,18 +3,18 @@
 #include <cstdlib>
 
 using namespace std;
-const int _ROWS = 8;		//©w¸q¦C¼Æ
-const int _COLS = 9;		//©w¸q¦æ¼Æ
-const int _NOTZERO = 8;		//©w¸qµ}²¨¯x°}¤¤¤£¬°0ªº­Ó¼Æ
+const int _ROWS = 8;		//å®šç¾©åˆ—æ•¸
+const int _COLS = 9;		//å®šç¾©è¡Œæ•¸
+const int _NOTZERO = 8;		//å®šç¾©ç¨€ç–çŸ©é™£ä¸­ä¸ç‚º0çš„å€‹æ•¸
 
 int main ()
 {  
 	int i,j,tmpRW,tmpCL,tmpNZ;
 	int temp=1;
-	int Sparse[_ROWS][_COLS];		//«Å§iµ}²¨¯x°}
-	int Compress[_NOTZERO][3];		//«Å§iÀ£ÁY¯x°}
+	int Sparse[_ROWS][_COLS];		//å®£å‘Šç¨€ç–çŸ©é™£
+	int Compress[_NOTZERO][3];		//å®£å‘Šå£“ç¸®çŸ©é™£
 	srand(time(NULL));
-	for (i=0;i<_ROWS;i++)			//±Nµ}²¨¯x°}ªº©Ò¦³¤¸¯À³]¬°0
+	for (i=0;i<_ROWS;i++)			//å°‡ç¨€ç–çŸ©é™£çš„æ‰€æœ‰å…ƒç´ è¨­ç‚º0
 		for (j=0;j<_COLS;j++)
 			Sparse[i][j]=0;
 	tmpNZ=_NOTZERO;
@@ -22,18 +22,18 @@ int main ()
 	{
 		tmpRW = rand()%_ROWS;
 		tmpCL = rand()%_COLS;
-		if(Sparse[tmpRW][tmpCL]!=0)	//Á×§K¦P¤@­Ó¤¸¯À³]©w¨â¦¸¼Æ­È¦Ó³y¦¨À£ÁY¯x°}¤¤¦³0
+		if(Sparse[tmpRW][tmpCL]!=0)	//é¿å…åŒä¸€å€‹å…ƒç´ è¨­å®šå…©æ¬¡æ•¸å€¼è€Œé€ æˆå£“ç¸®çŸ©é™£ä¸­æœ‰0
 			tmpNZ++;
-		Sparse[tmpRW][tmpCL]=i; //ÀH¾÷²£¥Íµ}²¨¯x°}¤¤«D¹sªº¤¸¯À­È
+		Sparse[tmpRW][tmpCL]=i; //éš¨æ©Ÿç”¢ç”Ÿç¨€ç–çŸ©é™£ä¸­éé›¶çš„å…ƒç´ å€¼
 	}
-	cout<<"[µ}²¨¯x°}ªº¦U­Ó¤¸¯À]"<<endl; //¦L¥Xµ}²¨¯x°}ªº¦U­Ó¤¸¯À
+	cout<<"[ç¨€ç–çŸ©é™£çš„å„å€‹å…ƒç´ ]"<<endl; //å°å‡ºç¨€ç–çŸ©é™£çš„å„å€‹å…ƒç´ 
 	for (i=0;i<_ROWS;i++)
 	{  
 		for (j=0;j<_COLS;j++)
 			cout<<"["<<Sparse[i][j]<<"] ";
 		cout<<endl;
 	}
-	//¶}©lÀ£ÁYµ}²¨¯x°}
+	//é–‹å§‹å£“ç¸®ç¨€ç–çŸ©é™£
 	Compress[0][0] = _ROWS;
 	Compress[0][1] = _COLS;
 	Compress[0][2] = _NOTZERO;
@@ -46,7 +46,7 @@ int main ()
 				Compress[temp][2]=Sparse[i][j];
 				temp++;
 			}
-	cout<<"[µ}²¨¯x°}À£ÁY«áªº¤º®e]"<<endl; //¦L¥XÀ£ÁY¯x°}ªº¦U­Ó¤¸¯À
+	cout<<"[ç¨€ç–çŸ©é™£å£“ç¸®å¾Œçš„å…§å®¹]"<<endl; //å°å‡ºå£“ç¸®çŸ©é™£çš„å„å€‹å…ƒç´ 
 	for (i=0;i<_NOTZERO+1;i++)
 	{  
 		for (j=0;j<3;j++)

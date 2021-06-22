@@ -1,17 +1,17 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
-void bubble (int *);   //«Å§i®ğªw±Æ§Ç°Æµ{¦¡
-void showdata (int *); //«Å§i¦C¦L°}¦C°Æµ{¦¡
+void bubble (int *);   //å®£å‘Šæ°£æ³¡æ’åºå‰¯ç¨‹å¼
+void showdata (int *); //å®£å‘Šåˆ—å°é™£åˆ—å‰¯ç¨‹å¼
 int main(void)
 {
-    int data[6]={4,6,2,7,8,9}; //­ì©l¸ê®Æ
-    cout<<"§ï¨}®ğªw±Æ§Çªk\n­ì©l¸ê®Æ¬°¡G\t";
+    int data[6]={4,6,2,7,8,9}; //åŸå§‹è³‡æ–™
+    cout<<"æ”¹è‰¯æ°£æ³¡æ’åºæ³•\nåŸå§‹è³‡æ–™ç‚ºï¼š\t";
     showdata(data);
     bubble(data);
     return 0;
 }
-void showdata (int data[]) //§Q¥Î°j°é¦C¦L¸ê®Æ
+void showdata (int data[]) //åˆ©ç”¨è¿´åœˆåˆ—å°è³‡æ–™
 {
 	for (int i=0;i<6;i++)
 		cout<<setw(3)<<data[i];
@@ -21,7 +21,7 @@ void bubble (int data[])
 {
 	for(int i=5;i>=0;i--)
 	{
-		int flag=0;  //flag¥Î¨Ó§PÂ_¬O§_¦³°õ¦æ¥æ´«ªº°Ê§@
+		int flag=0;  //flagç”¨ä¾†åˆ¤æ–·æ˜¯å¦æœ‰åŸ·è¡Œäº¤æ›çš„å‹•ä½œ
 		for (int j=0;j<i;j++)
 		{
 			if (data[j+1]<data[j])
@@ -30,20 +30,20 @@ void bubble (int data[])
 				tmp=data[j];
 				data[j]=data[j+1];
 				data[j+1]=tmp;
-				flag++;    //¦pªG¦³°õ¦æ¹L¥æ´«¡A«hflag¤£¬°0
+				flag++;    //å¦‚æœæœ‰åŸ·è¡Œéäº¤æ›ï¼Œå‰‡flagä¸ç‚º0
 			}
 		}
 		if (flag==0)
 			break;
 		/*
-		·í°õ¦æ§¹¤@¦¸±½´y´N§PÂ_¬O§_°µ¹L¥æ´«°Ê§@¡A¦pªG¨S¦³¥æ´«¹L¸ê®Æ
-		¡Aªí¥Ü¦¹®É°}¦C¤w§¹¦¨±Æ§Ç¡A¬G¥iª½±µ¸õ¥X°j°é
+		ç•¶åŸ·è¡Œå®Œä¸€æ¬¡æƒæå°±åˆ¤æ–·æ˜¯å¦åšéäº¤æ›å‹•ä½œï¼Œå¦‚æœæ²’æœ‰äº¤æ›éè³‡æ–™
+		ï¼Œè¡¨ç¤ºæ­¤æ™‚é™£åˆ—å·²å®Œæˆæ’åºï¼Œæ•…å¯ç›´æ¥è·³å‡ºè¿´åœˆ
 		*/
-		cout<<"²Ä "<<6-i<<" ¦¸±Æ§Ç¡G\t";
+		cout<<"ç¬¬ "<<6-i<<" æ¬¡æ’åºï¼š\t";
 		for (int j=0;j<6;j++)
 			cout<<setw(3)<<data[j];
 		cout<<endl;		    
 	}
-	cout<<"±Æ§Ç«áµ²ªG¬°¡G\t";
+	cout<<"æ’åºå¾Œçµæœç‚ºï¼š\t";
 	showdata (data);
 }

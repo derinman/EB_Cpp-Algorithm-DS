@@ -1,21 +1,21 @@
 /*
-[¥Ü½d]:°ò¼Æ±Æ§Çªk
+[ç¤ºç¯„]:åŸºæ•¸æ’åºæ³•
 */
-// °ò¼Æ±Æ§Çªk ¥Ñ¤p¨ì¤j±Æ§Ç 
+// åŸºæ•¸æ’åºæ³• ç”±å°åˆ°å¤§æ’åº 
 #include <iostream>
 #include <iomanip>
 #include <ctime>
 #include <cstdlib>
 using namespace std;
-void radix (int *,int);	// °ò¼Æ±Æ§Çªk°Æµ{¦¡ 
+void radix (int *,int);	// åŸºæ•¸æ’åºæ³•å‰¯ç¨‹å¼ 
 void showdata (int *,int);
 void inputarr (int *,int);
 int main(void)
 { 
 	int size,data[100]={0};
-	cout<<"½Ğ¿é¤J°}¦C¤j¤p(100¥H¤U)¡G";
+	cout<<"è«‹è¼¸å…¥é™£åˆ—å¤§å°(100ä»¥ä¸‹)ï¼š";
 	cin>>size;
-	cout<<"±z¿é¤Jªº­ì©l¸ê®Æ¬O¡G"<<endl;
+	cout<<"æ‚¨è¼¸å…¥çš„åŸå§‹è³‡æ–™æ˜¯ï¼š"<<endl;
 	inputarr (data,size);
 	showdata (data,size);
 	radix (data,size);
@@ -26,7 +26,7 @@ void inputarr(int data[],int size)
 	srand(time(NULL));
 	for (int i=0;i<size;i++)
 		data[i]=(rand()%999)+1;	
-			// ³]©wdata ­È³Ì¤j¬° 3 ¦ì¼Æ 
+			// è¨­å®šdata å€¼æœ€å¤§ç‚º 3 ä½æ•¸ 
 }
 void showdata(int data[],int size)
 {  
@@ -37,16 +37,16 @@ void showdata(int data[],int size)
 void radix(int data[],int size)
 {  
 	for (int n=1;n<=100;n=n*10)		
-	// n¬°°ò¼Æ¡A¥Ñ­Ó¦ì¼Æ¶}©l±Æ§Ç 
+	// nç‚ºåŸºæ•¸ï¼Œç”±å€‹ä½æ•¸é–‹å§‹æ’åº 
 	{  
 		int tmp[10][100]={0};		
-		// ³]©w¼È¦s°}¦C¡A[0~9¦ì¼Æ][¸ê®Æ­Ó¼Æ]¡A©Ò¦³¤º®e§¡¬°0 
-		for (int i=0;i<size;i++) // ¤ñ¹ï©Ò¦³¸ê®Æ 
+		// è¨­å®šæš«å­˜é™£åˆ—ï¼Œ[0~9ä½æ•¸][è³‡æ–™å€‹æ•¸]ï¼Œæ‰€æœ‰å…§å®¹å‡ç‚º0 
+		for (int i=0;i<size;i++) // æ¯”å°æ‰€æœ‰è³‡æ–™ 
 		{  
 			int m=(data[i]/n)%10;	
-			// m¬°n¦ì¼Æªº­È¡A¦p 36¨ú¤Q¦ì¼Æ (36/10)%10=3 
+			// mç‚ºnä½æ•¸çš„å€¼ï¼Œå¦‚ 36å–åä½æ•¸ (36/10)%10=3 
 			tmp[m][i]=data[i];		
-			// §âdata[i]ªº­È¼È¦s©ótmp ¸Ì 
+			// æŠŠdata[i]çš„å€¼æš«å­˜æ–¼tmp è£¡ 
 		}
 		int k=0;
 		for (int i=0;i<10;i++)
@@ -54,15 +54,15 @@ void radix(int data[],int size)
 			for(int j=0;j<size;j++)
 			{  
 				if(tmp[i][j] != 0)		
-				// ¦]¤@¶}©l³]©w tmp ={0}¡A¬G¤£¬°0ªÌ§Y¬° 
+				// å› ä¸€é–‹å§‹è¨­å®š tmp ={0}ï¼Œæ•…ä¸ç‚º0è€…å³ç‚º 
 				{  
 					data[k]=tmp[i][j];	
-					// data¼È¦s¦b tmp ¸Ìªº­È¡A§âtmp ¸Ìªº­È©ñ 
-					k++;		        // ¦^data[ ]¸Ì 
+					// dataæš«å­˜åœ¨ tmp è£¡çš„å€¼ï¼ŒæŠŠtmp è£¡çš„å€¼æ”¾ 
+					k++;		        // å›data[ ]è£¡ 
 				}
 			}
 		}
-		cout<<"¸g¹L"<<setw(3)<<n<<"¦ì¼Æ±Æ§Ç«á¡G";
+		cout<<"ç¶“é"<<setw(3)<<n<<"ä½æ•¸æ’åºå¾Œï¼š";
 		showdata(data,size);
 	} 
 }

@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:±N¥Í¦¨ÁZ¨Ì®y¸¹¤ÏÂà¦C¦L¥X¨Ó
+[ç¤ºç¯„]:å°‡ç”Ÿæˆç¸¾ä¾åº§è™Ÿåè½‰åˆ—å°å‡ºä¾†
 */
 #include <iostream>
 #include <iomanip>
@@ -28,10 +28,10 @@ int main()
         data[i][0]=i+1;
         data[i][1]=rand()%50+51;
     }
-    link head=new node;//«Ø¥ß¦ê¦C­º
+    link head=new node;//å»ºç«‹ä¸²åˆ—é¦–
     if(!head)
     {  
-        cout<<"Error!! °O¾ĞÅé°t¸m¥¢±Ñ!!"<<endl;
+        cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
         exit(1);
     }
     head->num=data[0][0];
@@ -40,7 +40,7 @@ int main()
     head->score=data[0][1];
     head->next=NULL;
     ptr=head;
-    for(i=1;i<12;i++) //«Ø¥ßÃìµ²¦ê¦C
+    for(i=1;i<12;i++) //å»ºç«‹éˆçµä¸²åˆ—
     {  
         link newnode=new node;
         newnode->num=data[i][0];
@@ -53,13 +53,13 @@ int main()
     }
     ptr=head;
     i=0;
-    cout<<"­ì©l¦ê¦C¸ê®Æ¡G"<<endl;               
+    cout<<"åŸå§‹ä¸²åˆ—è³‡æ–™ï¼š"<<endl;               
     while (ptr!=NULL)                       
-    {   //¦C¦L¦ê¦C¸ê®Æ
+    {   //åˆ—å°ä¸²åˆ—è³‡æ–™
         cout<<"["<<setw(2)<<ptr->num<<setw(8)
         <<ptr->name<<setw(3)<<ptr->score<<"] -> ";
         i++;
-        if(i>=3) //¤T­Ó¤¸¯À¬°¤@¦C
+        if(i>=3) //ä¸‰å€‹å…ƒç´ ç‚ºä¸€åˆ—
         {  
             cout<<endl;
             i=0;
@@ -68,8 +68,8 @@ int main()
     }
     ptr=head;
     before=NULL;
-    cout<<"\n¤ÏÂà«á¦ê¦C¸ê®Æ¡G"<<endl;          
-    while(ptr!=NULL) //¦ê¦C¤ÏÂà
+    cout<<"\nåè½‰å¾Œä¸²åˆ—è³‡æ–™ï¼š"<<endl;          
+    while(ptr!=NULL) //ä¸²åˆ—åè½‰
     {  
         last=before;
         before=ptr;

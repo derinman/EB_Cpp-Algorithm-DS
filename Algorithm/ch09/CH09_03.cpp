@@ -1,11 +1,11 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
-class tree //¸`ÂI¦ê¦Cµ²ºc«Å§i
+class tree //ç¯€é»ä¸²åˆ—çµæ§‹å®£å‘Š
 {  
     public :
-	    int data; //¸`ÂI¸ê®Æ 
-	    class tree *left,*right; //¸`ÂI¥ª«ü¼Ğ¤Î¥k«ü¼Ğ 
+	    int data; //ç¯€é»è³‡æ–™ 
+	    class tree *left,*right; //ç¯€é»å·¦æŒ‡æ¨™åŠå³æŒ‡æ¨™ 
 };
 typedef class tree node;
 typedef node *btree;
@@ -15,57 +15,57 @@ void in(btree);
 void post(btree);
 int main(void)
 {  
-	int arr[]={7,4,1,5,16,8,11,12,15,9,2};//­ì©l°}¦C¤º®e 
-	btree ptr=NULL; //«Å§i¾ğ®Ú 
-	cout<<"[­ì©l°}¦C¤º®e]"<<endl;
-	for (int i=0;i<11;i++)//«Ø¥ß¤G¤¸¾ğ¡A¨Ã±N¤G¤¸¾ğ¤º®e¦C¦L¥X¨Ó 
+	int arr[]={7,4,1,5,16,8,11,12,15,9,2};//åŸå§‹é™£åˆ—å…§å®¹ 
+	btree ptr=NULL; //å®£å‘Šæ¨¹æ ¹ 
+	cout<<"[åŸå§‹é™£åˆ—å…§å®¹]"<<endl;
+	for (int i=0;i<11;i++)//å»ºç«‹äºŒå…ƒæ¨¹ï¼Œä¸¦å°‡äºŒå…ƒæ¨¹å…§å®¹åˆ—å°å‡ºä¾† 
 	{  
 	    ptr=creat_tree(ptr,arr[i]);
 		cout<<"["<<setw(2)<<arr[i]<<"] ";
 	}
 	cout<<endl;
-	cout<<"[¤G¤¸¾ğªº¤º®e]"<<endl;
-	cout<<"«e§Ç¨«³Xµ²ªG¡G"<<endl;//¦C¦L«e¡B¤¤¡B«á§Ç¨«³Xµ²ªG 
+	cout<<"[äºŒå…ƒæ¨¹çš„å…§å®¹]"<<endl;
+	cout<<"å‰åºèµ°è¨ªçµæœï¼š"<<endl;//åˆ—å°å‰ã€ä¸­ã€å¾Œåºèµ°è¨ªçµæœ 
 	pre(ptr);
 	cout<<endl;
-	cout<<"¤¤§Ç¨«³Xµ²ªG¡G"<<endl;
+	cout<<"ä¸­åºèµ°è¨ªçµæœï¼š"<<endl;
 	in(ptr);
 	cout<<endl;
-	cout<<"«á§Ç¨«³Xµ²ªG¡G"<<endl;
+	cout<<"å¾Œåºèµ°è¨ªçµæœï¼š"<<endl;
 	post(ptr);
 	cout<<endl;
 	return 0;
 }
-btree creat_tree(btree root,int val)//«Ø¥ß¤G¤¸¾ğªº°Æµ{¦¡ 
+btree creat_tree(btree root,int val)//å»ºç«‹äºŒå…ƒæ¨¹çš„å‰¯ç¨‹å¼ 
 {  
-	btree newnode,current,backup;   //«Å§i¤@­Ó·s¸`ÂInewnode¦s©ñ°}¦C¸ê®Æ 
-	newnode = new node; //current¤Îbackup¦s©ñ¼È¦s«ü¼Ğ 
-	newnode->data=val;  //«ü©w·s¸`ÂIªº¸ê®Æ¤Î¥ª¥k«ü¼Ğ 
+	btree newnode,current,backup;   //å®£å‘Šä¸€å€‹æ–°ç¯€é»newnodeå­˜æ”¾é™£åˆ—è³‡æ–™ 
+	newnode = new node; //currentåŠbackupå­˜æ”¾æš«å­˜æŒ‡æ¨™ 
+	newnode->data=val;  //æŒ‡å®šæ–°ç¯€é»çš„è³‡æ–™åŠå·¦å³æŒ‡æ¨™ 
 	newnode->left=NULL;
 	newnode->right=NULL;
-	if (root==NULL)//¦pªGroot¬°ªÅ­È¡A§â·s¸`ÂI¶Ç¦^·í§@¾ğ®Ú 
+	if (root==NULL)//å¦‚æœrootç‚ºç©ºå€¼ï¼ŒæŠŠæ–°ç¯€é»å‚³å›ç•¶ä½œæ¨¹æ ¹ 
 	{  
 		root=newnode;
 		return root;
 	}
-	else //­Yroot¤£¬O¾ğ®Ú¡A«h«Ø¥ß¤G¤¸¾ğ 
+	else //è‹¥rootä¸æ˜¯æ¨¹æ ¹ï¼Œå‰‡å»ºç«‹äºŒå…ƒæ¨¹ 
 	{  
-		for(current=root;current!=NULL;) //current½Æ»sroot¡A¥H«O¯d¥Ø«eªº¾ğ®Ú­È 
+		for(current=root;current!=NULL;) //currentè¤‡è£½rootï¼Œä»¥ä¿ç•™ç›®å‰çš„æ¨¹æ ¹å€¼ 
 		{  
-			backup=current; //«O¯d¤÷¸`ÂI 
-			if(current->data > val)//¤ñ¸û¾ğ®Ú¸`ÂI¤Î·s¸`ÂI¸ê®Æ 
+			backup=current; //ä¿ç•™çˆ¶ç¯€é» 
+			if(current->data > val)//æ¯”è¼ƒæ¨¹æ ¹ç¯€é»åŠæ–°ç¯€é»è³‡æ–™ 
 				current=current->left;
 			else
 				current=current->right;
 		}
-		if(backup->data >val)//§â·s¸`ÂI©M¾ğ®Ú³sµ²°_¨Ó 
+		if(backup->data >val)//æŠŠæ–°ç¯€é»å’Œæ¨¹æ ¹é€£çµèµ·ä¾† 
 			backup->left=newnode;
 		else
 			backup->right=newnode;
 	}
-	return root; //¶Ç¦^¾ğ«ü¼Ğ 
+	return root; //å‚³å›æ¨¹æŒ‡æ¨™ 
 }
-void pre(btree ptr) //«e§Ç¨«³X 
+void pre(btree ptr) //å‰åºèµ°è¨ª 
 {  
 	if (ptr != NULL)
 	{  
@@ -74,7 +74,7 @@ void pre(btree ptr) //«e§Ç¨«³X
 		pre(ptr->right);
 	}
 }
-void in(btree ptr) //¤¤§Ç¨«³X 
+void in(btree ptr) //ä¸­åºèµ°è¨ª 
 {  
 	if (ptr != NULL)
 	{  
@@ -83,7 +83,7 @@ void in(btree ptr) //¤¤§Ç¨«³X
 		in(ptr->right);
 	}
 }
-void post(btree ptr)//«á§Ç¨«³X
+void post(btree ptr)//å¾Œåºèµ°è¨ª
 {  
 	if (ptr != NULL)
 	{  

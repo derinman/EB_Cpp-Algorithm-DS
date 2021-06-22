@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:¨D¥XMxN¯x°}ªºÂà¸m¯x°}
+[ç¤ºç¯„]:æ±‚å‡ºMxNçŸ©é™£çš„è½‰ç½®çŸ©é™£
 */
 #include <iostream>
 using namespace std;
@@ -7,15 +7,15 @@ using namespace std;
 int main()
 {
 	int M,N,row,col;
-	cout<<"[¿é¤JMxN¯x°}ªººû«×]"<<endl;
-	cout<<"½Ð¿é¤Jºû«×M: ";
+	cout<<"[è¼¸å…¥MxNçŸ©é™£çš„ç¶­åº¦]"<<endl;
+	cout<<"è«‹è¼¸å…¥ç¶­åº¦M: ";
 	cin>>M;
-	cout<<"½Ð¿é¤Jºû«×N: ";
+	cout<<"è«‹è¼¸å…¥ç¶­åº¦N: ";
 	cin>>N;
 	
-   	int *arrA = new int[M*N];//«Å§i°ÊºA°}¦C 
+   	int *arrA = new int[M*N];//å®£å‘Šå‹•æ…‹é™£åˆ— 
 	int *arrB = new int[M*N];
- 	cout<<"[½Ð¿é¤J¯x°}¤º®e]"<<endl;
+ 	cout<<"[è«‹è¼¸å…¥çŸ©é™£å…§å®¹]"<<endl;
 	for(row=1;row<=M;row++)
 	{
 		for(col=1;col<=N;col++)
@@ -24,7 +24,7 @@ int main()
 			cin>>arrA[(row-1)*N+(col-1)];
 		}
 	}
-	cout<<"[¿é¤J¯x°}¤º®e¬°]"<<endl;
+	cout<<"[è¼¸å…¥çŸ©é™£å…§å®¹ç‚º]"<<endl;
 	for(row=1;row<=M;row++)
 	{
 		for(col=1;col<=N;col++)
@@ -33,12 +33,12 @@ int main()
 		}
 		cout<<endl;
 	}
-	//¶i¦æ¯x°}Âà¸mªº°Ê§@
+	//é€²è¡ŒçŸ©é™£è½‰ç½®çš„å‹•ä½œ
 	for(row=1;row<=N;row++)
 		for(col=1;col<=M;col++)
 			arrB[(col-1)*N+(row-1)]=arrA[(row-1)+(col-1)*N];
 
-	cout<<"[Âà¸m¯x°}¤º®e¬°]"<<endl;
+	cout<<"[è½‰ç½®çŸ©é™£å…§å®¹ç‚º]"<<endl;
 	for(row=1;row<=N;row++)
 	{
 		for(col=1;col<=M;col++)

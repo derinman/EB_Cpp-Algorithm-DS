@@ -1,28 +1,28 @@
 /*
-[¥Ü½d]:Dijkstraºtºâªk(³æÂI¹ï¥ş³¡³»ÂIªº³Ìµu¸ô®|)
+[ç¤ºç¯„]:Dijkstraæ¼”ç®—æ³•(å–®é»å°å…¨éƒ¨é ‚é»çš„æœ€çŸ­è·¯å¾‘)
 */
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
 #define SIZE   7  
 #define NUMBER 6
-#define INFINITE  99999 //µL½a¤j
+#define INFINITE  99999 //ç„¡çª®å¤§
 using namespace std;
-int Graph_Matrix[SIZE][SIZE];//¹Ï§Î°}¦C
-int distance[SIZE];//¸ô®|ªø«×¦C
-//«Ø¥ß¹Ï§Î 
+int Graph_Matrix[SIZE][SIZE];//åœ–å½¢é™£åˆ—
+int distance[SIZE];//è·¯å¾‘é•·åº¦åˆ—
+//å»ºç«‹åœ–å½¢ 
 void BuildGraph_Matrix(int *Path_Cost)
 {
-   int Start_Point;//Ãä½uªº°_ÂI 
-   int End_Point; //Ãä½uªº²×ÂI
+   int Start_Point;//é‚Šç·šçš„èµ·é» 
+   int End_Point; //é‚Šç·šçš„çµ‚é»
    int i, j;
    for ( i = 1; i < SIZE; i++ )
       for ( j = 1; j < SIZE; j++ )
          if ( i == j )
-            Graph_Matrix[i][j] = 0; //¹ï¨¤½u³]¬°0
+            Graph_Matrix[i][j] = 0; //å°è§’ç·šè¨­ç‚º0
          else
             Graph_Matrix[i][j] = INFINITE;  
-   //¦s¤J¹Ï§ÎªºÃä½u 
+   //å­˜å…¥åœ–å½¢çš„é‚Šç·š 
    i=0;
    while(i<SIZE)
    {
@@ -32,7 +32,7 @@ void BuildGraph_Matrix(int *Path_Cost)
       i++;
    }
 }
-//¦L¥X¹Ï§Î
+//å°å‡ºåœ–å½¢
 void printGraph_Matrix()
 {
    int i, j;
@@ -47,13 +47,13 @@ void printGraph_Matrix()
       cout<<endl;
    }
 }
-//³æÂI¹ï¥ş³¡³»ÂI³Ìµu¶ZÂ÷ 
+//å–®é»å°å…¨éƒ¨é ‚é»æœ€çŸ­è·é›¢ 
 void shortestPath(int vertex1, int vertex_total)
 {       
-   extern int distance[SIZE];//«Å§i¬°¥~³¡ÅÜ¼Æ 
-   int shortest_vertex = 1; //¬ö¿ı³Ìµu¶ZÂ÷ªº³»ÂI
-   int shortest_distance;   //¬ö¿ı³Ìµu¶ZÂ÷
-   int goal[SIZE]; //¥Î¨Ó¬ö¿ı¸Ó³»ÂI¬O§_³Q¿ï¨ú
+   extern int distance[SIZE];//å®£å‘Šç‚ºå¤–éƒ¨è®Šæ•¸ 
+   int shortest_vertex = 1; //ç´€éŒ„æœ€çŸ­è·é›¢çš„é ‚é»
+   int shortest_distance;   //ç´€éŒ„æœ€çŸ­è·é›¢
+   int goal[SIZE]; //ç”¨ä¾†ç´€éŒ„è©²é ‚é»æ˜¯å¦è¢«é¸å–
    int i,j;
    for ( i = 1; i <= vertex_total; i++ )
    { 
@@ -66,7 +66,7 @@ void shortestPath(int vertex1, int vertex_total)
    for (i=1; i<=vertex_total-1; i++ ) 
    {      
       shortest_distance = INFINITE;      
-      //§ä³Ìµu¶ZÂ÷³» 
+      //æ‰¾æœ€çŸ­è·é›¢é ‚ 
       for (j=1;j<=vertex_total;j++ )
          if (goal[j]==0&&shortest_distance>distance[j])
          {
@@ -74,7 +74,7 @@ void shortestPath(int vertex1, int vertex_total)
             shortest_vertex=j;              
          }
       goal[shortest_vertex] = 1;   
-      //­pºâ¶}©l³»ÂI¨ì¦U³»ÂI³Ìµu¶ZÂ÷
+      //è¨ˆç®—é–‹å§‹é ‚é»åˆ°å„é ‚é»æœ€çŸ­è·é›¢
       for (j=1;j<=vertex_total;j++ )
       {
          if ( goal[j] == 0 && 
@@ -87,10 +87,10 @@ void shortestPath(int vertex1, int vertex_total)
       }
    }
 }
-//¥Dµ{¦¡
+//ä¸»ç¨‹å¼
 int main(void) 
 {
-   extern int distance[SIZE];//«Å§i¬°¥~³¡ÅÜ¼Æ
+   extern int distance[SIZE];//å®£å‘Šç‚ºå¤–éƒ¨è®Šæ•¸
    int Path_Cost[7][3] = { {1, 2, 10}, 
                       {2, 3, 20},
                       {2, 4, 25},
@@ -101,16 +101,16 @@ int main(void)
    int j;
    BuildGraph_Matrix(&Path_Cost[0][0]);
    cout<<"=================================="<<endl;
-   cout<<"¦¹½d¨Ò¹Ï§Îªº¬Û¾F¯x°}¦p¤U: "<<endl;
+   cout<<"æ­¤ç¯„ä¾‹åœ–å½¢çš„ç›¸é„°çŸ©é™£å¦‚ä¸‹: "<<endl;
    cout<<"=================================="<<endl;
-   cout<<"³»ÂI vex1 vex2 vex3 vex4 vex5 vex6"<<endl;
-   printGraph_Matrix();  //Åã¥Ü¹Ï§Î
-   shortestPath(1,NUMBER); //§ä´M³Ìµu¸ô®|
+   cout<<"é ‚é» vex1 vex2 vex3 vex4 vex5 vex6"<<endl;
+   printGraph_Matrix();  //é¡¯ç¤ºåœ–å½¢
+   shortestPath(1,NUMBER); //æ‰¾å°‹æœ€çŸ­è·¯å¾‘
    cout<<"=================================="<<endl;
-   cout<<"³»ÂI1¨ì¦U³»ÂI³Ìµu¶ZÂ÷ªº³Ì²×µ²ªG"<<endl;
+   cout<<"é ‚é»1åˆ°å„é ‚é»æœ€çŸ­è·é›¢çš„æœ€çµ‚çµæœ"<<endl;
    cout<<"=================================="<<endl;
    for (j=1;j<SIZE;j++) 
-      cout<<"³»ÂI 1¨ì³»ÂI"<<setw(2)<<j<<"ªº³Ìµu¶ZÂ÷="
+      cout<<"é ‚é» 1åˆ°é ‚é»"<<setw(2)<<j<<"çš„æœ€çŸ­è·é›¢="
       <<setw(3)<<distance[j]<<endl;
    cout<<endl;
    return 0; 

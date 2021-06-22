@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:¹Bºâ¨â­Ó¯x°}¬Û­¼ªºµ²ªG
+[ç¤ºç¯„]:é‹ç®—å…©å€‹çŸ©é™£ç›¸ä¹˜çš„çµæœ
 */
 #include <iostream>
 using namespace std;
@@ -9,28 +9,28 @@ int main()
 {
 	int M,N,P;
 	int i,j;
-	//¯x°}A³¡¤À 
- 	cout<<"½Ğ¿é¤J¯x°}Aªººû¼Æ(M,N): "<<endl;
+	//çŸ©é™£Aéƒ¨åˆ† 
+ 	cout<<"è«‹è¼¸å…¥çŸ©é™£Açš„ç¶­æ•¸(M,N): "<<endl;
  	cout<<"M= ";
 	cin>>M;
 	cout<<"N= ";
 	cin>>N;
 	int *A = new int[M*N];
-	cout<<"[½Ğ¿é¤J¯x°}Aªº¦U­Ó¤¸¯À]"<<endl;
+	cout<<"[è«‹è¼¸å…¥çŸ©é™£Açš„å„å€‹å…ƒç´ ]"<<endl;
 	for(i=0;i<M;i++)
 		for(j=0;j<N;j++)
 		    {
                cout<<"a"<<i<<j<<"=";
 			   cin>>A[i*N+j];
             }
-	//¯x°}B³¡¤À 
- 	cout<<"½Ğ¿é¤J¯x°}Bªººû¼Æ(N,P): "<<endl;
+	//çŸ©é™£Béƒ¨åˆ† 
+ 	cout<<"è«‹è¼¸å…¥çŸ©é™£Bçš„ç¶­æ•¸(N,P): "<<endl;
 	cout<<"N= ";
 	cin>>N;
 	cout<<"P= ";
 	cin>>P;
 	int *B = new int [N*P];
-	cout<<"[½Ğ¿é¤J¯x°}Bªº¦U­Ó¤¸¯À]"<<endl;
+	cout<<"[è«‹è¼¸å…¥çŸ©é™£Bçš„å„å€‹å…ƒç´ ]"<<endl;
 	for(i=0;i<N;i++)
 		for(j=0;j<P;j++)
         {
@@ -38,8 +38,8 @@ int main()
 		   cin>>B[i*P+j];
         }	
 	int *C = new int [M*P];
-	MatrixMultiply(A,B,C,M,N,P); //©I¥s¨ç¼Æ 
-	cout<<"[AxBªºµ²ªG¬O]"<<endl;
+	MatrixMultiply(A,B,C,M,N,P); //å‘¼å«å‡½æ•¸ 
+	cout<<"[AxBçš„çµæœæ˜¯]"<<endl;
 	for(i=0;i<M;i++)
 	{
 		for(j=0;j<P;j++)
@@ -47,12 +47,12 @@ int main()
 		cout<<endl;
 	}
 }
-//¶i¦æ¯x°}¬Û­¼ 
+//é€²è¡ŒçŸ©é™£ç›¸ä¹˜ 
 void MatrixMultiply(int* arrA,int* arrB,int* arrC,int M,int N,int P)
 {
 	if(M<=0||N<=0||P<=0)
 	{
-		cout<<"[¿ù»~:ºû¼ÆM,N,P¥²¶·¤j©ó0]"<<endl;
+		cout<<"[éŒ¯èª¤:ç¶­æ•¸M,N,På¿…é ˆå¤§æ–¼0]"<<endl;
 		return;
 	}
 	for(int i=0;i<M;i++)

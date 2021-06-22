@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
-#include <cstdlib>  //¨Ï¥Î¶Ã¼ÆªºªíÀYÀÉ 
+#include <cstdlib>  //ä½¿ç”¨äº‚æ•¸çš„è¡¨é ­æª” 
 using namespace std;
 class list
 {
@@ -19,8 +19,8 @@ int main()
     {"Lean"},{"Melissa"},{"Angel"},{"Sabrina"},
     {"Joyce"},{"Jasica"},{"Hanson"},{"Amy"},
     {"Bob"},{"Jack"}};
-	srand((unsigned)time(NULL));//¥H®É¶¡¬°¶Ã¼ÆªººØ¤l
-	cout<<"®y¸¹ ¦¨ÁZ  ®y¸¹ ¦¨ÁZ  ®y¸¹ ¦¨ÁZ  ®y¸¹  ¦¨ÁZ"<<endl;
+	srand((unsigned)time(NULL));//ä»¥æ™‚é–“ç‚ºäº‚æ•¸çš„ç¨®å­
+	cout<<"åº§è™Ÿ æˆç¸¾  åº§è™Ÿ æˆç¸¾  åº§è™Ÿ æˆç¸¾  åº§è™Ÿ  æˆç¸¾"<<endl;
 	cout<<"=============================================="<<endl;
 	for(int i=0;i<12;i++)
 	{  
@@ -33,10 +33,10 @@ int main()
 			cout<<"["<<data[j*3+i][0]<<"]  ["<<data[j*3+i][1]<<"]  ";
 		cout<<endl;
 	}
-	list *head=new list;//«Ø¥ß¦ê¦C­º
+	list *head=new list;//å»ºç«‹ä¸²åˆ—é¦–
  	if(!head)
 	{  
-		cout<<"Error!! °O¾ÐÅé°t¸m¥¢±Ñ!!"<<endl;
+		cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
 		exit(1);
 	}
 	head->num=data[0][0];
@@ -47,7 +47,7 @@ int main()
 	ptr=head;
 	for(int i=1;i<12;i++)                   
 	{  
-		list *newnode=new list;//«Ø¥ß¦ê¦C
+		list *newnode=new list;//å»ºç«‹ä¸²åˆ—
   		newnode->num=data[i][0];
 		for (int j=0;j<10;j++)
 			newnode->name[j]=namedata[i][j];
@@ -58,9 +58,9 @@ int main()
 	}
 	while(1)
 	{  
-		cout<<"½Ð¿é¤J­n§R°£ªº¦¨ÁZ¡Aµ²§ô¿é¤J-1¡G";
+		cout<<"è«‹è¼¸å…¥è¦åˆªé™¤çš„æˆç¸¾ï¼ŒçµæŸè¼¸å…¥-1ï¼š";
 		cin>>findword;
-		if(findword==-1)//°j°é¤¤Â_±ø¥ó
+		if(findword==-1)//è¿´åœˆä¸­æ–·æ¢ä»¶
 			break;
 		else
 		{  
@@ -70,17 +70,17 @@ int main()
 			{  
 				if(ptr->score==findword)     
 				{  
-					*ptr=del_ptr(head,ptr);//§R°£¸ê®Æ
+					*ptr=del_ptr(head,ptr);//åˆªé™¤è³‡æ–™
      				find++;
 				}
 				ptr=ptr->next;
 			}
 			if(find==0)
-			cout<<"######¨S¦³§ä¨ì######"<<endl;
+			cout<<"######æ²’æœ‰æ‰¾åˆ°######"<<endl;
 		}
 	}
 	ptr=head;
-	cout<<"\n\t®y¸¹\t    ©m¦W\t¦¨ÁZ"<<endl; //¦C¦L³Ñ¾l¦ê¦C¸ê®Æ
+	cout<<"\n\tåº§è™Ÿ\t    å§“å\tæˆç¸¾"<<endl; //åˆ—å°å‰©é¤˜ä¸²åˆ—è³‡æ–™
 	cout<<"\t=============================="<<endl;
 	while(ptr!=NULL)
 	{  
@@ -89,33 +89,33 @@ int main()
 		ptr=ptr->next;
 	}
 }
-list del_ptr(list *head,list *ptr)//§R°£¸`ÂI°Æµ{¦¡
+list del_ptr(list *head,list *ptr)//åˆªé™¤ç¯€é»žå‰¯ç¨‹å¼
 {  
 	list *top;
  	top=head;
-	if(ptr==head)//[±¡§Î1]:§R°£ÂI¦b¦ê¦C­º
+	if(ptr==head)//[æƒ…å½¢1]:åˆªé™¤é»žåœ¨ä¸²åˆ—é¦–
 	{  
 		head=head->next;
-		cout<<"¤w§R°£²Ä "<<ptr->num<<" ¸¹¾Ç¥Í!!©m¦W¡G "
+		cout<<"å·²åˆªé™¤ç¬¬ "<<ptr->num<<" è™Ÿå­¸ç”Ÿ!!å§“åï¼š "
             <<ptr->name<<endl;
 	}
 	else
 	{  
-		while(top->next!=ptr)//§ä¨ì§R°£ÂIªº«e¤@­Ó¦ì¸m
+		while(top->next!=ptr)//æ‰¾åˆ°åˆªé™¤é»žçš„å‰ä¸€å€‹ä½ç½®
 			top=top->next;
-		if(ptr->next==NULL)  //[±¡§Î2]:§R°£ÂI¦b¦ê¦C§À
+		if(ptr->next==NULL)  //[æƒ…å½¢2]:åˆªé™¤é»žåœ¨ä¸²åˆ—å°¾
 		{  
 			top->next=NULL;
-	 		cout<<"¤w§R°£²Ä "<<ptr->num<<" ¸¹¾Ç¥Í!!©m¦W¡G "
+	 		cout<<"å·²åˆªé™¤ç¬¬ "<<ptr->num<<" è™Ÿå­¸ç”Ÿ!!å§“åï¼š "
                 <<ptr->name<<endl;
 		}
-		else  //[±¡§Î3]:§R°£ÂI¦b¦ê¦C¤¤¥ô¤@¸`ÂI
+		else  //[æƒ…å½¢3]:åˆªé™¤é»žåœ¨ä¸²åˆ—ä¸­ä»»ä¸€ç¯€é»ž
 		{  
 			top->next=ptr->next;
-			cout<<"¤w§R°£²Ä "<<ptr->num<<" ¸¹¾Ç¥Í!!©m¦W¡G "
+			cout<<"å·²åˆªé™¤ç¬¬ "<<ptr->num<<" è™Ÿå­¸ç”Ÿ!!å§“åï¼š "
                 <<ptr->name<<endl;
 		}
 	}
-    delete []ptr;  //ÄÀ©ñ°O¾ÐÅéªÅ¶¡
-    return *head;  //¦^¶Ç¦ê¦C
+    delete []ptr;  //é‡‹æ”¾è¨˜æ†¶é«”ç©ºé–“
+    return *head;  //å›žå‚³ä¸²åˆ—
 }

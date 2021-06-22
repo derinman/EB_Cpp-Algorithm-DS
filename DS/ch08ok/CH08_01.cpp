@@ -3,17 +3,17 @@
 using namespace std;
 int main(void)
 {
-	int data[6]={6,5,9,7,2,8};	// ­ì©l¸ê®Æ 
-	cout<<"®ğªw±Æ§Çªk¡G\n­ì©l¸ê®Æ¬°¡G";
+	int data[6]={6,5,9,7,2,8};	// åŸå§‹è³‡æ–™ 
+	cout<<"æ°£æ³¡æ’åºæ³•ï¼š\nåŸå§‹è³‡æ–™ç‚ºï¼š";
 	for (int i=0;i<6;i++)
 		cout<<setw(3)<<data[i];
 	cout<<endl;
 
-	for (int i=5;i>0;i--)// ±½ºË¦¸¼Æ 
+	for (int i=5;i>0;i--)// æƒç„æ¬¡æ•¸ 
 	{
-		for (int j=0;j<i;j++)//¤ñ¸û¡B¥æ´«¦¸¼Æ
+		for (int j=0;j<i;j++)//æ¯”è¼ƒã€äº¤æ›æ¬¡æ•¸
 		{
-			if (data[j]>data[j+1])// ¤ñ¸û¬Û¾F¨â¼Æ¡A¦p²Ä¤@¼Æ¸û¤j«h¥æ´« 
+			if (data[j]>data[j+1])// æ¯”è¼ƒç›¸é„°å…©æ•¸ï¼Œå¦‚ç¬¬ä¸€æ•¸è¼ƒå¤§å‰‡äº¤æ› 
 			{
 				int tmp;
 				tmp=data[j];
@@ -21,12 +21,12 @@ int main(void)
 				data[j+1]=tmp;
 			}
 		}
-		cout<<"²Ä "<<6-i<<" ¦¸±Æ§Ç«áªºµ²ªG¬O¡G"; //§â¦U¦¸±½´y«áªºµ²ªG¦L¥X
+		cout<<"ç¬¬ "<<6-i<<" æ¬¡æ’åºå¾Œçš„çµæœæ˜¯ï¼š"; //æŠŠå„æ¬¡æƒæå¾Œçš„çµæœå°å‡º
 		for (int j=0;j<6;j++)
 			cout<<setw(3)<<data[j];
 		cout<<endl;
 	}
-	cout<<"±Æ§Ç«áµ²ªG¬°¡G";
+	cout<<"æ’åºå¾Œçµæœç‚ºï¼š";
 	for (int i=0;i<6;i++)
 		cout<<setw(3)<<data[i];
 	cout<<endl;

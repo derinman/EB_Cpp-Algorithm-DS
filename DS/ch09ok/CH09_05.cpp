@@ -3,51 +3,51 @@
 #include <ctime>
 #include<cstdlib>
 using namespace std;
-const int INDEXBOX = 10;   //Âø´êªí³Ì¤j¤¸¯À
-const int MAXNUM = 7;       //³Ì¤j¸ê®Æ­Ó¼Æ
+const int INDEXBOX = 10;   //é›œæ¹Šè¡¨æœ€å¤§å…ƒç´ 
+const int MAXNUM = 7;       //æœ€å¤§è³‡æ–™å€‹æ•¸
 int print_data(int *,int);
 int creat_table(int ,int *);
 
 int main(void)
 {  
 	int i,index[INDEXBOX],data[MAXNUM];
-	srand(time(NULL));     //¨Ì®É¶¡ªì©l¶Ã¼Æ
-	cout<<"­ì©l°}¦C­È¡G\n";
-	for(i=0;i<MAXNUM;i++)       //°_©l¸ê®Æ­È
+	srand(time(NULL));     //ä¾æ™‚é–“åˆå§‹äº‚æ•¸
+	cout<<"åŸå§‹é™£åˆ—å€¼ï¼š\n";
+	for(i=0;i<MAXNUM;i++)       //èµ·å§‹è³‡æ–™å€¼
 		data[i]=rand()%20+1;
-	for(i=0;i<INDEXBOX;i++)     //²M°£Âø´êªí
+	for(i=0;i<INDEXBOX;i++)     //æ¸…é™¤é›œæ¹Šè¡¨
 		index[i]=-1;
-	print_data(data,MAXNUM);    //¦C¦L°_©l¸ê®Æ
-	cout<<"Âø´êªí¤º®e¡G"<<endl;
-	for(i=0;i<MAXNUM;i++)       //«Ø¥ßÂø´êªí
+	print_data(data,MAXNUM);    //åˆ—å°èµ·å§‹è³‡æ–™
+	cout<<"é›œæ¹Šè¡¨å…§å®¹ï¼š"<<endl;
+	for(i=0;i<MAXNUM;i++)       //å»ºç«‹é›œæ¹Šè¡¨
 	{  
 		creat_table(data[i],index);
-		cout<<data[i]<<" =>";  //¦C¦L³æ¤@¤¸¯ÀªºÂø´êªí¦ì¸m
+		cout<<data[i]<<" =>";  //åˆ—å°å–®ä¸€å…ƒç´ çš„é›œæ¹Šè¡¨ä½ç½®
 		print_data(index,INDEXBOX);
 	}
-	cout<<"§¹¦¨Âø´êªí¡G"<<endl;     
-	print_data(index,INDEXBOX);  //¦C¦L³Ì«á§¹¦¨µ²ªG
+	cout<<"å®Œæˆé›œæ¹Šè¡¨ï¼š"<<endl;     
+	print_data(index,INDEXBOX);  //åˆ—å°æœ€å¾Œå®Œæˆçµæœ
 	return 0;
 }
-int print_data(int *data,int max)  //¦C¦L°}¦C°Æµ{¦¡
+int print_data(int *data,int max)  //åˆ—å°é™£åˆ—å‰¯ç¨‹å¼
 {  
 	cout<<"\t";
 	for(int i=0;i<max;i++)
 		cout<<"["<<setw(2)<<data[i]<<"] ";
 	cout<<endl;
 }
-int creat_table(int num,int *index)  //«Ø¥ßÂø´êªí°Æµ{¦¡
+int creat_table(int num,int *index)  //å»ºç«‹é›œæ¹Šè¡¨å‰¯ç¨‹å¼
 {  
 	int tmp;
-	tmp=num%INDEXBOX;    //Âø´ê¨ç¼Æ=¸ê®Æ%INDEXBOX
+	tmp=num%INDEXBOX;    //é›œæ¹Šå‡½æ•¸=è³‡æ–™%INDEXBOX
 	while(1)
 	{  
-		if(index[tmp]==-1)      //¦pªG¸ê®Æ¹ïÀ³ªº¦ì¸m¬OªÅªº
+		if(index[tmp]==-1)      //å¦‚æœè³‡æ–™å°æ‡‰çš„ä½ç½®æ˜¯ç©ºçš„
 		{  
-			index[tmp]=num;     //«hª½±µ¦s¤J¸ê®Æ
+			index[tmp]=num;     //å‰‡ç›´æ¥å­˜å…¥è³‡æ–™
 			break;
 		}
 		else
-			tmp=(tmp+1)%INDEXBOX;    //§_«h©¹«á§ä¦ì¸m¦s©ñ
+			tmp=(tmp+1)%INDEXBOX;    //å¦å‰‡å¾€å¾Œæ‰¾ä½ç½®å­˜æ”¾
 	}
 }

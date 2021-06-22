@@ -8,7 +8,7 @@ bool is_prime(int n)
 	int i=2;
 	while (i<=n)
 	{
-		if(n%i==0) //¦pªG¾ã°£,i¬Onªº¦]¼Æ,¦^¶Ç false
+		if(n%i==0) //å¦‚æžœæ•´é™¤,iæ˜¯nçš„å› æ•¸,å›žå‚³ false
 		    return false;
 		i=i+1;
 		return true;
@@ -17,18 +17,18 @@ bool is_prime(int n)
 int main()
 {
 	int n;
-	cout<<"½Ð¿é¤J¤@­Ó¤j©óµ¥©ó2ªº¼Æ¦r: "; 
+	cout<<"è«‹è¼¸å…¥ä¸€å€‹å¤§æ–¼ç­‰æ–¼2çš„æ•¸å­—: "; 
 	cin>>n;
 	cout<<endl;
 	if(n==2)
 	{ 
-	    cout<<n<<"¬O½è¼Æ";
+	    cout<<n<<"æ˜¯è³ªæ•¸";
 	    return 0;
 	} 
 	if(is_prime(n))
-	    cout<<n<<"¬O½è¼Æ";
+	    cout<<n<<"æ˜¯è³ªæ•¸";
 	else
-	    cout<<n<<"¤£¬O½è¼Æ";
+	    cout<<n<<"ä¸æ˜¯è³ªæ•¸";
 
     return 0;	
 }

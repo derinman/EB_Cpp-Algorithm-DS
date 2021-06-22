@@ -1,28 +1,28 @@
 #include <iostream>
 using namespace std;
-#define ARRAY_SIZE 5  //¯x°}ªººû¼Æ¤j¤p 
+#define ARRAY_SIZE 5  //çŸ©é™£çš„ç¶­æ•¸å¤§å° 
 int getValue(int ,int);
-int A[ARRAY_SIZE][ARRAY_SIZE]={ //¤W¤T¨¤¯x°}ªº¤º®e 
+int A[ARRAY_SIZE][ARRAY_SIZE]={ //ä¸Šä¸‰è§’çŸ©é™£çš„å…§å®¹ 
        {7, 8, 12, 21, 9}, 
        {0, 5, 14,  17, 6}, 
        {0, 0, 7, 23, 24}, 
        {0, 0, 0,  32, 19}, 
        {0, 0, 0,  0,  8}};  
-//¤@ºû°}¦Cªº°}¦C«Å§i 
+//ä¸€ç¶­é™£åˆ—çš„é™£åˆ—å®£å‘Š 
 int B[ARRAY_SIZE*(1+ARRAY_SIZE)/2];  
 int main()
 {
     int i=0,j=0;
     int index;    
 		cout<<"=========================================="<<endl;
-		cout<<"¤W¤T¨¤§Î¯x°}¡G"<<endl;
+		cout<<"ä¸Šä¸‰è§’å½¢çŸ©é™£ï¼š"<<endl;
 		for ( i = 0 ; i < ARRAY_SIZE ; i++ ) 
 		{
 			for ( j = 0 ; j < ARRAY_SIZE ; j++ ) 
 		        cout<<"\t"<<A[i][j];
 		    cout<<endl;    
 		}
-		//±N¥k¤W¤T¨¤¯x°}À£ÁY¬°¤@ºû°}¦C 
+		//å°‡å³ä¸Šä¸‰è§’çŸ©é™£å£“ç¸®ç‚ºä¸€ç¶­é™£åˆ— 
 		index=0;
 		for ( i = 0 ; i < ARRAY_SIZE ; i++ ) 
 		{
@@ -32,7 +32,7 @@ int main()
             }
         }
 		cout<<"=========================================="<<endl;
-		cout<<"¥H¤@ºûªº¤è¦¡ªí¥Ü¡G"<<endl;
+		cout<<"ä»¥ä¸€ç¶­çš„æ–¹å¼è¡¨ç¤ºï¼š"<<endl;
 		cout<<"\t[";
 		for ( i = 0 ; i < ARRAY_SIZE ; i++ ) 
 		{

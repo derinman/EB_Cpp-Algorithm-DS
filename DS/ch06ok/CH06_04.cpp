@@ -39,19 +39,19 @@ btree creat_tree(btree root,int val)
 	}
 	return root;
 }
-btree search(btree ptr,int val)     //·j´M¤G¤¸¾ğ°Æµ{¦¡
+btree search(btree ptr,int val)     //æœå°‹äºŒå…ƒæ¨¹å‰¯ç¨‹å¼
 {  
-	int i=1;                     //§PÂ_°õ¦æ¦¸¼ÆªºÅÜ¼Æ
+	int i=1;                     //åˆ¤æ–·åŸ·è¡Œæ¬¡æ•¸çš„è®Šæ•¸
 	while(1)
 	{  
-		if(ptr==NULL)            //¨S§ä¨ì´N¶Ç¦^NULL
+		if(ptr==NULL)            //æ²’æ‰¾åˆ°å°±å‚³å›NULL
 			return NULL;
-		if(ptr->data==val)       //¸`ÂI­Èµ¥©ó·j´M­È
+		if(ptr->data==val)       //ç¯€é»å€¼ç­‰æ–¼æœå°‹å€¼
 		{  
-			cout<<"¦@·j´M "<<i<<"¦¸"<<endl;
+			cout<<"å…±æœå°‹ "<<i<<"æ¬¡"<<endl;
 			return ptr;
 		}
-		else if(ptr->data > val)  //¸`ÂI­È¤j©ó·j´M­È
+		else if(ptr->data > val)  //ç¯€é»å€¼å¤§æ–¼æœå°‹å€¼
 			ptr=ptr->left;
 		else
 			ptr=ptr->right;
@@ -63,18 +63,18 @@ int main()
 {  
 	int i,data,arr[]={7,1,4,2,8,13,12,11,15,9,5};
 	btree ptr=NULL;
-	cout<<"[­ì©l°}¦C¤º®e]"<<endl;
+	cout<<"[åŸå§‹é™£åˆ—å…§å®¹]"<<endl;
 	for (i=0;i<11;i++)              
 	{  
-		ptr=creat_tree(ptr,arr[i]);  //«Ø¥ß¤G¤¸¾ğ
+		ptr=creat_tree(ptr,arr[i]);  //å»ºç«‹äºŒå…ƒæ¨¹
 		cout<<"["<<arr[i]<<"] ";
 	}
 	cout<<endl;
-	cout<<"½Ğ¿é¤J·j´M­È¡G"<<endl;
+	cout<<"è«‹è¼¸å…¥æœå°‹å€¼ï¼š"<<endl;
 	cin>>data;
-	if((search(ptr,data)) !=NULL)        //·j´M¤G¤¸¾ğ
-		cout<<"§A­n§äªº­È ["<<data<<" ] ¦³§ä¨ì!!"<<endl;
+	if((search(ptr,data)) !=NULL)        //æœå°‹äºŒå…ƒæ¨¹
+		cout<<"ä½ è¦æ‰¾çš„å€¼ ["<<data<<" ] æœ‰æ‰¾åˆ°!!"<<endl;
 	else
-		cout<<"±z­n§äªº­È¨S§ä¨ì!!"<<endl;
+		cout<<"æ‚¨è¦æ‰¾çš„å€¼æ²’æ‰¾åˆ°!!"<<endl;
 	return 0;
 }

@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:Âù¦V¦î¦C¹ê§@
+[ç¤ºç¯„]:é›™å‘ä½‡åˆ—å¯¦ä½œ
 */
 #include <iostream>
 #include <cstdlib>
@@ -15,49 +15,49 @@ typedef class Node QueueNode;
 typedef QueueNode *QueueByLinkedList;
 QueueByLinkedList front=NULL;
 QueueByLinkedList rear=NULL;
-//¤èªkenqueue:¦î¦C¸ê®Æªº¦s¤J
+//æ–¹æ³•enqueue:ä½‡åˆ—è³‡æ–™çš„å­˜å…¥
 void enqueue(int value) 
 {
-   QueueByLinkedList node; //«Ø¥ß¸`ÂI
+   QueueByLinkedList node; //å»ºç«‹ç¯€é»
    node=new QueueNode;
    node->data=value;
    node->next=NULL;
-   //ÀË¬d¬O§_¬°ªÅ¦î¦C
+   //æª¢æŸ¥æ˜¯å¦ç‚ºç©ºä½‡åˆ—
    if (rear==NULL)
-      front=node;//·s«Ø¥ßªº¸`ÂI¦¨¬°²Ä1­Ó¸`ÂI
+      front=node;//æ–°å»ºç«‹çš„ç¯€é»æˆç‚ºç¬¬1å€‹ç¯€é»
    else
-      rear->next=node;//±N¸`ÂI¥[¤J¨ì¦î¦Cªº§Àºİ
-   rear=node;//±N¦î¦Cªº§Àºİ«ü¼Ğ«ü¦V·s¥[¤Jªº¸`ÂI
+      rear->next=node;//å°‡ç¯€é»åŠ å…¥åˆ°ä½‡åˆ—çš„å°¾ç«¯
+   rear=node;//å°‡ä½‡åˆ—çš„å°¾ç«¯æŒ‡æ¨™æŒ‡å‘æ–°åŠ å…¥çš„ç¯€é»
 }
-//¤èªkdequeue:¦î¦C¸ê®Æªº¨ú¥X
+//æ–¹æ³•dequeue:ä½‡åˆ—è³‡æ–™çš„å–å‡º
 int dequeue(int action)
 {
    int value;
    QueueByLinkedList tempNode,startNode;
-   //±q«eºİ¨ú¥X¸ê®Æ
+   //å¾å‰ç«¯å–å‡ºè³‡æ–™
    if (!(front==NULL) && action==1) 
    {
      if(front==rear) rear=NULL;
-     value=front->data;//±N¦î¦C¸ê®Æ±q«eºİ¨ú¥X
-     front=front->next;//±N¦î¦Cªº«eºİ«ü¼Ğ«ü¦V¤U¤@­Ó
+     value=front->data;//å°‡ä½‡åˆ—è³‡æ–™å¾å‰ç«¯å–å‡º
+     front=front->next;//å°‡ä½‡åˆ—çš„å‰ç«¯æŒ‡æ¨™æŒ‡å‘ä¸‹ä¸€å€‹
      return value;
    }
-   //±q§Àºİ¨ú¥X¸ê®Æ
+   //å¾å°¾ç«¯å–å‡ºè³‡æ–™
    else if(!(rear==NULL) && action==2) 
    {
-     startNode=front;//¥ı°O¤U«eºİªº«ü¼Ğ­È
-     value=rear->data;//¨ú¥X¥Ø«e§Àºİªº¸ê®Æ
-     //§ä´M³Ì§Àºİ¸`ÂIªº«e¤@­Ó¸`ÂI
+     startNode=front;//å…ˆè¨˜ä¸‹å‰ç«¯çš„æŒ‡æ¨™å€¼
+     value=rear->data;//å–å‡ºç›®å‰å°¾ç«¯çš„è³‡æ–™
+     //æ‰¾å°‹æœ€å°¾ç«¯ç¯€é»çš„å‰ä¸€å€‹ç¯€é»
      tempNode=front;
      while (front->next!=rear && front->next!=NULL) 
      { 
            front=front->next;
            tempNode=front;
      }
-     front=startNode;//°O¿ı±q§Àºİ¨ú¥X¸ê®Æ«áªº¦î¦C«eºİ«ü¼Ğ
-     rear=tempNode;//°O¿ı±q§Àºİ¨ú¥X¸ê®Æ«áªº¦î¦C§Àºİ«ü¼Ğ
-     //¤U¤@¦æµ{¦¡¬O«ü·í¦î¦C¤¤¶È³Ñ¤U³Ì¸`ÂI®É,
-     //¨ú¥X¸ê®Æ«á«K±Nfront¤Îrear«ü¦VNULL
+     front=startNode;//è¨˜éŒ„å¾å°¾ç«¯å–å‡ºè³‡æ–™å¾Œçš„ä½‡åˆ—å‰ç«¯æŒ‡æ¨™
+     rear=tempNode;//è¨˜éŒ„å¾å°¾ç«¯å–å‡ºè³‡æ–™å¾Œçš„ä½‡åˆ—å°¾ç«¯æŒ‡æ¨™
+     //ä¸‹ä¸€è¡Œç¨‹å¼æ˜¯æŒ‡ç•¶ä½‡åˆ—ä¸­åƒ…å‰©ä¸‹æœ€ç¯€é»æ™‚,
+     //å–å‡ºè³‡æ–™å¾Œä¾¿å°‡frontåŠrearæŒ‡å‘NULL
      if ((front->next==NULL) || (rear->next==NULL)) 
      { 
          front=NULL;
@@ -70,29 +70,29 @@ int dequeue(int action)
 int main(void)
 {
    int temp;
-   cout<<"¥HÃìµ²¦ê¦C¨Ó¹ê§@Âù¦V¦î¦C"<<endl;
+   cout<<"ä»¥éˆçµä¸²åˆ—ä¾†å¯¦ä½œé›™å‘ä½‡åˆ—"<<endl;
    cout<<"===================================="<<endl;
-   cout<<"¦bÂù¦V¦î¦C«eºİ¥[¤J²Ä1µ§¸ê®Æ¡A¦¹¸ê®Æ­È¬°1"<<endl;
+   cout<<"åœ¨é›™å‘ä½‡åˆ—å‰ç«¯åŠ å…¥ç¬¬1ç­†è³‡æ–™ï¼Œæ­¤è³‡æ–™å€¼ç‚º1"<<endl;
    enqueue(1);
-   cout<<"¦bÂù¦V¦î¦C«eºİ¥[¤J²Ä2µ§¸ê®Æ¡A¦¹¸ê®Æ­È¬°3"<<endl;
+   cout<<"åœ¨é›™å‘ä½‡åˆ—å‰ç«¯åŠ å…¥ç¬¬2ç­†è³‡æ–™ï¼Œæ­¤è³‡æ–™å€¼ç‚º3"<<endl;
    enqueue(3);
-   cout<<"¦bÂù¦V¦î¦C«eºİ¥[¤J²Ä3µ§¸ê®Æ¡A¦¹¸ê®Æ­È¬°5"<<endl;
+   cout<<"åœ¨é›™å‘ä½‡åˆ—å‰ç«¯åŠ å…¥ç¬¬3ç­†è³‡æ–™ï¼Œæ­¤è³‡æ–™å€¼ç‚º5"<<endl;
    enqueue(5);
-   cout<<"¦bÂù¦V¦î¦C«eºİ¥[¤J²Ä4µ§¸ê®Æ¡A¦¹¸ê®Æ­È¬°7"<<endl;
+   cout<<"åœ¨é›™å‘ä½‡åˆ—å‰ç«¯åŠ å…¥ç¬¬4ç­†è³‡æ–™ï¼Œæ­¤è³‡æ–™å€¼ç‚º7"<<endl;
    enqueue(7);
-   cout<<"¦bÂù¦V¦î¦C«eºİ¥[¤J²Ä5µ§¸ê®Æ¡A¦¹¸ê®Æ­È¬°9"<<endl;
+   cout<<"åœ¨é›™å‘ä½‡åˆ—å‰ç«¯åŠ å…¥ç¬¬5ç­†è³‡æ–™ï¼Œæ­¤è³‡æ–™å€¼ç‚º9"<<endl;
    enqueue(9);
    cout<<"===================================="<<endl;
    temp=dequeue(1);
-   cout<<"±qÂù¦V¦î¦C«eºİ¨Ì§Ç¨ú¥Xªº¤¸¯À¸ê®Æ­È¬°¡G"<<setw(1)<<temp<<endl;
+   cout<<"å¾é›™å‘ä½‡åˆ—å‰ç«¯ä¾åºå–å‡ºçš„å…ƒç´ è³‡æ–™å€¼ç‚ºï¼š"<<setw(1)<<temp<<endl;
    temp=dequeue(2);
-   cout<<"±qÂù¦V¦î¦C§Àºİ¨Ì§Ç¨ú¥Xªº¤¸¯À¸ê®Æ­È¬°¡G"<<setw(1)<<temp<<endl;
+   cout<<"å¾é›™å‘ä½‡åˆ—å°¾ç«¯ä¾åºå–å‡ºçš„å…ƒç´ è³‡æ–™å€¼ç‚ºï¼š"<<setw(1)<<temp<<endl;
    temp=dequeue(1);
-   cout<<"±qÂù¦V¦î¦C«eºİ¨Ì§Ç¨ú¥Xªº¤¸¯À¸ê®Æ­È¬°¡G"<<setw(1)<<temp<<endl;
+   cout<<"å¾é›™å‘ä½‡åˆ—å‰ç«¯ä¾åºå–å‡ºçš„å…ƒç´ è³‡æ–™å€¼ç‚ºï¼š"<<setw(1)<<temp<<endl;
    temp=dequeue(2);
-   cout<<"±qÂù¦V¦î¦C§Àºİ¨Ì§Ç¨ú¥Xªº¤¸¯À¸ê®Æ­È¬°¡G"<<setw(1)<<temp<<endl;
+   cout<<"å¾é›™å‘ä½‡åˆ—å°¾ç«¯ä¾åºå–å‡ºçš„å…ƒç´ è³‡æ–™å€¼ç‚ºï¼š"<<setw(1)<<temp<<endl;
    temp=dequeue(1);
-   cout<<"±qÂù¦V¦î¦C«eºİ¨Ì§Ç¨ú¥Xªº¤¸¯À¸ê®Æ­È¬°¡G"<<setw(1)<<temp<<endl;
+   cout<<"å¾é›™å‘ä½‡åˆ—å‰ç«¯ä¾åºå–å‡ºçš„å…ƒç´ è³‡æ–™å€¼ç‚ºï¼š"<<setw(1)<<temp<<endl;
    cout<<endl;
    return 0;
 }

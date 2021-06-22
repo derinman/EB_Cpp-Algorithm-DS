@@ -1,53 +1,53 @@
 /*
-[¥Ü½d]:´¡¤J±Æ§Çªk
+[ç¤ºç¯„]:æ’å…¥æ’åºæ³•
 */
 #include <iostream>
 #include <iomanip>
-#define SIZE 6  //©w¸q°}¦C¤j¤p
+#define SIZE 6  //å®šç¾©é™£åˆ—å¤§å°
 using namespace std;
 
-void inser (int *);//«Å§i´¡¤J±Æ§Çªk°Æµ{¦¡
-void showdata (int *);//«Å§i¦C¦L°}¦C°Æµ{¦¡
-void inputarr (int *,int);//«Å§i¿é¤J°}¦C°Æµ{¦¡
+void inser (int *);//å®£å‘Šæ’å…¥æ’åºæ³•å‰¯ç¨‹å¼
+void showdata (int *);//å®£å‘Šåˆ—å°é™£åˆ—å‰¯ç¨‹å¼
+void inputarr (int *,int);//å®£å‘Šè¼¸å…¥é™£åˆ—å‰¯ç¨‹å¼
 int  main(void)
 { 
 	int data[SIZE];
-	inputarr(data,SIZE);//§â°}¦C¦WºÙ¤Î°}¦C¤j¤p¶Çµ¹°Æµ{¦¡
-	cout<<"±z¿é¤Jªº­ì©l°}¦C¬O¡G";
+	inputarr(data,SIZE);//æŠŠé™£åˆ—åç¨±åŠé™£åˆ—å¤§å°å‚³çµ¦å‰¯ç¨‹å¼
+	cout<<"æ‚¨è¼¸å…¥çš„åŸå§‹é™£åˆ—æ˜¯ï¼š";
 	showdata (data);
 	inser(data);
 	return 0;
 }
 void inputarr(int data[],int size)
 {
-	for (int i=0;i<size;i++)//§Q¥Î°j°é¿é¤J°}¦C¸ê®Æ
+	for (int i=0;i<size;i++)//åˆ©ç”¨è¿´åœˆè¼¸å…¥é™£åˆ—è³‡æ–™
 	{ 
-		cout<<"½Ğ¿é¤J²Ä "<<i+1<<" ­Ó¤¸¯À¡G";
+		cout<<"è«‹è¼¸å…¥ç¬¬ "<<i+1<<" å€‹å…ƒç´ ï¼š";
 		cin>>data[i];
 	}
 }
 void showdata(int data[])
 {  
 	for (int i=0;i<SIZE;i++)
-		cout<<setw(3)<<data[i];//¦C¦L°}¦C¸ê®Æ
+		cout<<setw(3)<<data[i];//åˆ—å°é™£åˆ—è³‡æ–™
 	cout<<endl;
 }
 void inser(int data[])
 {  
-	int i;     //i¬°±½´y¦¸¼Æ
-	int j;     //¥Hj¨Ó©w¦ì¤ñ¸ûªº¤¸¯À
-	for (i=1;i<SIZE;i++)  //±½´y°j°é¦¸¼Æ¬°SIZE-1
+	int i;     //iç‚ºæƒææ¬¡æ•¸
+	int j;     //ä»¥jä¾†å®šä½æ¯”è¼ƒçš„å…ƒç´ 
+	for (i=1;i<SIZE;i++)  //æƒæè¿´åœˆæ¬¡æ•¸ç‚ºSIZE-1
 	{  
- 		int tmp;   //tmp¥Î¨Ó¼È¦s¸ê®Æ
+ 		int tmp;   //tmpç”¨ä¾†æš«å­˜è³‡æ–™
 		tmp=data[i];
         j=i-1;
-	    while (j>=0 && tmp<data[j])  //¦pªG²Ä¤G¤¸¯À¤p©ó²Ä¤@¤¸¯À
+	    while (j>=0 && tmp<data[j])  //å¦‚æœç¬¬äºŒå…ƒç´ å°æ–¼ç¬¬ä¸€å…ƒç´ 
 		{							 
-			data[j+1]=data[j];		//´N§â©Ò¦³¤¸¯À©¹«á±À¤@­Ó¦ì¸m		
+			data[j+1]=data[j];		//å°±æŠŠæ‰€æœ‰å…ƒç´ å¾€å¾Œæ¨ä¸€å€‹ä½ç½®		
 			j--;
 		}
-		data[j+1]=tmp;              //³Ì¤pªº¤¸¯À©ñ¨ì²Ä¤@­Ó¤¸¯À	
-		cout<<"²Ä "<<i<<" ¦¸±½ºË¡G";
+		data[j+1]=tmp;              //æœ€å°çš„å…ƒç´ æ”¾åˆ°ç¬¬ä¸€å€‹å…ƒç´ 	
+		cout<<"ç¬¬ "<<i<<" æ¬¡æƒç„ï¼š";
 		showdata(data);
 	}
 }

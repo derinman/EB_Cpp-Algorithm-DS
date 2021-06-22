@@ -1,6 +1,6 @@
 /*
-[¥Ü½d]:ª½±µ¦X¨Ö±Æ§Çªk
-       ¸ê®ÆÀÉ¦W¡Gdata1.txt,data2.txt¡A¦X¨Ö«áÀÉ®×¡Gdata.txt
+[ç¤ºç¯„]:ç›´æ¥åˆä½µæ’åºæ³•
+       è³‡æ–™æª”åï¼šdata1.txt,data2.txtï¼Œåˆä½µå¾Œæª”æ¡ˆï¼šdata.txt
 */
 #include <fstream>
 #include <iostream>
@@ -19,17 +19,17 @@ void merge(ofstream& fp, ifstream& fp1, ifstream& fp2)
 		if (n1 <= n2)
 		{  
             fp.put(n1);   
-			fp1>>n1;/*±µµÛÅª¤U¤@µ§ n1 ªº¸ê®Æ*/
+			fp1>>n1;/*æ¥è‘—è®€ä¸‹ä¸€ç­† n1 çš„è³‡æ–™*/
 		}
 		else
 		{  
-            fp.put(n2);/*¦pªGn2¤ñ¸û¤p¡A«h§ân2¦s¨ìfp¸Ì*/
-			fp2>>n2;/*±µµÛÅª¤U¤@µ§ n2ªº¸ê®Æ*/
+            fp.put(n2);/*å¦‚æœn2æ¯”è¼ƒå°ï¼Œå‰‡æŠŠn2å­˜åˆ°fpè£¡*/
+			fp2>>n2;/*æ¥è‘—è®€ä¸‹ä¸€ç­† n2çš„è³‡æ–™*/
 		}
 	}
-	if(fp1.eof())/*¦pªG¨ä¤¤¤@­Ó¸ê®ÆÀÉ¤wÅª¨ú§¹²¦¡A¸g§PÂ_«á*/
+	if(fp1.eof())/*å¦‚æœå…¶ä¸­ä¸€å€‹è³‡æ–™æª”å·²è®€å–å®Œç•¢ï¼Œç¶“åˆ¤æ–·å¾Œ*/
 	{ 
-       /*§â¥t¤@­Ó¸ê®ÆÀÉ¤ºªº¸ê®Æ¥ş³¡©ñ¨ìfp¸Ì*/
+       /*æŠŠå¦ä¸€å€‹è³‡æ–™æª”å…§çš„è³‡æ–™å…¨éƒ¨æ”¾åˆ°fpè£¡*/
 		while (!fp2.eof())
 		{  
             fp2>>n2;
@@ -55,35 +55,35 @@ int main(void)
 	fp1.open("data1.txt",ios::in);
 	fp2.open("data2.txt",ios::in);
 	if(!fp.is_open())
-		cout<<"¶}±Ò¥DÀÉ¥¢±Ñ"<<endl;
+		cout<<"é–‹å•Ÿä¸»æª”å¤±æ•—"<<endl;
 	else if(!fp1.is_open())
-		cout<<"¶}±Ò¸ê®ÆÀÉ 1 ¥¢±Ñ"<<endl;
+		cout<<"é–‹å•Ÿè³‡æ–™æª” 1 å¤±æ•—"<<endl;
 	else if(!fp2.is_open())
-		cout<<"¶}±Ò¸ê®ÆÀÉ 2 ¥¢±Ñ"<<endl;
+		cout<<"é–‹å•Ÿè³‡æ–™æª” 2 å¤±æ•—"<<endl;
 	else
 	{  
-		cout<<"¸ê®Æ±Æ§Ç¤¤......"<<endl;
+		cout<<"è³‡æ–™æ’åºä¸­......"<<endl;
         merge(fp,fp1,fp2);
-		cout<<"¸ê®Æ³B²z§¹¦¨!!"<<endl;
+		cout<<"è³‡æ–™è™•ç†å®Œæˆ!!"<<endl;
 	}
 	fp.close();
 	fp1.close();
 	fp2.close();
-	cout<<"data1.txt¸ê®Æ¤º®e¬°¡G"<<endl;
+	cout<<"data1.txtè³‡æ–™å…§å®¹ç‚ºï¼š"<<endl;
 	f1.open("data1.txt",ios::in);
 	while(!f1.eof()) 
 	{  
 		f1>>txt;
 		cout<<txt<<endl;
 	}
-	cout<<"data2.txt¸ê®Æ¤º®e¬°¡G"<<endl;
+	cout<<"data2.txtè³‡æ–™å…§å®¹ç‚ºï¼š"<<endl;
 	f2.open("data2.txt",ios::in);
 	while(!f2.eof())
 	{  
 		f2>>txt;
 		cout<<txt<<endl;
 	}
-	cout<<"±Æ§Ç«ádata.txt¸ê®Æ¤º®e¬°¡G"<<endl;
+	cout<<"æ’åºå¾Œdata.txtè³‡æ–™å…§å®¹ç‚ºï¼š"<<endl;
 	f.open("data.txt",ios::in);
 	while(!f.eof())
 	{  

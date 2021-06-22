@@ -5,12 +5,12 @@ using namespace std;
 int main()
 {
 	int *intptr = new int(50);
- 	//«Å§i¤@«ü¦V¾ã¼Æªº«ü¼Ğ,¦b¸Ó°O¾ĞÅé¤¤¦s¤J¾ã¼Æ­È50
+ 	//å®£å‘Šä¸€æŒ‡å‘æ•´æ•¸çš„æŒ‡æ¨™,åœ¨è©²è¨˜æ†¶é«”ä¸­å­˜å…¥æ•´æ•¸å€¼50
  	float *floatptr = new float;
- 	//«Å§i¤@«ü¦V¯BÂI¼Æªº«ü¼Ğ,¦ı¥¼«ü©w°O¾ĞÅé¤¤Àx¦sªº¸ê®Æ­È
- 	cout << "intptr «ü¦Vªº¸ê®Æ­È¡G" << *intptr << "\n\n";
+ 	//å®£å‘Šä¸€æŒ‡å‘æµ®é»æ•¸çš„æŒ‡æ¨™,ä½†æœªæŒ‡å®šè¨˜æ†¶é«”ä¸­å„²å­˜çš„è³‡æ–™å€¼
+ 	cout << "intptr æŒ‡å‘çš„è³‡æ–™å€¼ï¼š" << *intptr << "\n\n";
  	*floatptr = 0.5;
- 	cout << "floatptr «ü¦Vªº¸ê®Æ­È¡G" << *floatptr << "\n\n";
+ 	cout << "floatptr æŒ‡å‘çš„è³‡æ–™å€¼ï¼š" << *floatptr << "\n\n";
 
 	delete intptr;
 	delete floatptr;

@@ -2,12 +2,12 @@
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
-#define INDEXBOX 7       //Âø´êªí¤¸¯À­Ó¼Æ
-#define MAXNUM 13        //¸ê®Æ­Ó¼Æ
+#define INDEXBOX 7       //é›œæ¹Šè¡¨å…ƒç´ å€‹æ•¸
+#define MAXNUM 13        //è³‡æ–™å€‹æ•¸
 using namespace std;
-void creat_table(int);   //«Å§i«Ø¥ßÂø´êªí°Æµ{¦¡
-void print_data(int);    //«Å§i¦C¦LÂø´êªí°Æµ{¦¡
-class list              //«Å§i¦ê¦Cµ²ºc
+void creat_table(int);   //å®£å‘Šå»ºç«‹é›œæ¹Šè¡¨å‰¯ç¨‹å¼
+void print_data(int);    //å®£å‘Šåˆ—å°é›œæ¹Šè¡¨å‰¯ç¨‹å¼
+class list              //å®£å‘Šä¸²åˆ—çµæ§‹
 {  
     public:
 	int val;
@@ -15,38 +15,38 @@ class list              //«Å§i¦ê¦Cµ²ºc
 };
 typedef class list node;
 typedef node *link;
-node indextable[INDEXBOX];  //«Å§i°ÊºA°}¦C
+node indextable[INDEXBOX];  //å®£å‘Šå‹•æ…‹é™£åˆ—
 int main(void)
 {  
 	int i,data[MAXNUM];
 	srand((unsigned)time(NULL));
-	for(i=0;i<INDEXBOX;i++) //²M°£Âø´êªí
+	for(i=0;i<INDEXBOX;i++) //æ¸…é™¤é›œæ¹Šè¡¨
 	{  
 		indextable[i].val=-1;
 		indextable[i].next=NULL;
 	}
-	cout<<"­ì©l¸ê®Æ¡G\n\t";
+	cout<<"åŸå§‹è³‡æ–™ï¼š\n\t";
 	for(i=0;i<MAXNUM;i++)
 	{  
-		data[i]=rand()%30+1; //¶Ã¼Æ«Ø¥ß­ì©l¸ê®Æ
-		cout<<"["<<setw(2)<<data[i]<<"] "; //¨Ã¦C¦L¥X¨Ó
+		data[i]=rand()%30+1; //äº‚æ•¸å»ºç«‹åŸå§‹è³‡æ–™
+		cout<<"["<<setw(2)<<data[i]<<"] "; //ä¸¦åˆ—å°å‡ºä¾†
 		if(i%8==7)
 			cout<<"\n\t";
 	}
-	cout<<"\nÂø´êªí¡G\n";
+	cout<<"\né›œæ¹Šè¡¨ï¼š\n";
 	for(i=0;i<MAXNUM;i++)
-		creat_table(data[i]); //«Ø¥ßÂø´êªí
+		creat_table(data[i]); //å»ºç«‹é›œæ¹Šè¡¨
 	for(i=0;i<INDEXBOX;i++)
-		print_data(i);        //¦C¦LÂø´êªí
+		print_data(i);        //åˆ—å°é›œæ¹Šè¡¨
 	cout<<endl;
 	return 0;
 }
-void creat_table(int val)     //«Ø¥ßÂø´êªí°Æµ{¦¡
+void creat_table(int val)     //å»ºç«‹é›œæ¹Šè¡¨å‰¯ç¨‹å¼
 {  
 	link newnode;
 	link current;
 	int hash;
-	hash=val%7;              //Âø´ê¨ç¼Æ°£¥H7¨ú¾l¼Æ
+	hash=val%7;              //é›œæ¹Šå‡½æ•¸é™¤ä»¥7å–é¤˜æ•¸
 	newnode=new node;
 	current=new node;
 	newnode->val=val;
@@ -56,21 +56,21 @@ void creat_table(int val)     //«Ø¥ßÂø´êªí°Æµ{¦¡
         indextable[hash].next=newnode;
     else
         while(current->next!=NULL) current=current->next;
-    current->next=newnode; //±N¸`ÂI¥[¦b¦ê¦C
+    current->next=newnode; //å°‡ç¯€é»åŠ åœ¨ä¸²åˆ—
 }
-void print_data(int val)   //¦C¦LÂø´êªí°Æµ{¦¡
+void print_data(int val)   //åˆ—å°é›œæ¹Šè¡¨å‰¯ç¨‹å¼
 {  
 	link head;
 	int i=0;
-	head=indextable[val].next;  //°_©l«ü¼Ğ
-	cout<<"   "<<setw(2)<<val<<"¡G\t";//¯Á¤Ş¦ì§}
+	head=indextable[val].next;  //èµ·å§‹æŒ‡æ¨™
+	cout<<"   "<<setw(2)<<val<<"ï¼š\t";//ç´¢å¼•ä½å€
 	while(head!=NULL)
 	{  
 		cout<<"["<<setw(2)<<head->val<<"]-";
 		i++;
-		if(i%8==7)  //±±¨îªø«×
+		if(i%8==7)  //æ§åˆ¶é•·åº¦
 			cout<<"\n\t";
 		head=head->next;
 	}
-	cout<<"\b \n";//²M°£³Ì«á¤@­Ó"-"²Å¸¹
+	cout<<"\b \n";//æ¸…é™¤æœ€å¾Œä¸€å€‹"-"ç¬¦è™Ÿ
 }

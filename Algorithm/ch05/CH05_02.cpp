@@ -14,17 +14,17 @@ int main(void)
 	while (1)
 	{  
 		num=0;
-		cout<<"½Ğ¿é¤J·j´MÁä­È(1-150)¡A¿é¤J-1µ²§ô¡G";
+		cout<<"è«‹è¼¸å…¥æœå°‹éµå€¼(1-150)ï¼Œè¼¸å…¥-1çµæŸï¼š";
 		cin>>val;
 		if(val==-1)
 			break;
 		num=bin_search(data,val);
 		if(num==-1)
-			cout<<"##### ¨S¦³§ä¨ì["<<setw(3)<<val<<"] #####"<<endl;
+			cout<<"##### æ²’æœ‰æ‰¾åˆ°["<<setw(3)<<val<<"] #####"<<endl;
 		else
-			cout<<"¦b²Ä "<<setw(2)<<num+1<<"­Ó¦ì¸m§ä¨ì ["<<setw(3)<<data[num]<<"]"<<endl;
+			cout<<"åœ¨ç¬¬ "<<setw(2)<<num+1<<"å€‹ä½ç½®æ‰¾åˆ° ["<<setw(3)<<data[num]<<"]"<<endl;
 	}
-	cout<<"¸ê®Æ¤º®e¡G"<<endl;
+	cout<<"è³‡æ–™å…§å®¹ï¼š"<<endl;
 	for(int i=0;i<8;i++)
 	{ 
 		for(int j=0;j<10;j++)
@@ -39,18 +39,18 @@ int bin_search(int data[80],int val)
 	int low,mid,high;
 	low=0;
 	high=79;
-	cout<<"·j´M³B²z¤¤......"<<endl;
+	cout<<"æœå°‹è™•ç†ä¸­......"<<endl;
 	while(low <= high && val !=-1)
 	{  
 		mid=(low+high)/2;
 		if(val<data[mid])
 		{  
-			cout<<val<<" ¤¶©ó¦ì¸m "<<low+1<<"["<<setw(3)<<data[low]<<"]¤Î¤¤¶¡­È "<<mid+1<<"["<<setw(3)<<data[mid]<<"]¡A§ä¥ª¥bÃä"<<endl;
+			cout<<val<<" ä»‹æ–¼ä½ç½® "<<low+1<<"["<<setw(3)<<data[low]<<"]åŠä¸­é–“å€¼ "<<mid+1<<"["<<setw(3)<<data[mid]<<"]ï¼Œæ‰¾å·¦åŠé‚Š"<<endl;
 			high=mid-1;	     
 		}
 		else if(val>data[mid])
 		{  
-			cout<<val<<" ¤¶©ó¤¤¶¡­È¦ì¸m "<<mid+1<<"["<<setw(3)<<data[mid]<<"]¤Î"<<high+1<<"["<<setw(3)<<data[high]<<"]¡A§ä¥k¥bÃä"<<endl;			
+			cout<<val<<" ä»‹æ–¼ä¸­é–“å€¼ä½ç½® "<<mid+1<<"["<<setw(3)<<data[mid]<<"]åŠ"<<high+1<<"["<<setw(3)<<data[high]<<"]ï¼Œæ‰¾å³åŠé‚Š"<<endl;			
    			low=mid+1;   	     
 		}
 		else

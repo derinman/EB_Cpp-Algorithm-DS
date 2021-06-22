@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:Âù¦VÃìµ²¦ê¦C¤¤¸`ÂIªº§R°£ 
+[ç¤ºç¯„]:é›™å‘éˆçµä¸²åˆ—ä¸­ç¯€é»çš„åˆªé™¤ 
 */
 #include <iostream>
 #include <cstdlib>
@@ -32,14 +32,14 @@ link findnode(link head,int num)
 
 link deletenode(link head,link del)   
 {  
-    if(head==NULL) //Âù¦V¦ê¦C¬OªÅªº
+    if(head==NULL) //é›™å‘ä¸²åˆ—æ˜¯ç©ºçš„
     {
-       cout<<"[¦ê¦C¬OªÅªº]"<<endl;
+       cout<<"[ä¸²åˆ—æ˜¯ç©ºçš„]"<<endl;
        return NULL;
     }
    if(del==NULL)
    {
-      cout<<"[¿ù»~:¤£¬O¦ê¦C¤¤ªº¸`ÂI]"<<endl;
+      cout<<"[éŒ¯èª¤:ä¸æ˜¯ä¸²åˆ—ä¸­çš„ç¯€é»]"<<endl;
       return NULL;
    }
    if(del==head)
@@ -49,11 +49,11 @@ link deletenode(link head,link del)
    }
    else
    {
-       if(del->rlink==NULL) //§R°£¦ê¦C§À
+       if(del->rlink==NULL) //åˆªé™¤ä¸²åˆ—å°¾
        {
           del->llink->rlink=NULL;
        }
-       else //§R°£¤¤¶¡¸`ÂI
+       else //åˆªé™¤ä¸­é–“ç¯€é»
        {
            del->llink->rlink=del->rlink;
            del->rlink->llink=del->llink;
@@ -76,7 +76,7 @@ int main()
     ,{"John"},{"Mark"},{"Ricky"},{"Lisa"}
     ,{"Jasica"},{"Hanson"},{"Amy"},{"Bob"},{"Jack"}};
 	srand((unsigned)time(NULL));
-	cout<<"®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ"<<endl;
+	cout<<"åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾"<<endl;
 	cout<<"=============================================="<<endl;
 	for(i=0;i<12;i++)
 	{  
@@ -90,10 +90,10 @@ int main()
             <<"] ["<<setw(3)<<data[j*3+i][1]<<"]  ";
 		cout<<endl;
 	}
-	head=new node; //«Ø¥ß¦ê¦C­º
+	head=new node; //å»ºç«‹ä¸²åˆ—é¦–
 	if(head==NULL)
 	{  
-		cout<<"Error!! °O¾ĞÅé°t¸m¥¢±Ñ!!"<<endl;
+		cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
 		exit(1);
 	}
 	else
@@ -104,7 +104,7 @@ int main()
 		   head->name[j]=namedata[0][j];
 	    head->score=data[0][1];
 	    llinknode=head;
-	    for(i=1;i<12;i++) //«Ø¥ß¦ê¦C
+	    for(i=1;i<12;i++) //å»ºç«‹ä¸²åˆ—
 	    {  
 		   newnode=new node;
 		   newnode->num=data[i][0];
@@ -119,9 +119,9 @@ int main()
 	
 	while(1)
 	{  
-		cout<<"½Ğ¿é¤J§R°£ªº¾Ç¥Í½s¸¹¡Aµ²§ô¿é¤J-1¡G";
+		cout<<"è«‹è¼¸å…¥åˆªé™¤çš„å­¸ç”Ÿç·¨è™Ÿï¼ŒçµæŸè¼¸å…¥-1ï¼š";
 		scanf("%d",&position);
-		if(position==-1) //°j°é¤¤Â_±ø¥ó
+		if(position==-1) //è¿´åœˆä¸­æ–·æ¢ä»¶
 			break;
 		else
 		{  
@@ -129,7 +129,7 @@ int main()
 		  	head=deletenode(head,ptr);
 		}
 	}
-	cout<<endl<<"\t®y¸¹\t    ©m¦W\t¦¨ÁZ"<<endl;         
+	cout<<endl<<"\tåº§è™Ÿ\t    å§“å\tæˆç¸¾"<<endl;         
 	cout<<"\t=============================="<<endl;
 	ptr=head;
 	while(ptr!=NULL)

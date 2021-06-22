@@ -13,18 +13,18 @@ int fib(int n)
 int fib_search(int data[MAX],int SearchKey)
 {
     int index=2; 
-    //¶O¤ó¼Æ¦Cªº·j´M
+    //è²»æ°æ•¸åˆ—çš„æœå°‹
     while(fib(index)<=MAX)
         index++;
     index--;
     //index >=2
-    //°_©lªº¶O¤ó¼Æ
+    //èµ·å§‹çš„è²»æ°æ•¸
     int RootNode=fib(index);
-    //¤W¤@­Ó¶O¤ó¼Æ
+    //ä¸Šä¸€å€‹è²»æ°æ•¸
     int diff1=fib(index-1); 
-    //¤W¤G­Ó¶O¤ó¼Æ§Ydiff2=fib(index-2)
+    //ä¸ŠäºŒå€‹è²»æ°æ•¸å³diff2=fib(index-2)
     int diff2=RootNode-diff1;
-    RootNode--;//³o¦C¹Bºâ¦¡¬O°t¦X°}¦Cªº¯Á¤Ş¬O±q0¶}©lÀx¦s¸ê®Æ
+    RootNode--;//é€™åˆ—é‹ç®—å¼æ˜¯é…åˆé™£åˆ—çš„ç´¢å¼•æ˜¯å¾0é–‹å§‹å„²å­˜è³‡æ–™
     while(1)
     {
        if(SearchKey==data[RootNode])
@@ -33,21 +33,21 @@ int fib_search(int data[MAX],int SearchKey)
        }
        else
        {
-            if(index==2) return MAX; //¨S¦³§ä¨ì
+            if(index==2) return MAX; //æ²’æœ‰æ‰¾åˆ°
             if(SearchKey<data[RootNode])
             {
-                RootNode=RootNode-diff2;//¥ª¤l¾ğªº·s¶O¤ó¼Æ
+                RootNode=RootNode-diff2;//å·¦å­æ¨¹çš„æ–°è²»æ°æ•¸
                 int temp=diff1;
-                diff1=diff2;//¤W¤@­Ó¶O¤ó¼Æ
-                diff2=temp-diff2;//¤W¤G­Ó¶O¤ó¼Æ
+                diff1=diff2;//ä¸Šä¸€å€‹è²»æ°æ•¸
+                diff2=temp-diff2;//ä¸ŠäºŒå€‹è²»æ°æ•¸
                 index=index-1;
             }
            else
            {
                 if(index==3) return MAX;
-                RootNode=RootNode+diff2;//¥k¤l¾ğªº·s¶O¤ó¼Æ 
-                diff1=diff1-diff2;//¤W¤@­Ó¶O¤ó¼Æ
-                diff2=diff2-diff1;//¤W¤G­Ó¶O¤ó¼Æ
+                RootNode=RootNode+diff2;//å³å­æ¨¹çš„æ–°è²»æ°æ•¸ 
+                diff1=diff1-diff2;//ä¸Šä¸€å€‹è²»æ°æ•¸
+                diff2=diff2-diff1;//ä¸ŠäºŒå€‹è²»æ°æ•¸
                 index=index-2;
            }         
        }
@@ -62,18 +62,18 @@ int main(void)
     int j=0;
 	while(1)
 	{  
-		cout<<"½Ğ¿é¤J·j´MÁä­È(1-150)¡A¿é¤J-1µ²§ô¡G";
-		cin>>val;//¿é¤J·j´Mªº¼Æ­È
-		if(val==-1)//¿é¤J­È¬°-1´N¸õÂ÷°j°é
+		cout<<"è«‹è¼¸å…¥æœå°‹éµå€¼(1-150)ï¼Œè¼¸å…¥-1çµæŸï¼š";
+		cin>>val;//è¼¸å…¥æœå°‹çš„æ•¸å€¼
+		if(val==-1)//è¼¸å…¥å€¼ç‚º-1å°±è·³é›¢è¿´åœˆ
 			break;
-		int RootNode=fib_search(data,val);//§Q¥Î¶O¤ó·j´Mªk§ä´M¸ê®Æ
+		int RootNode=fib_search(data,val);//åˆ©ç”¨è²»æ°æœå°‹æ³•æ‰¾å°‹è³‡æ–™
 		if(RootNode==MAX)
-			cout<<"##### ¨S¦³§ä¨ì["<<setw(3)<<val<<"] #####"<<endl;
+			cout<<"##### æ²’æœ‰æ‰¾åˆ°["<<setw(3)<<val<<"] #####"<<endl;
 		else
-			cout<<"¦b²Ä "<<setw(2)<<RootNode+1
-            <<"­Ó¦ì¸m§ä¨ì ["<<setw(3)<<data[RootNode]<<"]"<<endl;
+			cout<<"åœ¨ç¬¬ "<<setw(2)<<RootNode+1
+            <<"å€‹ä½ç½®æ‰¾åˆ° ["<<setw(3)<<data[RootNode]<<"]"<<endl;
 	}
-	cout<<"¸ê®Æ¤º®e¡G"<<endl;
+	cout<<"è³‡æ–™å…§å®¹ï¼š"<<endl;
 	for(i=0;i<2;i++)
 	{ 
 		for(j=0;j<10;j++)

@@ -12,7 +12,7 @@ class Node {
 typedef class Node ThreadNode;
 typedef ThreadNode *ThreadBinaryTree;
 ThreadBinaryTree rootNode;
-//±N«ü©wªº­È¥[¤J¨ì¤G¤¸¤Ş½u¾ğ
+//å°‡æŒ‡å®šçš„å€¼åŠ å…¥åˆ°äºŒå…ƒå¼•ç·šæ¨¹
 void Add_Node_To_Tree(int value) {
      ThreadBinaryTree newnode;
      ThreadBinaryTree previous;
@@ -31,7 +31,7 @@ void Add_Node_To_Tree(int value) {
       previous->left_Node=NULL;
       previous->right_Node=NULL;
       int pos;
-      //³]©w¤Ş½u¤G¤¸¾ğªº¶}ÀY¸`ÂI
+      //è¨­å®šå¼•ç·šäºŒå…ƒæ¨¹çš„é–‹é ­ç¯€é»
       if(rootNode==NULL) {
          rootNode=newnode;
          rootNode->left_Node=rootNode;
@@ -40,7 +40,7 @@ void Add_Node_To_Tree(int value) {
          rootNode->right_Thread=1;
          return;
       }
-      //³]©w¶}ÀY¸`ÂI©Ò«üªº¸`ÂI
+      //è¨­å®šé–‹é ­ç¯€é»æ‰€æŒ‡çš„ç¯€é»
       current=rootNode->right_Node;
       if(current==NULL){
          rootNode->right_Node=newnode;
@@ -48,8 +48,8 @@ void Add_Node_To_Tree(int value) {
          newnode->right_Node=rootNode;
          return ;
       }
-      parent=rootNode; //¤÷¸`ÂI¬O¶}ÀY¸`ÂI
-      pos=0; //³]©w¤G¤¸¾ğ¤¤ªº¦æ¶i¤è¦V
+      parent=rootNode; //çˆ¶ç¯€é»æ˜¯é–‹é ­ç¯€é»
+      pos=0; //è¨­å®šäºŒå…ƒæ¨¹ä¸­çš„è¡Œé€²æ–¹å‘
       while(current!=NULL) {
          if(current->value>value) {
             if(pos!=-1) {
@@ -88,7 +88,7 @@ void Add_Node_To_Tree(int value) {
       }
       return ;
    }
-//¤Ş½u¤G¤¸¾ğ¤¤§Ç¨«³X
+//å¼•ç·šäºŒå…ƒæ¨¹ä¸­åºèµ°è¨ª
    void trace() {
       ThreadBinaryTree tempNode;
       tempNode=rootNode;
@@ -109,23 +109,23 @@ int main(void)
 {
       int i=0;
       int array_size=11;
-      cout<<"¤Ş½u¤G¤¸¾ğ¸g«Ø¥ß«á,¥H¤¤§Ç°lÂÜ¯à¦³±Æ§Çªº®ÄªG"<<endl;
-      cout<<"²Ä¤@­Ó¼Æ¦r¬°¤Ş½u¤G¤¸¾ğªº¶}ÀY¸`ÂI,¤£¦C¤J±Æ§Ç"<<endl;
+      cout<<"å¼•ç·šäºŒå…ƒæ¨¹ç¶“å»ºç«‹å¾Œ,ä»¥ä¸­åºè¿½è¹¤èƒ½æœ‰æ’åºçš„æ•ˆæœ"<<endl;
+      cout<<"ç¬¬ä¸€å€‹æ•¸å­—ç‚ºå¼•ç·šäºŒå…ƒæ¨¹çš„é–‹é ­ç¯€é»,ä¸åˆ—å…¥æ’åº"<<endl;
       int data1[]={0,10,20,30,100,399,453,43,237,373,655};
       for(i=0;i<array_size;i++)
          Add_Node_To_Tree(data1[i]);
       cout<<"===================================="<<endl;
-      cout<<"½d¨Ò 1 "<<endl;
-      cout<<"¼Æ¦r¥Ñ¤p¨ì¤jªº±Æ§Ç¶¶§Çµ²ªG¬°: "<<endl;
+      cout<<"ç¯„ä¾‹ 1 "<<endl;
+      cout<<"æ•¸å­—ç”±å°åˆ°å¤§çš„æ’åºé †åºçµæœç‚º: "<<endl;
       trace();
       int data2[]={0,101,118,87,12,765,65};
-      rootNode=NULL;//±N¤Ş½u¤G¤¸¾ğªº¾ğ®ÚÂk¹s
-      array_size=7;//²Ä2­Ó½d¨Òªº°}¦Cªø«×¬°7
+      rootNode=NULL;//å°‡å¼•ç·šäºŒå…ƒæ¨¹çš„æ¨¹æ ¹æ­¸é›¶
+      array_size=7;//ç¬¬2å€‹ç¯„ä¾‹çš„é™£åˆ—é•·åº¦ç‚º7
       for(i=0;i<array_size;i++)
          Add_Node_To_Tree(data2[i]);    
       cout<<"===================================="<<endl;
-      cout<<"½d¨Ò 2 "<<endl;
-      cout<<"¼Æ¦r¥Ñ¤p¨ì¤jªº±Æ§Ç¶¶§Çµ²ªG¬°: "<<endl;
+      cout<<"ç¯„ä¾‹ 2 "<<endl;
+      cout<<"æ•¸å­—ç”±å°åˆ°å¤§çš„æ’åºé †åºçµæœç‚º: "<<endl;
       trace();
       cout<<endl;
 	  return 0;

@@ -1,21 +1,21 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-#define EIGHT 8 //©w¸q³Ì¤j°ïÅ|®e¶q
+#define EIGHT 8 //å®šç¾©æœ€å¤§å †ç–Šå®¹é‡
 #define TRUE 1
 #define FALSE 0
 using namespace std;
-int queen[EIGHT];//¦s©ñ8­Ó¬Ó¦Z¤§¦C¦ì¸m
-int number=0;//­pºâÁ`¦@¦³´X²Õ¸ÑªºÁ`¼Æ
-//¨M©w¬Ó¦Z¦s©ñªº¦ì¸m
-//¿é¥X©Ò»İ­nªºµ²ªG
+int queen[EIGHT];//å­˜æ”¾8å€‹çš‡åä¹‹åˆ—ä½ç½®
+int number=0;//è¨ˆç®—ç¸½å…±æœ‰å¹¾çµ„è§£çš„ç¸½æ•¸
+//æ±ºå®šçš‡åå­˜æ”¾çš„ä½ç½®
+//è¼¸å‡ºæ‰€éœ€è¦çš„çµæœ
 int attack(int ,int);
 void print_table()
 {
      int x=0,y=0;
      number+=1;
      cout<<endl;
-     cout<<"¤K¬Ó¦Z°İÃDªº²Ä"<<setw(2)<<number<<"²Õ¸Ñ"<<endl<<"\t";
+     cout<<"å…«çš‡åå•é¡Œçš„ç¬¬"<<setw(2)<<number<<"çµ„è§£"<<endl<<"\t";
      for(x=0;x<EIGHT;x++)
      {
         for(y=0;y<EIGHT;y++)
@@ -32,7 +32,7 @@ void decide_position(int value)
    int i=0;
    while(i<EIGHT)
    {
-   //¬O§_¨ü¨ì§ğÀ»ªº§PÂ_¦¡
+   //æ˜¯å¦å—åˆ°æ”»æ“Šçš„åˆ¤æ–·å¼
       if(attack(i,value)!=1)
       {
          queen[value]=i;
@@ -44,8 +44,8 @@ void decide_position(int value)
       i++;
    }    
 }
-//´ú¸Õ¦b(row,col)¤Wªº¬Ó¦Z¬O§_¾D¨ü§ğÀ»
-//­Y¾D¨ü§ğÀ»«h¶Ç¦^­È¬°1,§_«h¶Ç¦^0
+//æ¸¬è©¦åœ¨(row,col)ä¸Šçš„çš‡åæ˜¯å¦é­å—æ”»æ“Š
+//è‹¥é­å—æ”»æ“Šå‰‡å‚³å›å€¼ç‚º1,å¦å‰‡å‚³å›0
 int attack(int row,int col)
 {
     int i=0,atk=FALSE;
@@ -54,14 +54,14 @@ int attack(int row,int col)
     {
        offset_col=abs(i-col);
        offset_row=abs(queen[i]-row);
-       //§PÂ_¨â¬Ó¦Z¬O§_¦b¦P¤@¦C¦b¦P¤@¹ï¨¤½u¤W
+       //åˆ¤æ–·å…©çš‡åæ˜¯å¦åœ¨åŒä¸€åˆ—åœ¨åŒä¸€å°è§’ç·šä¸Š
        if((queen[i]==row)||(offset_row==offset_col))
           atk=TRUE;
        i++;
     }
     return atk;
 }
-//¥Dµ{¦¡
+//ä¸»ç¨‹å¼
 int main(void)
 {
     decide_position(0);      

@@ -1,51 +1,51 @@
 #include <iostream>
 #include <iomanip>
-#define MAXSTACK 100 //©w¸q³Ì¤j°ïÅ|®e¶q
+#define MAXSTACK 100 //å®šç¾©æœ€å¤§å †ç–Šå®¹é‡
 using namespace std;
-int stack[MAXSTACK];//°ïÅ|ªº°}¦C«Å§i
-int top=-1;//°ïÅ|ªº³»ºÝ
-//§PÂ_¬O§_¬°ªÅ°ïÅ|
+int stack[MAXSTACK];//å †ç–Šçš„é™£åˆ—å®£å‘Š
+int top=-1;//å †ç–Šçš„é ‚ç«¯
+//åˆ¤æ–·æ˜¯å¦ç‚ºç©ºå †ç–Š
 int isEmpty() 
 {
     if(top==-1) return 1;
     else return 0;
 }
-//±N«ü©wªº¸ê®Æ¦s¤J°ïÅ|
+//å°‡æŒ‡å®šçš„è³‡æ–™å­˜å…¥å †ç–Š
 int push(int data)
 {
     if(top>=MAXSTACK)
     {
-        cout<<"°ïÅ|¤wº¡,µLªk¦A¥[¤J"<<endl;
+        cout<<"å †ç–Šå·²æ»¿,ç„¡æ³•å†åŠ å…¥"<<endl;
         return 0; 
     }
     else
     {
-        stack[++top]=data; //±N¸ê®Æ¦s¤J°ïÅ|
+        stack[++top]=data; //å°‡è³‡æ–™å­˜å…¥å †ç–Š
         return 1;
     }
 }
-//±q°ïÅ|¨ú¥X¸ê®Æ
+//å¾žå †ç–Šå–å‡ºè³‡æ–™
 int pop()
 {
-    if(isEmpty()) //§PÂ_°ïÅ|¬O§_¬°ªÅ,¦pªG¬O«h¶Ç¦^-1
+    if(isEmpty()) //åˆ¤æ–·å †ç–Šæ˜¯å¦ç‚ºç©º,å¦‚æžœæ˜¯å‰‡å‚³å›ž-1
         return -1;
     else
-        return stack[top--]; //±N¸ê®Æ¨ú¥X«á,¦A±N°ïÅ|«ü¼Ð©¹¤U²¾
+        return stack[top--]; //å°‡è³‡æ–™å–å‡ºå¾Œ,å†å°‡å †ç–ŠæŒ‡æ¨™å¾€ä¸‹ç§»
 }
-//¥Dµ{¦¡
+//ä¸»ç¨‹å¼
 int main(void)
 {
     int value;
     int i;
-    cout<<"½Ð¨Ì§Ç¿é¤J10µ§¸ê®Æ:"<<endl;
+    cout<<"è«‹ä¾åºè¼¸å…¥10ç­†è³‡æ–™:"<<endl;
     for(i=0;i<10;i++)
     {
         cin>>value;
         push(value);
     }
     cout<<"===================="<<endl;
-    while(!isEmpty()) //±N¸ê®Æ³°Äò±q³»ºÝ¼u¥X
-        cout<<"°ïÅ|¼u¥Xªº¶¶§Ç¬°:"<<setw(2)<<pop()<<endl; 
+    while(!isEmpty()) //å°‡è³‡æ–™é™¸çºŒå¾žé ‚ç«¯å½ˆå‡º
+        cout<<"å †ç–Šå½ˆå‡ºçš„é †åºç‚º:"<<setw(2)<<pop()<<endl; 
     cout<<"===================="<<endl;
     return 0; 
 }

@@ -2,20 +2,20 @@
 #include <cstdlib>
 using namespace std;
 
-// ³]©wÃş§O¼Ëª©ªº«¬ºA°Ñ¼ÆTypeªº¹w³]­È¬°¾ã¼Æint,«D«¬ºA°Ñ¼Æªº«¬§O¬°¾ã¼Æint,¹w³]­È¬°5
-template <class Type = int, int size = 5>	// Ãş§O¼Ëª©«Å§i
+// è¨­å®šé¡åˆ¥æ¨£ç‰ˆçš„å‹æ…‹åƒæ•¸Typeçš„é è¨­å€¼ç‚ºæ•´æ•¸int,éå‹æ…‹åƒæ•¸çš„å‹åˆ¥ç‚ºæ•´æ•¸int,é è¨­å€¼ç‚º5
+template <class Type = int, int size = 5>	// é¡åˆ¥æ¨£ç‰ˆå®£å‘Š
 class Stack
 {
       private:
-        Type st[size];// «Å§i¤@°}¦C§@¬°°ïÅ|ªºÀx¦sªÅ¶¡
-        int top;		// °ïÅ|¸ê®Æ³»ºİªº¯Á¤Ş
+        Type st[size];// å®£å‘Šä¸€é™£åˆ—ä½œç‚ºå †ç–Šçš„å„²å­˜ç©ºé–“
+        int top;		// å †ç–Šè³‡æ–™é ‚ç«¯çš„ç´¢å¼•
       public:
         Stack()
          {
           top = -1;
           }
-       void push(Type data);	// ±N¸ê®Æ©ñ¤J°ïÅ|
-       Type pop();// ±N¸ê®Æ¥Ñ°ïÅ|¤¤¨ú¥X
+       void push(Type data);	// å°‡è³‡æ–™æ”¾å…¥å †ç–Š
+       Type pop();// å°‡è³‡æ–™ç”±å †ç–Šä¸­å–å‡º
    };
    template < class Type, int size >
    void Stack< Type, size > :: push ( Type data )
@@ -29,8 +29,8 @@ class Stack
     }
 int main()
 {
-    Stack<> stk_1;// «Å§i¤@°ïÅ|ª«¥ó,¨Ã¨Ï¥Î¨ä¹w³]­È
-    Stack<char*, 4> stk_2;	// «Å§i°ïÅ|ª«¥ó,¨ä«¬ºA¬°¦r¦ê,¤j¤p¬°4
+    Stack<> stk_1;// å®£å‘Šä¸€å †ç–Šç‰©ä»¶,ä¸¦ä½¿ç”¨å…¶é è¨­å€¼
+    Stack<char*, 4> stk_2;	// å®£å‘Šå †ç–Šç‰©ä»¶,å…¶å‹æ…‹ç‚ºå­—ä¸²,å¤§å°ç‚º4
     stk_1.push( 11 );
     stk_1.push( 22 );
     stk_1.push( 33 );
@@ -38,9 +38,9 @@ int main()
     cout << "stack_1 [2] = " << stk_1.pop() << endl;
     cout << "stack_1 [3] = " << stk_1.pop() << endl;
     cout << endl;
-    stk_2.push( "²Ä¤@¦W" );
-    stk_2.push( "²Ä¤G¦W" );
-    stk_2.push( "²Ä¤T¦W" );
+    stk_2.push( "ç¬¬ä¸€å" );
+    stk_2.push( "ç¬¬äºŒå" );
+    stk_2.push( "ç¬¬ä¸‰å" );
     cout << "stack_2 [1] = " << stk_2.pop() << endl;
     cout << "stack_2 [2] = " << stk_2.pop() << endl;  
     cout << "stack_2 [3] = " << stk_2.pop() << endl;

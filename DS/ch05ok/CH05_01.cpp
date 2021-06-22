@@ -1,9 +1,9 @@
 /*
-[¥Ü½d]:¹ê§@¦î¦C¸ê®Æªº¦s¤J©M¨ú¥X
+[ç¤ºç¯„]:å¯¦ä½œä½‡åˆ—è³‡æ–™çš„å­˜å…¥å’Œå–å‡º
 */
 #include <iostream>
 using namespace std;
-const int MAX=20;//©w¸q¦î¦Cªº¤j¤p
+const int MAX=20;//å®šç¾©ä½‡åˆ—çš„å¤§å°
 int main(void)
 {
 	int front,rear,val,queue[MAX]={0};
@@ -11,12 +11,12 @@ int main(void)
 	front=rear=-1;
 	while(rear<MAX-1&&ch!='E')
 	{  
-		cout<<"[I]¦s¤J¤@­Ó¼Æ­È[G]¨ú¥X¤@­Ó¼Æ­È[E]µ²§ô: ";
+		cout<<"[I]å­˜å…¥ä¸€å€‹æ•¸å€¼[G]å–å‡ºä¸€å€‹æ•¸å€¼[E]çµæŸ: ";
 		cin>>ch;
 		switch(ch)
 		{
 			case 'I':
-				cout<<"[½Ğ¿é¤J¼Æ­È]: ";
+				cout<<"[è«‹è¼¸å…¥æ•¸å€¼]: ";
 				cin>>val;
 				rear++;
 				queue[rear]=val;
@@ -25,13 +25,13 @@ int main(void)
 				if(rear>front)
 				{  
 					front++;
-					cout<<"[¨ú¥X¼Æ­È¬°]: ["<<queue[front]<<"]";
+					cout<<"[å–å‡ºæ•¸å€¼ç‚º]: ["<<queue[front]<<"]";
 					cout<<endl;
 					queue[front]=0;
 				}
 				else
 				{  
-					cout<<"[¦î¦C¤w¸gªÅ¤F]"<<endl;
+					cout<<"[ä½‡åˆ—å·²ç¶“ç©ºäº†]"<<endl;
 					exit(0);
 				}
 				break;
@@ -40,12 +40,12 @@ int main(void)
 				break;
 		}
 	}
-	if(rear==MAX-1) cout<<"[¦î¦C¤w¸gº¡¤F]"<<endl;
-	cout<<"[¥Ø«e¦î¦C¤¤ªº¸ê®Æ]:";
+	if(rear==MAX-1) cout<<"[ä½‡åˆ—å·²ç¶“æ»¿äº†]"<<endl;
+	cout<<"[ç›®å‰ä½‡åˆ—ä¸­çš„è³‡æ–™]:";
 	if (front>=rear)
 	{
-		cout<<"¨S¦³"<<endl;
-		cout<<"[¦î¦C¤w¸gªÅ¤F]"<<endl;
+		cout<<"æ²’æœ‰"<<endl;
+		cout<<"[ä½‡åˆ—å·²ç¶“ç©ºäº†]"<<endl;
 	}
 	else
 	{

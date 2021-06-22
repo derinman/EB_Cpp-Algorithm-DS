@@ -3,37 +3,37 @@
 #include <iomanip>
 #define ArraySize 10
 using namespace std;
-class Node//¤G¤¸¾ğªº¸`ÂI«Å§i
+class Node//äºŒå…ƒæ¨¹çš„ç¯€é»å®£å‘Š
 {
     public:
-    int value;//¸`ÂI¸ê®Æ
-    struct Node *left_Node;//«ü¦V¥ª¤l¾ğªº«ü¼Ğ
-    struct Node *right_Node;//«ü¦V¥ª¥k¤l¾ğªº«ü¼Ğ
+    int value;//ç¯€é»è³‡æ–™
+    struct Node *left_Node;//æŒ‡å‘å·¦å­æ¨¹çš„æŒ‡æ¨™
+    struct Node *right_Node;//æŒ‡å‘å·¦å³å­æ¨¹çš„æŒ‡æ¨™
 };
-typedef class Node TreeNode;//©w¸q·sªº¤G¤¸¾ğ¸`ÂI¸ê®Æ«¬ºA
-typedef TreeNode *BinaryTree;//©w¸q·sªº¤G¤¸¾ğÃìµ²¸ê®Æ«¬ºA
-BinaryTree rootNode;//¤G¤¸¾ğªº®Ú¸`ÂIªº«ü¼Ğ 
+typedef class Node TreeNode;//å®šç¾©æ–°çš„äºŒå…ƒæ¨¹ç¯€é»è³‡æ–™å‹æ…‹
+typedef TreeNode *BinaryTree;//å®šç¾©æ–°çš„äºŒå…ƒæ¨¹éˆçµè³‡æ–™å‹æ…‹
+BinaryTree rootNode;//äºŒå…ƒæ¨¹çš„æ ¹ç¯€é»çš„æŒ‡æ¨™ 
 
-//±N«ü©wªº­È¥[¤J¨ì¤G¤¸¾ğ¤¤¾A·íªº¸`ÂI
+//å°‡æŒ‡å®šçš„å€¼åŠ å…¥åˆ°äºŒå…ƒæ¨¹ä¸­é©ç•¶çš„ç¯€é»
 void Add_Node_To_Tree(int value)
 {
       BinaryTree currentNode;
       BinaryTree newnode;
-      int flag=0;//¥Î¨Ó¬ö¿ı¬O§_´¡¤J·sªº¸`ÂI
+      int flag=0;//ç”¨ä¾†ç´€éŒ„æ˜¯å¦æ’å…¥æ–°çš„ç¯€é»
       newnode=(BinaryTree) malloc(sizeof(TreeNode));
-      //«Ø¥ß¸`ÂI¤º®e
+      //å»ºç«‹ç¯€é»å…§å®¹
       newnode->value=value;
       newnode->left_Node=NULL;
       newnode->right_Node=NULL;
-      //¦pªG¬°ªÅªº¤G¤¸¾ğ,«K±N·sªº¸`ÂI³]©w¬°®Ú¸`ÂI
+      //å¦‚æœç‚ºç©ºçš„äºŒå…ƒæ¨¹,ä¾¿å°‡æ–°çš„ç¯€é»è¨­å®šç‚ºæ ¹ç¯€é»
       if(rootNode==NULL)
           rootNode=newnode;
       else 
       {
-          currentNode=rootNode;//«ü©w¤@­Ó«ü¼Ğ«ü¦V®Ú¸`ÂI
+          currentNode=rootNode;//æŒ‡å®šä¸€å€‹æŒ‡æ¨™æŒ‡å‘æ ¹ç¯€é»
           while(!flag)
             if (value<currentNode->value) 
-            { //¦b¥ª¤l¾ğ
+            { //åœ¨å·¦å­æ¨¹
                if(currentNode->left_Node==NULL)
                {
                   currentNode->left_Node=newnode;
@@ -43,7 +43,7 @@ void Add_Node_To_Tree(int value)
                   currentNode=currentNode->left_Node;
             }
             else
-            { //¦b¥k¤l¾ğ
+            { //åœ¨å³å­æ¨¹
                if(currentNode->right_Node==NULL) 
                {
                   currentNode->right_Node=newnode;
@@ -61,16 +61,16 @@ int main(void)
     int i=0;
     rootNode=(BinaryTree) malloc(sizeof(TreeNode));
     rootNode=NULL;
-    cout<<"½Ğ³sÄò¿é¤J10µ§¸ê®Æ: "<<endl;
+    cout<<"è«‹é€£çºŒè¼¸å…¥10ç­†è³‡æ–™: "<<endl;
     for(i=0;i<ArraySize;i++)
     {
-      cout<<"½Ğ¿é¤J²Ä"<<setw(1)<<(i+1)<<"µ§¸ê®Æ: ";
+      cout<<"è«‹è¼¸å…¥ç¬¬"<<setw(1)<<(i+1)<<"ç­†è³‡æ–™: ";
       cin>>tempdata;       
       content[i]=tempdata;
     }
     for(i=0;i<ArraySize;i++) 
          Add_Node_To_Tree(content[i]);
-    cout<<"§¹¦¨¥HÃìµ²¦ê¦Cªº¤è¦¡«Ø¥ß¤G¤¸¾ğ";
+    cout<<"å®Œæˆä»¥éˆçµä¸²åˆ—çš„æ–¹å¼å»ºç«‹äºŒå…ƒæ¨¹";
     cout<<endl;  
 	return 0;
 }

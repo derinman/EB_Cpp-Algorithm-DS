@@ -1,28 +1,28 @@
 /*
-[¥Ü½d]:¶O§B¨º§Ç¦Cªº»¼°jµ{¦¡
+[ç¤ºç¯„]:è²»ä¼¯é‚£åºåˆ—çš„éè¿´ç¨‹å¼
 */
 #include<iostream>
 using namespace std;
 
-int fib(int);	//fib()¨ç¼Æªº­ì«¬«Å§i 
+int fib(int);	//fib()å‡½æ•¸çš„åŸå‹å®£å‘Š 
 
 int main()
 {
     int i,n;
-    cout<<"½Ğ¿é¤J©Ò­n­pºâ²Ä´X­Ó¶O¦¡¼Æ¦C:";
+    cout<<"è«‹è¼¸å…¥æ‰€è¦è¨ˆç®—ç¬¬å¹¾å€‹è²»å¼æ•¸åˆ—:";
     cin>>n;
-    for(i=0;i<=n;i++) // ­pºâ«e1n­Ó¶O¤ó¼Æ¦C 
+    for(i=0;i<=n;i++) // è¨ˆç®—å‰1nå€‹è²»æ°æ•¸åˆ— 
 		cout<<"fib("<<i<<")="<<fib(i)<<endl;
     return 0;
 }
 
-int fib(int n) 	//©w¸q¨ç¼Æfib()
+int fib(int n) 	//å®šç¾©å‡½æ•¸fib()
 {
     	
     if (n==0)
-        return 0; // ¦pªGn=0 «h¶Ç¦^ 0
-    else if(n==1 || n==2)	//¦pªGn=1©În=2¡A«h¶Ç¦^1 
+        return 0; // å¦‚æœn=0 å‰‡å‚³å› 0
+    else if(n==1 || n==2)	//å¦‚æœn=1æˆ–n=2ï¼Œå‰‡å‚³å›1 
         return 1;
-    else		//§_«h¶Ç¦^ fib(n-1)+fib(n-2) 
+    else		//å¦å‰‡å‚³å› fib(n-1)+fib(n-2) 
         return (fib(n-1)+fib(n-2));
 }

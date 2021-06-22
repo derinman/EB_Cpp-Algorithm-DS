@@ -2,28 +2,28 @@
 using namespace std;
 int main(void)
 {  
-	int arr[6][6];//«Å§i¯x°}arr
-	int data[14][2]={{1,2},{2,1},{1,5},{5,1}, //¹Ï§Î¦UÃäªº°_ÂI­È¤Î²×ÂI­È
+	int arr[6][6];//å®£å‘ŠçŸ©é™£arr
+	int data[14][2]={{1,2},{2,1},{1,5},{5,1}, //åœ–å½¢å„é‚Šçš„èµ·é»å€¼åŠçµ‚é»å€¼
 					{2,3},{3,2},{2,4},{4,2},
 					{3,4},{4,3},{3,5},{5,3},
 					{4,5},{5,4}};
-	for (int i=0;i<6;i++)//§â¯x°}²M¬°0
+	for (int i=0;i<6;i++)//æŠŠçŸ©é™£æ¸…ç‚º0
 		for (int j=0;j<6;j++)
 			arr[i][j]=0;
-	for (int i=0;i<14;i++)//Åª¨ú¹Ï§Î¸ê®Æ
-		for (int j=0;j<6;j++)//¶ñ¤Jarr¯x°}
+	for (int i=0;i<14;i++)//è®€å–åœ–å½¢è³‡æ–™
+		for (int j=0;j<6;j++)//å¡«å…¥arrçŸ©é™£
 			for (int k=0;k<6;k++)
 			{  
 				int tmpi, tmpj;
-				tmpi=data[i][0];//tmpi¬°°_©l³»ÂI
-				tmpj=data[i][1];//tmpj¬°²×¤î³»ÂI
-				arr[tmpi][tmpj]=1;//¦³ÃäªºÂI¶ñ¤J1
+				tmpi=data[i][0];//tmpiç‚ºèµ·å§‹é ‚é»
+				tmpj=data[i][1];//tmpjç‚ºçµ‚æ­¢é ‚é»
+				arr[tmpi][tmpj]=1;//æœ‰é‚Šçš„é»å¡«å…¥1
 			}
-	cout<<"µL¦V¹Ï§Î¯x°}¡G"<<endl;
+	cout<<"ç„¡å‘åœ–å½¢çŸ©é™£ï¼š"<<endl;
 	for (int i=1;i<6;i++)
 	{  
 		for (int j=1;j<6;j++)
-	    cout<<"["<<arr[i][j]<<"] ";  //¦C¦L¯x°}¤º®e
+	    cout<<"["<<arr[i][j]<<"] ";  //åˆ—å°çŸ©é™£å…§å®¹
 		cout<<endl;
 	}
 }

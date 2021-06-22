@@ -4,22 +4,22 @@
 using namespace std;
 
 int main(){
-    int no,count=0, Total=0;   // ©w¸q¾ã¼ÆÅÜ¼Æ count »P Total
-    cout<<"­n¿é¤J­pºâªº­Ó¼Æ¬°:";
+    int no,count=0, Total=0;   // å®šç¾©æ•´æ•¸è®Šæ•¸ count èˆ‡ Total
+    cout<<"è¦è¼¸å…¥è¨ˆç®—çš„å€‹æ•¸ç‚º:";
     cin>>no; 
-    int *ptr=new int[no]; // °ÊºA°t¸m°}¦C¬°n­Ó¤¸¯À 
+    int *ptr=new int[no]; // å‹•æ…‹é…ç½®é™£åˆ—ç‚ºnå€‹å…ƒç´  
     cout<<endl;	
     for (count=0; count < no; count++)	 
     {	 
-		cout << "¿é¤Jptr[" << count << "]:";
-   	 	cin >> ptr[count];            // ±Ä¥Î°}¦C¯Á¤Ş¨Ó¿é¤J°}¦C¤¸¯À
+		cout << "è¼¸å…¥ptr[" << count << "]:";
+   	 	cin >> ptr[count];            // æ¡ç”¨é™£åˆ—ç´¢å¼•ä¾†è¼¸å…¥é™£åˆ—å…ƒç´ 
     }
     for (count=0; count < no; count++)
-      	Total+=*(ptr+count);       // ±Ä¥Î«ü¼ĞÅÜ¼Æ¹Bºâ¨Ó¦s¨ú°}¦C¤¸¯À­È
+      	Total+=*(ptr+count);       // æ¡ç”¨æŒ‡æ¨™è®Šæ•¸é‹ç®—ä¾†å­˜å–é™£åˆ—å…ƒç´ å€¼
     cout<<"---------------------------------------"<<endl;
-    cout << no<<"­Ó¼ÆªºÁ`©M=" << Total;    // Åã¥Üµ²ªG
+    cout << no<<"å€‹æ•¸çš„ç¸½å’Œ=" << Total;    // é¡¯ç¤ºçµæœ
     cout << endl; 
-    delete [] ptr;                // ÄÀ©ñ°t¸mµ¹ ptr ªº°O¾ĞÅéªÅ¶¡	    
+    delete [] ptr;                // é‡‹æ”¾é…ç½®çµ¦ ptr çš„è¨˜æ†¶é«”ç©ºé–“	    
     ptr=NULL;	     
         
  	return 0; 

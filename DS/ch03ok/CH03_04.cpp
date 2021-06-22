@@ -2,7 +2,7 @@
 #include <cstring>
 #include <cstdlib>
 #include <ctime>
-#include <iomanip> //¾ŞÁa¤lªº¼ĞÀYÀÉ 
+#include <iomanip> //æ“ç¸±å­çš„æ¨™é ­æª” 
 using namespace std;
 class list
 {  
@@ -37,18 +37,18 @@ link insertnode(link head,link ptr,int num,int score,char name[10])
     InsertNode->score=score;
     strcpy(InsertNode->name,name);
     InsertNode->next=NULL;
-    if(ptr==NULL) //´¡¤J²Ä¤@­Ó¸`ÂI
+    if(ptr==NULL) //æ’å…¥ç¬¬ä¸€å€‹ç¯€é»
     {
        InsertNode->next=head;
        return InsertNode;
     }    
     else
     {
-        if(ptr->next==NULL)//´¡¤J³Ì«á¤@­Ó¸`ÂI
+        if(ptr->next==NULL)//æ’å…¥æœ€å¾Œä¸€å€‹ç¯€é»
         {
            ptr->next=InsertNode;
         }
-        else //´¡¤J¤¤¶¡¸`ÂI
+        else //æ’å…¥ä¸­é–“ç¯€é»
         {
             InsertNode->next=ptr->next;
             ptr->next=InsertNode;     
@@ -68,7 +68,7 @@ int main()
     {"John"},{"Mark"},{"Ricky"},{"Lisa"},{"Jasica"},
     {"Hanson"},{"Amy"},{"Bob"},{"Jack"}};
 	srand((unsigned)time(NULL));
-	cout<<"®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ"<<endl;
+	cout<<"åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾"<<endl;
 	cout<<"=============================================="<<endl;
 	for(i=0;i<12;i++)
 	{  
@@ -81,10 +81,10 @@ int main()
 			cout<<"["<<data[j*3+i][0]<<"]  ["<<data[j*3+i][1]<<"]   ";
 		cout<<endl;
 	}
-	head=new node;  //«Ø¥ß¦ê¦C­º
+	head=new node;  //å»ºç«‹ä¸²åˆ—é¦–
 	if(!head)
 	{  
-		cout<<"Error!! °O¾ĞÅé°t¸m¥¢±Ñ!!"<<endl;
+		cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
 		exit(1);
 	}
 	head->num=data[0][0];
@@ -93,7 +93,7 @@ int main()
 	head->score=data[0][1];
 	head->next=NULL;
 	ptr=head;
-	for(i=1;i<12;i++) //«Ø¥ß¦ê¦C
+	for(i=1;i<12;i++) //å»ºç«‹ä¸²åˆ—
 	{  
 		newnode=new node;
 		newnode->num=data[i][0];
@@ -106,24 +106,24 @@ int main()
 	}
 	while(1)
 	{  
-		cout<<"½Ğ¿é¤J­n´¡¤J¨ä«áªº¾Ç¥Í½s¸¹¡Aµ²§ô¿é¤J-1¡G";
+		cout<<"è«‹è¼¸å…¥è¦æ’å…¥å…¶å¾Œçš„å­¸ç”Ÿç·¨è™Ÿï¼ŒçµæŸè¼¸å…¥-1ï¼š";
 		cin>>position;
-		if(position==-1)//°j°é¤¤Â_±ø¥ó
+		if(position==-1)//è¿´åœˆä¸­æ–·æ¢ä»¶
 			break;
 		else
 		{  
 			ptr=findnode(head,position);
-		  	cout<<"½Ğ¿é¤J·s´¡¤Jªº¾Ç¥Í½s¸¹¡G";
+		  	cout<<"è«‹è¼¸å…¥æ–°æ’å…¥çš„å­¸ç”Ÿç·¨è™Ÿï¼š";
 			cin>>new_num;
-			cout<<"½Ğ¿é¤J·s´¡¤Jªº¾Ç¥Í¦¨ÁZ¡G";
+			cout<<"è«‹è¼¸å…¥æ–°æ’å…¥çš„å­¸ç”Ÿæˆç¸¾ï¼š";
 			cin>>new_score;
-			cout<<"½Ğ¿é¤J·s´¡¤Jªº¾Ç¥Í©m¦W¡G";
+			cout<<"è«‹è¼¸å…¥æ–°æ’å…¥çš„å­¸ç”Ÿå§“åï¼š";
 			cin>>new_name;
 			head=insertnode(head,ptr,new_num,new_score,new_name);
 		}
 	}
 	ptr=head;
-	cout<<"\n\t®y¸¹\t    ©m¦W\t¦¨ÁZ\n";         
+	cout<<"\n\tåº§è™Ÿ\t    å§“å\tæˆç¸¾\n";         
 	cout<<"\t==============================\n";
 	while(ptr!=NULL)
 	{  

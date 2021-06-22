@@ -2,12 +2,12 @@
 #include <iomanip>
 using namespace std;
 
-void select (int *); //«Å§i±Æ§Çªk°Æµ{§Ç
-void showdata (int *);//«Å§i¦C¦L°}¦C°Æµ{§Ç
+void select (int *); //å®£å‘Šæ’åºæ³•å‰¯ç¨‹åº
+void showdata (int *);//å®£å‘Šåˆ—å°é™£åˆ—å‰¯ç¨‹åº
 int main(void)
 {
 	int data[6]={9,7,5,3,4,6};
-	cout<<"­ì©l¸ê®Æ¬°¡G";
+	cout<<"åŸå§‹è³‡æ–™ç‚ºï¼š";
 	showdata(data);
 	select(data);
 	return 0;
@@ -21,11 +21,11 @@ void showdata (int data[])
 
 void select (int data[])
 {
-	for(int i=0;i<5;i++)    //±½´y5¦¸
+	for(int i=0;i<5;i++)    //æƒæ5æ¬¡
 	{   
-		for(int j=i+1;j<6;j++)  //¥Ñi+1¤ñ¸û°_¡A¤ñ¸û5¦¸
+		for(int j=i+1;j<6;j++)  //ç”±i+1æ¯”è¼ƒèµ·ï¼Œæ¯”è¼ƒ5æ¬¡
 		{	
-			if(data[i]>data[j])  //¤ñ¸û²Äi¤Î²Äj­Ó¤¸¯À
+			if(data[i]>data[j])  //æ¯”è¼ƒç¬¬iåŠç¬¬jå€‹å…ƒç´ 
 			{	
 				int tmp;
 				tmp=data[i];
@@ -33,9 +33,9 @@ void select (int data[])
 				data[j]=tmp;	
 			}
 		}
-		cout<<"²Ä "<<i+1<<" ¦¸±Æ§Çµ²ªG¡G";
+		cout<<"ç¬¬ "<<i+1<<" æ¬¡æ’åºçµæœï¼š";
 	    for (int k=0;k<6;k++)
-			cout<<setw(3)<<data[k];    //¦C¦L±Æ§Çµ²ªG
+			cout<<setw(3)<<data[k];    //åˆ—å°æ’åºçµæœ
 	    cout<<endl;
 	}
 	cout<<endl;

@@ -1,4 +1,4 @@
-//­pºâ10! ªº­È
+//è¨ˆç®—10! çš„å€¼
 #include <iostream>
 #include <cstdlib>
 using namespace std;
@@ -6,10 +6,10 @@ using namespace std;
 int main()
 {
     int i,sum=1;
-    for (i=1;i<=10;i++)  //©w¸qfor°j°é
+    for (i=1;i<=10;i++)  //å®šç¾©forè¿´åœˆ
     {
         sum*=i;   //sum=sum+*i
     } 
-    cout<<i-1<<"!="<<sum<<endl;  //¦L¥Xi©Msumªº­È 
+    cout<<i-1<<"!="<<sum<<endl;  //å°å‡ºiå’Œsumçš„å€¼ 
     return 0;
 }

@@ -15,14 +15,14 @@ int main(void) {
     int list2[NUM1] = {12,8,45,63}; 
     int list3[NUM1+NUM2] = {0}; 
 
-    cout<<"±Æ§Ç«e¡G"; 
-    cout<<"\nlist1[]¡G"; 
+    cout<<"æ’åºå‰ï¼š"; 
+    cout<<"\nlist1[]ï¼š"; 
     int i;
     
     for(i = 0; i < NUM1; i++) 
         cout<<list1[i]<<" ";
         
-    cout<<"\nlist2[]¡G"; 
+    cout<<"\nlist2[]ï¼š"; 
     for(i = 0; i < NUM2; i++) { 
         //list2[i] = rand() % 100; 
         cout<<list2[i]<<" ";
@@ -31,18 +31,18 @@ int main(void) {
     quick(list1,NUM1,0,NUM1-1);
     quick(list2,NUM2,0,NUM2-1);
 
-    cout<<"\n±Æ§Ç«á¡G";
-    cout<<"\nlist1[]¡G";
+    cout<<"\næ’åºå¾Œï¼š";
+    cout<<"\nlist1[]ï¼š";
     for(i = 0; i < NUM1; i++) 
         cout<<list1[i]<<" ";
-    cout<<"\nlist2[]¡G";
+    cout<<"\nlist2[]ï¼š";
     for(i = 0; i < NUM2; i++) 
         cout<<list2[i]<<" ";
 
-    // ¦X¨Ö±Æ§Ç 
+    // åˆä½µæ’åº 
     mergeSort(list1, NUM1, list2, NUM2, list3); 
 
-    cout<<"\n¦X¨Ö«á¡G"; 
+    cout<<"\nåˆä½µå¾Œï¼š"; 
     for(i = 0; i < NUM1+NUM2; i++) 
         cout<<list3[i]<<" ";
     cout<<endl;
@@ -56,14 +56,14 @@ void quick(int d[],int size,int lf,int rg)
 	int lf_idx;
 	int rg_idx;
 	int t;
-    //1:²Ä¤@µ§Áä­È¬°d[lf]
+    //1:ç¬¬ä¸€ç­†éµå€¼ç‚ºd[lf]
 	if(lf<rg)
 	{
 		lf_idx=lf+1;
 		rg_idx=rg;
     while(1) {
     	for(int i=lf+1;i<=rg;i++)
-	//2:¥Ñ¥ª¦V¥k§ä¥X¤@­ÓÁä­È¤j©ód[lf]ªÌ
+	//2:ç”±å·¦å‘å³æ‰¾å‡ºä¸€å€‹éµå€¼å¤§æ–¼d[lf]è€…
 		{
 			if(d[i]>=d[lf])
 			{
@@ -73,7 +73,7 @@ void quick(int d[],int size,int lf,int rg)
 			lf_idx++;
 		}
 		for(int j=rg;j>=lf+1;j--)
-	//3:¥Ñ¥k¦V¥ª§ä¥X¤@­ÓÁä­È¤p©ód[lf]ªÌ
+	//3:ç”±å³å‘å·¦æ‰¾å‡ºä¸€å€‹éµå€¼å°æ–¼d[lf]è€…
 		{
 			if(d[j]<=d[lf]) 
 			{
@@ -83,28 +83,28 @@ void quick(int d[],int size,int lf,int rg)
 			rg_idx--;
 		}
 		if(lf_idx<rg_idx)       
-		 //4-1:­Ylf_idx<rg_idx
+		 //4-1:è‹¥lf_idx<rg_idx
 		{					     
 			tmp = d[lf_idx];       
 			d[lf_idx] = d[rg_idx];
-			//«hd[lf_idx]©Md[rg_idx]¤¬´«
-			d[rg_idx] = tmp;      //µM«áÄ~Äò±Æ§Ç 
+			//å‰‡d[lf_idx]å’Œd[rg_idx]äº’æ›
+			d[rg_idx] = tmp;      //ç„¶å¾Œç¹¼çºŒæ’åº 
         } else {
-			break;    //§_«h¸õ¥X±Æ§Ç¹Lµ{ 
+			break;    //å¦å‰‡è·³å‡ºæ’åºéç¨‹ 
 		} 
     }
 		if(lf_idx>=rg_idx)      
-		 //5-1:­Ylf_idx¤j©óµ¥©órg_idx
-		{       //«h±Nd[lf]©Md[rg_idx]¤¬´«
+		 //5-1:è‹¥lf_idxå¤§æ–¼ç­‰æ–¼rg_idx
+		{       //å‰‡å°‡d[lf]å’Œd[rg_idx]äº’æ›
 			tmp = d[lf];
 			d[lf] = d[rg_idx];
 			d[rg_idx] = tmp;
                                       
-			//5-2:¨Ã¥Hrg_idx¬°°ò·ÇÂI¤À¦¨¥ª¥k¨â¥b
+			//5-2:ä¸¦ä»¥rg_idxç‚ºåŸºæº–é»åˆ†æˆå·¦å³å…©åŠ
 			quick(d,size,lf,rg_idx-1);
-			//¥H»¼°j¤è¦¡¤À§O¬°¥ª¥k¨â¥b¶i¦æ±Æ§Ç
+			//ä»¥éè¿´æ–¹å¼åˆ†åˆ¥ç‚ºå·¦å³å…©åŠé€²è¡Œæ’åº
 			quick(d,size,rg_idx+1,rg);
-			//ª½¦Ü§¹¦¨±Æ§Ç
+			//ç›´è‡³å®Œæˆæ’åº
 		}
 	}
 }

@@ -1,13 +1,13 @@
 /*
-[¥Ü½d]:§Q¥Îªe¤º¶ğ¨ç¼Æ¨D¥X¤£¦P½L¤l¼Æªº½L¤l²¾°Ê¨BÆJ
+[ç¤ºç¯„]:åˆ©ç”¨æ²³å…§å¡”å‡½æ•¸æ±‚å‡ºä¸åŒç›¤å­æ•¸çš„ç›¤å­ç§»å‹•æ­¥é©Ÿ
 */
 #include <iostream>
 using namespace std;
-void hanoi(int, int, int, int);	// ¨ç¼Æ­ì«¬ 
+void hanoi(int, int, int, int);	// å‡½æ•¸åŸå‹ 
 int main(void)
 {  
     int j;
-	cout<<"½Ğ¿é¤J½L¤l¼Æ¶q¡G";
+	cout<<"è«‹è¼¸å…¥ç›¤å­æ•¸é‡ï¼š";
 	cin>>j;
 	hanoi(j,1, 2, 3);    
     return 0;
@@ -15,11 +15,11 @@ int main(void)
 void hanoi(int n, int p1, int p2, int p3)
 {  
 	if (n==1)
-		cout<<"½L¤l±q "<<p1<<" ²¾¨ì "<<p3<<endl;
+		cout<<"ç›¤å­å¾ "<<p1<<" ç§»åˆ° "<<p3<<endl;
 	else
 	{  
 		hanoi(n-1, p1, p3, p2);
-		cout<<"½L¤l±q "<<p1<<" ²¾¨ì "<<p3<<endl;
+		cout<<"ç›¤å­å¾ "<<p1<<" ç§»åˆ° "<<p3<<endl;
 		hanoi(n-1, p2, p1, p3);
 	}
 }

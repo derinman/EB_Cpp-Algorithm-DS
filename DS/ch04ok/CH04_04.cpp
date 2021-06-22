@@ -2,37 +2,37 @@
 #include <cstdlib>
 using namespace std;
 
-template <class Type>	 // ©w¸qÃìµ²¦ê¦C¤¤ªº¸`ÂI
+template <class Type>	 // å®šç¾©éˆçµä¸²åˆ—ä¸­çš„ç¯€é»
 struct Node
 {
-  Type data;	// ¬ö¿ı¸ê®Æ
-  Node* next;// ¬ö¿ı¤U¤@µ§¸`ÂIªº¦ì§}
+  Type data;	// ç´€éŒ„è³‡æ–™
+  Node* next;// ç´€éŒ„ä¸‹ä¸€ç­†ç¯€é»çš„ä½å€
 };
 template <class Type>
-class LinkedList	// Ãìµ²¦ê¦CÃş§O
+class LinkedList	// éˆçµä¸²åˆ—é¡åˆ¥
 {
   private:
-   Node<Type>* first;	    // «ü¨ì²Ä¤@­Ó¸`ÂIªº«ü¼Ğ
+   Node<Type>* first;	    // æŒ‡åˆ°ç¬¬ä¸€å€‹ç¯€é»çš„æŒ‡æ¨™
    public:
-     LinkedList()			    // «Øºc¤l
+     LinkedList()			    // å»ºæ§‹å­
      {
        first = NULL;
      }
-   void addNode(Type data);	// ¥[¤J¸`ÂI
-   void display();			    // Åã¥Ü©Ò¦³ªº¸`ÂI23	
+   void addNode(Type data);	// åŠ å…¥ç¯€é»
+   void display();			    // é¡¯ç¤ºæ‰€æœ‰çš„ç¯€é»23	
 };
    template<class Type>
    void LinkedList<Type>::addNode(Type data)
    {
-    Node<Type>* newNode = new Node<Type>;	// ·s¼W¤@­Ó¸`ÂI
-    newNode->data = data;			// ¬ö¿ı¸ê®Æ
-    newNode->next = first;		// «ü¨ì«e¤@­Ó¸`ÂI
-    first = newNode;			// «ü¨ì·sªº¸`ÂI
+    Node<Type>* newNode = new Node<Type>;	// æ–°å¢ä¸€å€‹ç¯€é»
+    newNode->data = data;			// ç´€éŒ„è³‡æ–™
+    newNode->next = first;		// æŒ‡åˆ°å‰ä¸€å€‹ç¯€é»
+    first = newNode;			// æŒ‡åˆ°æ–°çš„ç¯€é»
    }
    template<class Type>
    void LinkedList<Type>::display()
    {
-     Node<Type>* currentNode = first;    // ¥Ñ²Ä¤@­Ó¸`ÂI¶}©lÅã¥Ü
+     Node<Type>* currentNode = first;    // ç”±ç¬¬ä¸€å€‹ç¯€é»é–‹å§‹é¡¯ç¤º
      while( currentNode != NULL )
      {
      cout << currentNode->data << " -> ";
@@ -42,18 +42,18 @@ class LinkedList	// Ãìµ²¦ê¦CÃş§O
 
 int main()
 {
-    LinkedList<double> dblList;	    // «Ø¥ß¤@­ÓÀx¦sdouble«¬ºA¸ê®ÆªºÃìµ²¦ê¦C
-    double num;					// ¬ö¿ı¿é¤Jªº¸ê®Æ
-    char ch;						// ¬ö¿ı¨Ï¥ÎªÌªº¿ï¾Ü
+    LinkedList<double> dblList;	    // å»ºç«‹ä¸€å€‹å„²å­˜doubleå‹æ…‹è³‡æ–™çš„éˆçµä¸²åˆ—
+    double num;					// ç´€éŒ„è¼¸å…¥çš„è³‡æ–™
+    char ch;						// ç´€éŒ„ä½¿ç”¨è€…çš„é¸æ“‡
     	do{
-           cout << endl <<"½Ğ¿é¤J¤@­Ó¼Æ¦r : ";
+           cout << endl <<"è«‹è¼¸å…¥ä¸€å€‹æ•¸å­— : ";
            cin >> num;
            dblList.addNode( num );
-           cout << "Ä~Äò¿é¤J(y / n)?";
+           cout << "ç¹¼çºŒè¼¸å…¥(y / n)?";
            cin >> ch;
          }while( ch != 'n' );
       cout << endl;
-      dblList.display();				// Åã¥Ü©Ò¦³ªº¸ê®Æ
+      dblList.display();				// é¡¯ç¤ºæ‰€æœ‰çš„è³‡æ–™
       cout << endl << endl;
       
       return 0;

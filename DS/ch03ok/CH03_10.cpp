@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:Àôª¬Ãìµ²¦ê¦Cªº¸`ÂI§R°£ 
+[ç¤ºç¯„]:ç’°ç‹€éˆçµä¸²åˆ—çš„ç¯€é»åˆªé™¤ 
 */
 #include <iostream>
 #include <cstdlib>
@@ -36,34 +36,34 @@ link deletenode(link head,link del)
      link TailNode=NULL;
      if(head==NULL)
      {
-        cout<<"[Àôª¬¦ê¦C¤w¸gªÅ¤F]";
+        cout<<"[ç’°ç‹€ä¸²åˆ—å·²ç¶“ç©ºäº†]";
         return NULL;
      }
      else
      {
-         if(del==head) //§R°£ªº¸`ÂI¬O¦ê¦C­º
+         if(del==head) //åˆªé™¤çš„ç¯€é»æ˜¯ä¸²åˆ—é¦–
          {
             CurNode=head;
             while(CurNode->next!=head)
                CurNode=CurNode->next;
-               //§ä¨ì³Ì«á¤@­Ó¸`ÂI¨Ã°O¿ı¤U¨Ó
+               //æ‰¾åˆ°æœ€å¾Œä¸€å€‹ç¯€é»ä¸¦è¨˜éŒ„ä¸‹ä¾†
                TailNode=CurNode;
-               //(1)±N¦ê¦C­º²¾¨ì¤U¤@­Ó¸`ÂI
+               //(1)å°‡ä¸²åˆ—é¦–ç§»åˆ°ä¸‹ä¸€å€‹ç¯€é»
                head=head->next;
-               //(2)±N¦ê¦C³Ì«á¤@­Ó¸`ÂIªº«ü¼Ğ«ü¦V·sªº¦ê¦C­º
+               //(2)å°‡ä¸²åˆ—æœ€å¾Œä¸€å€‹ç¯€é»çš„æŒ‡æ¨™æŒ‡å‘æ–°çš„ä¸²åˆ—é¦–
                TailNode->next=head;
                return head;
          } 
-         else //­n§R°£ªº¸`ÂI¤£¬O¦ê¦C­º
+         else //è¦åˆªé™¤çš„ç¯€é»ä¸æ˜¯ä¸²åˆ—é¦–
          {
               CurNode=head;
               while(CurNode->next!=del)
                  CurNode=CurNode->next;
-              //(1)§ä¨ì­n§R°£¸`ÂIªº«e¤@­Ó¸`ÂI¨Ã°O¿ı¤U¨Ó
+              //(1)æ‰¾åˆ°è¦åˆªé™¤ç¯€é»çš„å‰ä¸€å€‹ç¯€é»ä¸¦è¨˜éŒ„ä¸‹ä¾†
               PreNode=CurNode;
-              //­n§R°£ªº¸`ÂI
+              //è¦åˆªé™¤çš„ç¯€é»
               CurNode=CurNode->next;
-              //(2)±N­n§R°£¸`ÂIªº«e¤@­Ó«ü¼Ğ«ü¦V­n§R°£¸`ÂIªº¤U¤@­Ó¸`ÂI
+              //(2)å°‡è¦åˆªé™¤ç¯€é»çš„å‰ä¸€å€‹æŒ‡æ¨™æŒ‡å‘è¦åˆªé™¤ç¯€é»çš„ä¸‹ä¸€å€‹ç¯€é»
               PreNode->next=CurNode->next;
               delete CurNode;
               return head;
@@ -82,7 +82,7 @@ int main()
     ,{"John"},{"Mark"},{"Ricky"},{"Lisa"},{"Jasica"}
     ,{"Hanson"},{"Amy"},{"Bob"},{"Jack"}};
 	srand((unsigned)time(NULL));
-	cout<<"®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ  ®y¸¹  ¦¨ÁZ"<<endl;
+	cout<<"åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾  åº§è™Ÿ  æˆç¸¾"<<endl;
 	cout<<"=============================================="<<endl;
 	for(i=0;i<12;i++)
 	{  
@@ -95,10 +95,10 @@ int main()
 			cout<<"["<<data[j*3+i][0]<<"]"<<setw(4)<<"["<<data[j*3+i][1]<<"]  ";
 		cout<<endl;
 	}
-	head=new node;   //«Ø¥ß¦ê¦C­º
+	head=new node;   //å»ºç«‹ä¸²åˆ—é¦–
 	if(!head)
 	{  
-		cout<<"Error!! °O¾ĞÅé°t¸m¥¢±Ñ!!"<<endl;
+		cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
 		exit(1);
 	}
 	head->num=data[0][0];
@@ -107,7 +107,7 @@ int main()
 	head->score=data[0][1];
 	head->next=NULL;
 	ptr=head;
-	for(i=1;i<12;i++) //«Ø¥ß¦ê¦C
+	for(i=1;i<12;i++) //å»ºç«‹ä¸²åˆ—
 	{  
 		newnode=new node;
 		newnode->num=data[i][0];
@@ -115,15 +115,15 @@ int main()
 			newnode->name[j]=namedata[i][j];
 		newnode->score=data[i][1];
 		newnode->next=NULL;
-		ptr->next=newnode;//±N«e¤@­Ó¸`ÂI«ü¦V·s«Ø¥ßªº¸`ÂI
-		ptr=newnode; //·s¸`ÂI¦¨¬°«e¤@­Ó¸`ÂI
+		ptr->next=newnode;//å°‡å‰ä¸€å€‹ç¯€é»æŒ‡å‘æ–°å»ºç«‹çš„ç¯€é»
+		ptr=newnode; //æ–°ç¯€é»æˆç‚ºå‰ä¸€å€‹ç¯€é»
 	}
-	newnode->next=head;//±N³Ì«á¤@­Ó¸`ÂI«ü¦VÀY¸`ÂI´N¦¨¤FÀôª¬Ãìµ²
+	newnode->next=head;//å°‡æœ€å¾Œä¸€å€‹ç¯€é»æŒ‡å‘é ­ç¯€é»å°±æˆäº†ç’°ç‹€éˆçµ
 	while(1)
 	{  
-		cout<<"½Ğ¿é¤J­n§R°£ªº¾Ç¥Í½s¸¹¡Aµ²§ô¿é¤J-1¡G";
+		cout<<"è«‹è¼¸å…¥è¦åˆªé™¤çš„å­¸ç”Ÿç·¨è™Ÿï¼ŒçµæŸè¼¸å…¥-1ï¼š";
 		cin>>position;
-		if(position==-1) //°j°é¤¤Â_±ø¥ó
+		if(position==-1) //è¿´åœˆä¸­æ–·æ¢ä»¶
 			break;
 		else
 		{  
@@ -131,13 +131,13 @@ int main()
 			head=deletenode(head,ptr);
 		}
 	}
-	ptr=head;//«ü¦V¦ê¦Cªº¶}ÀY
-	cout<<"\n\t®y¸¹\t    ©m¦W\t¦¨ÁZ\n";         
+	ptr=head;//æŒ‡å‘ä¸²åˆ—çš„é–‹é ­
+	cout<<"\n\tåº§è™Ÿ\t    å§“å\tæˆç¸¾\n";         
 	cout<<"\t==============================\n";
 	do
 	{
 	    cout<<"\t["<<ptr->num<<"]\t[ "<<setw(10)<<ptr->name<<"]\t["<<ptr->score<<"]"<<endl;
-		ptr=ptr->next;//«ü¦V¤U¤@­Ó¸`ÂI
+		ptr=ptr->next;//æŒ‡å‘ä¸‹ä¸€å€‹ç¯€é»
     } while(head!=ptr && head!=head->next);
     delete head;
 	return 0;

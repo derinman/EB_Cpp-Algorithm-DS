@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:±N¨â­Ó³Ì°ª¦¸¤è¬Ûµ¥ªº¦h¶µ¦¡¬Û¥[«á¿é¥Xµ²ªG
+[ç¤ºç¯„]:å°‡å…©å€‹æœ€é«˜æ¬¡æ–¹ç›¸ç­‰çš„å¤šé …å¼ç›¸åŠ å¾Œè¼¸å‡ºçµæœ
 */
 #include <iostream>
 using namespace std; 
@@ -9,14 +9,14 @@ void PrintPoly(int Poly[],int items);
 void PolySum(int Poly1[ITEMS],int Poly2[ITEMS]);
 int main()
 {  
-	int PolyA[ITEMS]={4,3,7,0,6,2};	//«Å§i¦h¶µ¦¡A
-	int PolyB[ITEMS]={4,1,5,2,0,9};	//«Å§i¦h¶µ¦¡B
-	cout<<"¦h¶µ¦¡A=>";
-	PrintPoly(PolyA,ITEMS);			//¦L¥X¦h¶µ¦¡A
-	cout<<"¦h¶µ¦¡B=>";
-	PrintPoly(PolyB,ITEMS);			//¦L¥X¦h¶µ¦¡B
+	int PolyA[ITEMS]={4,3,7,0,6,2};	//å®£å‘Šå¤šé …å¼A
+	int PolyB[ITEMS]={4,1,5,2,0,9};	//å®£å‘Šå¤šé …å¼B
+	cout<<"å¤šé …å¼A=>";
+	PrintPoly(PolyA,ITEMS);			//å°å‡ºå¤šé …å¼A
+	cout<<"å¤šé …å¼B=>";
+	PrintPoly(PolyB,ITEMS);			//å°å‡ºå¤šé …å¼B
 	cout<<"A+B =>";
-	PolySum(PolyA,PolyB);//¦h¶µ¦¡A+¦h¶µ¦¡B
+	PolySum(PolyA,PolyB);//å¤šé …å¼A+å¤šé …å¼B
 }
 void PrintPoly(int Poly[],int items)
 {  
@@ -25,7 +25,7 @@ void PrintPoly(int Poly[],int items)
 	for(int i=1;i<=Poly[0]+1;i++)
 	{  
 		MaxExp--;
-		if(Poly[i]!=0)	//¦pªG¸Ó¶µ¦¡0´N¸õ¹L
+		if(Poly[i]!=0)	//å¦‚æœè©²é …å¼0å°±è·³é
 		{  
 			if((MaxExp+1)!=0)
 				cout<<" "<<Poly[i]<<"X^"<<MaxExp+1<<" ";
@@ -42,6 +42,6 @@ void PolySum(int Poly1[ITEMS],int Poly2[ITEMS])
 	int result[ITEMS];
 	result[0] = Poly1[0];
 	for(int i=1;i<=Poly1[0]+1;i++)
-		result[i]=Poly1[i]+Poly2[i];//µ¥ò»ªº«Y¼Æ¬Û¥[
+		result[i]=Poly1[i]+Poly2[i];//ç­‰ç¾ƒçš„ä¿‚æ•¸ç›¸åŠ 
 	PrintPoly(result,ITEMS);
 }

@@ -1,21 +1,21 @@
 /*
-[¥Ü½d]:¥Î»¼°j¨ç¼Æ¨D 0-4 ¶¥¼hªº­È
+[ç¤ºç¯„]:ç”¨éè¿´å‡½æ•¸æ±‚ 0-4 éšå±¤çš„å€¼
 */
 #include <iostream>
 using namespace std;
-int recursive(int);  //¨ç¼Æ­ì«¬
+int recursive(int);  //å‡½æ•¸åŸå‹
 int main(void)
 {  
 	for (int i=0;i<5;i++)
-		cout<<i<<" ¶¥¼h­È¬° "<<recursive(i)<<endl;   
+		cout<<i<<" éšå±¤å€¼ç‚º "<<recursive(i)<<endl;   
     return 0;
 }
 int recursive(int i)
 {  
 	int sum;
-	if(i == 0) //»¼°j²×¤îªº±ø¥ó
+	if(i == 0) //éè¿´çµ‚æ­¢çš„æ¢ä»¶
 		return(1);
 	else
-		sum = i * recursive(i-1); //sum=n*(n-1)!©Ò¥Hª½±µ©I¥s¥»¨­
+		sum = i * recursive(i-1); //sum=n*(n-1)!æ‰€ä»¥ç›´æ¥å‘¼å«æœ¬èº«
 	return sum;
 }

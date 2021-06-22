@@ -1,6 +1,6 @@
 /*
-[¦WºÙ]:ch03_07.cpp
-[¥Ü½d]:³æ¦V¦ê¦Cªº³sµ²¥\¯à 
+[åç¨±]:ch03_07.cpp
+[ç¤ºç¯„]:å–®å‘ä¸²åˆ—çš„é€£çµåŠŸèƒ½ 
 */
 #include <iostream>
 #include <cstdlib>
@@ -22,11 +22,11 @@ int main()
 	link head,ptr,newnode,last,before;
 	link head1,head2;
 	int i,j,findword=0,data[12][2];
-	//²Ä¤@²Õ¦ê¦Cªº©m¦W 
+	//ç¬¬ä¸€çµ„ä¸²åˆ—çš„å§“å 
 	char namedata1[12][10]={{"Allen"},{"Scott"},{"Marry"},
     {"Jon"},{"Mark"},{"Ricky"},{"Lisa"},{"Jasica"},
     {"Hanson"},{"Amy"},{"Bob"},{"Jack"}};
-    //²Ä¤G²Õ¦ê¦Cªº©m¦W
+    //ç¬¬äºŒçµ„ä¸²åˆ—çš„å§“å
     char namedata2[12][10]={{"May"},{"John"},{"Michael"},
     {"Andy"},{"Tom"},{"Jane"},{"Yoko"},{"Axel"},
     {"Alex"},{"Judy"},{"Kelly"},{"Lucy"}};
@@ -36,10 +36,10 @@ int main()
 		data[i][0]=i+1;
 		data[i][1]=rand()%50+51;
 	}
-	head1=new node; //«Ø¥ß²Ä¤@²Õ¦ê¦C­º
+	head1=new node; //å»ºç«‹ç¬¬ä¸€çµ„ä¸²åˆ—é¦–
 	if(!head1)
 	{  
-		cout<<"Error!! °O¾ĞÅé°t¸m¥¢±Ñ!!"<<endl;
+		cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!"<<endl;
 		exit(1);
 	}
 	head1->num=data[0][0];
@@ -48,7 +48,7 @@ int main()
 	head1->score=data[0][1];
 	head1->next=NULL;
 	ptr=head1;
-	for(i=1;i<12;i++)//«Ø¥ß²Ä¤@²ÕÃìµ²¦ê¦C
+	for(i=1;i<12;i++)//å»ºç«‹ç¬¬ä¸€çµ„éˆçµä¸²åˆ—
 	{  
 		newnode=new node;
 		newnode->num=data[i][0];
@@ -66,10 +66,10 @@ int main()
 		data[i][0]=i+13;
 		data[i][1]=rand()%40+41;
 	}
-	head2=new node; //«Ø¥ß²Ä¤G²Õ¦ê¦C­º
+	head2=new node; //å»ºç«‹ç¬¬äºŒçµ„ä¸²åˆ—é¦–
 	if(!head2)
 	{  
-		cout<<"Error!! °O¾ĞÅé°t¸m¥¢±Ñ!!\n";
+		cout<<"Error!! è¨˜æ†¶é«”é…ç½®å¤±æ•—!!\n";
 		exit(1);
 	}
 	head2->num=data[0][0];
@@ -78,7 +78,7 @@ int main()
 	head2->score=data[0][1];
 	head2->next=NULL;
 	ptr=head2;
-	for(i=1;i<12;i++)//«Ø¥ß²Ä¤G²ÕÃìµ²¦ê¦C
+	for(i=1;i<12;i++)//å»ºç«‹ç¬¬äºŒçµ„éˆçµä¸²åˆ—
 	{  
 		newnode=new node;
 		newnode->num=data[i][0];
@@ -90,13 +90,13 @@ int main()
 		ptr=ptr->next;
 	}
 	i=0;
-	ptr=concatlist(head1,head2);//±N¦ê¦C¬Û³s
-	cout<<"¨â­ÓÃìµ²¦ê¦C¬Û³sªºµ²ªG¡G"<<endl;               
+	ptr=concatlist(head1,head2);//å°‡ä¸²åˆ—ç›¸é€£
+	cout<<"å…©å€‹éˆçµä¸²åˆ—ç›¸é€£çš„çµæœï¼š"<<endl;               
 	while (ptr!=NULL)                       
-	{   //¦C¦L¦ê¦C¸ê®Æ
+	{   //åˆ—å°ä¸²åˆ—è³‡æ–™
 		cout<<"["<<ptr->num<<" "<<ptr->name<<"  "<<ptr->score<<" ]\t-> ";
 		i++;
-		if(i>=3)//¤T­Ó¤¸¯À¬°¤@¦C
+		if(i>=3)//ä¸‰å€‹å…ƒç´ ç‚ºä¸€åˆ—
 		{  
 			cout<<endl;
 			i=0;

@@ -1,12 +1,12 @@
 /*
-[¥Ü½d]:¨â­Ó¯x°}¬Û¥[ªº¹Bºâ
+[ç¤ºç¯„]:å…©å€‹çŸ©é™£ç›¸åŠ çš„é‹ç®—
 */
 #include <iostream>
 using namespace std;
 
 const int  ROWS = 3;
 const int COLS = 3;
-void MatrixAdd(int*,int*,int*,int,int);   //¨ç¼Æ­ì«¬
+void MatrixAdd(int*,int*,int*,int,int);   //å‡½æ•¸åŸå‹
 int main()
 {
 	int A[ROWS][COLS] = {{1,3,5},
@@ -16,14 +16,14 @@ int main()
 						 {6,5,4},
 						 {3,2,1}};
 	int C[ROWS][COLS] = {0};
-	cout<<"[¯x°}Aªº¦U­Ó¤¸¯À]"<<endl; //¦L¥X¯x°}Aªº¤º®e
+	cout<<"[çŸ©é™£Açš„å„å€‹å…ƒç´ ]"<<endl; //å°å‡ºçŸ©é™£Açš„å…§å®¹
 	for(int i=0;i<ROWS;i++)
 	{
 		for(int j=0;j<COLS;j++)
 			cout<<A[i][j]<<"\t";
 		cout<<endl;
 	}
-	cout<<"[¯x°}Bªº¦U­Ó¤¸¯À]"<<endl; //¦L¥X¯x°}Bªº¤º®e
+	cout<<"[çŸ©é™£Bçš„å„å€‹å…ƒç´ ]"<<endl; //å°å‡ºçŸ©é™£Bçš„å…§å®¹
 	for(int i=0;i<ROWS;i++)
 	{
 		for(int j=0;j<COLS;j++)
@@ -31,7 +31,7 @@ int main()
 		cout<<endl;
 	}
 	MatrixAdd(&A[0][0],&B[0][0],&C[0][0],ROWS,COLS);
-	cout<<"[Åã¥Ü¯x°}A©M¯x°}B¬Û¥[ªºµ²ªG]"<<endl;	//¦L¥XA+Bªº¤º®e
+	cout<<"[é¡¯ç¤ºçŸ©é™£Aå’ŒçŸ©é™£Bç›¸åŠ çš„çµæœ]"<<endl;	//å°å‡ºA+Bçš„å…§å®¹
 	for(int i=0;i<ROWS;i++)
 	{
 		for(int j=0;j<COLS;j++)
@@ -44,7 +44,7 @@ void MatrixAdd(int* arrA,int* arrB,int* arrC,int dimX,int dimY)
 {
 	if(dimX<=0||dimY<=0)
 	{
-		cout<<"¯x°}ºû¼Æ¥²¶·¤j©ó0"<<endl;
+		cout<<"çŸ©é™£ç¶­æ•¸å¿…é ˆå¤§æ–¼0"<<endl;
 		return;
 	}
 	for(int row=1;row<=dimX;row++)

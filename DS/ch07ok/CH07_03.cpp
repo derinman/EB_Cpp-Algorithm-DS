@@ -1,5 +1,5 @@
 /*
-[¥Ü½d]:¨Ï¥Î¬Û¾F¦ê¦C¨Óªí¥Ü¹Ï§Î(a)¤Î(b)
+[ç¤ºç¯„]:ä½¿ç”¨ç›¸é„°ä¸²åˆ—ä¾†è¡¨ç¤ºåœ–å½¢(a)åŠ(b)
 */
 #include <iostream>
 using namespace std;
@@ -9,32 +9,32 @@ class list
 	int val;
 	class list *next;
 };
-class list head[6];//«Å§i¤@­Ó¸`ÂI«¬ºA°}¦C
+class list head[6];//å®£å‘Šä¸€å€‹ç¯€é»å‹æ…‹é™£åˆ—
 int main(void)
 {  
 	list *ptr,*newnode;
- 	int data[14][2]={{1,2},{2,1},{1,5},{5,1},//¹Ï§Î°}¦C«Å§i
+ 	int data[14][2]={{1,2},{2,1},{1,5},{5,1},//åœ–å½¢é™£åˆ—å®£å‘Š
 					{2,3},{3,2},{2,4},{4,2},
 					{3,4},{4,3},{3,5},{5,3},
 					{4,5},{5,4}};
-	cout<<"¹Ï§Î(a)ªº¾F±µ¦ê¦C¤º®e¡G"<<endl;
+	cout<<"åœ–å½¢(a)çš„é„°æ¥ä¸²åˆ—å…§å®¹ï¼š"<<endl;
 	for (int i=1;i<6;i++)
 	{  
-		head[i].val=i; //¦ê¦C­ºhead
+		head[i].val=i; //ä¸²åˆ—é¦–head
 		head[i].next=NULL;
-		cout<<"³»ÂI "<<i<<" =>";	//§â³»ÂI­È¦C¦L¥X¨Ó
-		ptr=&(head[i]);          	//¼È¦s¸`ÂIptr
-		for (int j=0;j<14;j++)      //¨«³X¹Ï§Î°}¦C
+		cout<<"é ‚é» "<<i<<" =>";	//æŠŠé ‚é»å€¼åˆ—å°å‡ºä¾†
+		ptr=&(head[i]);          	//æš«å­˜ç¯€é»ptr
+		for (int j=0;j<14;j++)      //èµ°è¨ªåœ–å½¢é™£åˆ—
 		{  
-			if (data[j][0]==i)    	//¦pªG¸`ÂI­È=i¡A¥[¤J¸`ÂI¨ì¦ê¦C­º
+			if (data[j][0]==i)    	//å¦‚æœç¯€é»å€¼=iï¼ŒåŠ å…¥ç¯€é»åˆ°ä¸²åˆ—é¦–
 			{  
 				newnode = new list;
-    			newnode->val=data[j][1];//«Å§i·s¸`ÂI¡A­È¬°²×ÂI­È
+    			newnode->val=data[j][1];//å®£å‘Šæ–°ç¯€é»ï¼Œå€¼ç‚ºçµ‚é»å€¼
 				newnode->next=NULL;
-				while(ptr!=NULL)        //§PÂ_¬O§_¬°¦ê¦Cªº§Àºİ
+				while(ptr!=NULL)        //åˆ¤æ–·æ˜¯å¦ç‚ºä¸²åˆ—çš„å°¾ç«¯
 					ptr=ptr->next;
-				ptr=newnode;            //¥[¤J·s¸`ÂI
-				cout<<"["<<newnode->val<<"] ";//¦C¦L¬Û¾F³»ÂI
+				ptr=newnode;            //åŠ å…¥æ–°ç¯€é»
+				cout<<"["<<newnode->val<<"] ";//åˆ—å°ç›¸é„°é ‚é»
 			}
 		}   
 		cout<<endl;
